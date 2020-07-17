@@ -1,0 +1,53 @@
+/* Resetting all values to manage the
+website elements from scratch */
+
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+}
+
+/* Colours used on the website */
+
+:root {
+   --speedyBlue: rgba(55, 95, 255, 1);
+   --speedyWhite: rgba(255, 255, 255, 1);
+   --speedyGrey: rgba(25, 25, 25, 1);
+}
+
+/* This section modifies the header section */
+
+header {
+   position: fixed;
+   background-color: var(--speedyGrey);
+   color: var(--speedyWhite);
+}
+
+nav {
+
+}
+
+/* This section modifies the main section */
+
+main {
+   width: 100vw;
+   height: 100vh;
+   background-image: url(../images/neonbrand-ZSz1m4JPDqU-unsplash.jpg);
+   background-size: cover;
+}
+
+#sample1 {
+   width: 100vw;
+}
+
+/* This section modifies the footer section */
+
+footer {
+   background-color: var(--speedyGrey);
+   color: var(--speedyWhite);
+}
