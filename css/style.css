@@ -10,6 +10,7 @@ website elements from scratch */
     text-decoration: none;
     list-style: none;
     color: inherit;
+    box-sizing: border-box;
 }
 
 /* Colours used on the website */
@@ -24,12 +25,25 @@ website elements from scratch */
 
 header {
    position: fixed;
+   width: 100vw;
+   display: grid;
+   grid-template-columns: 1fr 5fr 1fr;
    background-color: var(--speedyGrey);
    color: var(--speedyWhite);
 }
 
 nav {
+   grid-column: 2 / span 1;
+}
 
+nav ul {
+   display: flex;
+   justify-content: flex-end;
+}
+
+nav ul li {
+   padding: 1rem;
+   margin: 1rem 0;
 }
 
 /* This section modifies the main section */
