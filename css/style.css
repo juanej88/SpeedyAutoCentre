@@ -19,6 +19,8 @@ website elements from scratch */
    --speedyBlue: rgba(55, 95, 255, 1);
    --speedyWhite: rgba(255, 255, 255, 1);
    --speedyGrey: rgba(25, 25, 25, 1);
+   --speedyLightGrey: rgba(200, 200, 200, 1);
+   --speedyRed: rgba(255, 100, 100, 1);
 }
 
 /* This section modifies the header section */
@@ -27,7 +29,7 @@ header {
    position: fixed;
    width: 100vw;
    display: grid;
-   grid-template-columns: 1fr 5fr 1fr;
+   grid-template-columns: 1fr 4fr 1fr;
    background-color: var(--speedyGrey);
    color: var(--speedyWhite);
 }
@@ -42,8 +44,16 @@ nav ul {
 }
 
 nav ul li {
-   padding: 1rem;
-   margin: 1rem 0;
+   padding: .5rem 1rem;
+   margin: .5rem 0;
+}
+
+.navLinks {
+
+}
+
+.navLinks:hover {
+   color: var(--speedyRed);
 }
 
 /* This section modifies the main section */
@@ -62,6 +72,33 @@ main {
 /* This section modifies the footer section */
 
 footer {
+   display: grid;
+   grid-template: 250px 50px / 1fr 7fr 3fr 1fr;
+   align-items: center;
    background-color: var(--speedyGrey);
    color: var(--speedyWhite);
+}
+
+footer p,
+footer p a {
+   font-size: 12px;
+   /* height: 50px; */
+   padding: 17px 0 17px 0;
+}
+
+#copyright {
+   grid-area: 2 / 2 / span 1 / span 1;
+   border-top: 1px solid var(--speedyLightGrey);
+   opacity: .5;
+}
+
+#createdBy {
+   text-align: right;
+   grid-area: 2 / 3 / span 1 / span 1;
+   border-top: 1px solid var(--speedyLightGrey);
+   opacity: .5;
+}
+
+#createdBy a:hover {
+   color: var(--speedyRed);
 }
