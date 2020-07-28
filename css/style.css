@@ -5,7 +5,8 @@ website elements from scratch */
     padding: 0;
     border: 0;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     text-decoration: none;
     list-style: none;
@@ -20,7 +21,7 @@ website elements from scratch */
    --speedyWhite: rgba(255, 255, 255, 1);
    --speedyGrey: rgba(30, 30, 30, 1);
    --speedyDarkGrey: rgba(120, 120, 120, 1);
-   --speedyRed: rgba(255, 80, 80, 1);
+   --speedyRed: rgba(227, 8, 21, 1);
 }
 
 /* This section modifies the header section */
@@ -29,13 +30,26 @@ header {
    position: fixed;
    width: 100vw;
    display: grid;
-   grid-template-columns: 1fr 4fr 1fr;
-   background-color: var(--speedyGrey);
+   grid-template-columns: repeat(2, 1fr) 8fr repeat(2, 1fr);
+   background-color: rgba(30, 30, 30, 0);
    color: var(--speedyWhite);
+   z-index: 10;
+   font-weight: 600;
+}
+
+#logo {
+   grid-column: 2 / span 1;
+   justify-self: center;
+}
+
+#logo img {
+   height: 125px;
+   /* height: 75px; */
+   padding-top: 5px;
 }
 
 nav {
-   grid-column: 2 / span 1;
+   grid-column: 3 / span 1;
 }
 
 nav ul {
@@ -44,16 +58,20 @@ nav ul {
 }
 
 nav ul li {
-   padding: .5rem 1rem;
+   padding: 1rem;
    margin: .5rem 0;
+}
+
+nav ul li a {
+   opacity: .75;
+}
+
+nav ul li a:hover {
+   opacity: 1;
 }
 
 .navLinks {
 
-}
-
-.navLinks:hover {
-   color: var(--speedyRed);
 }
 
 /* This section modifies the main section */
@@ -61,12 +79,24 @@ nav ul li {
 main {
    width: 100vw;
    height: 100vh;
-   background-image: url(../images/neonbrand-ZSz1m4JPDqU-unsplash.jpg);
+   background-image: url(../images/background/background1.jpg);
    background-size: cover;
+   background-position: 50% 75%;
 }
 
-#sample1 {
-   width: 100vw;
+.firstSentence {
+   position: relative;
+   top: 300px;
+   left: 150px;
+   color: var(--speedyWhite);
+}
+
+.firstSentence h1 {
+   font-size: 3.5rem;
+}
+
+.firstSentence h2 {
+   font-size: 2rem;
 }
 
 /* This section modifies the footer section */
@@ -98,5 +128,6 @@ footer p a {
 }
 
 #createdBy a:hover {
-   color: var(--speedyRed);
+   color: var(--speedyWhite);
+   opacity: .5;
 }
