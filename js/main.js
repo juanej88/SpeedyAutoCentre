@@ -1,9 +1,9 @@
 const typingPhone = () => {
 
-   const phoneNumber = '0296 821 772';
+   const phoneNumber = '02 9682 1772';
    const blank = '';
 
-   $('#callUs').mouseenter( () => {
+   $('#phoneIcon').mouseenter( () => {
       $('#phoneNumber').html(phoneNumber);
    });
 
