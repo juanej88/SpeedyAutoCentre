@@ -7,7 +7,7 @@ const typingPhone = () => {
       $('#phoneNumber').html(phoneNumber);
    });
 
-   $('#callUs').mouseleave( () => {
+   $('#phoneIcon').mouseleave( () => {
       $('#phoneNumber').html(blank);
    });
 
