@@ -1,19 +1,5 @@
-const typingPhone = () => {
-
-   const phoneNumber = '02 9682 1772';
-   const blank = '';
-
-   $('#phoneIcon').mouseenter( () => {
-      $('#phoneNumber').html(phoneNumber);
-   });
-
-   $('#phoneIcon').mouseleave( () => {
-      $('#phoneNumber').html(blank);
-   });
-
-};
-
-typingPhone();
+//This function adds an animation to the nav when the website is scrolled by
+//20% of the window height.
 
 const navAnimation = () => {
 
@@ -34,3 +20,20 @@ const navAnimation = () => {
   };
 
 navAnimation();
+
+//This function shows and hides the phone and location information displayed
+//when clicking the respective nav icons.
+
+const hidePhone = () => {
+   $(document).mouseup(e => {
+       if (!$('#phoneIcon').is(e.target)) {
+         $('#getPhone').addClass('hideInformation');
+         $('#phoneIcon').removeClass('hoverOnHold');
+      } else {
+         $('#getPhone').removeClass('hideInformation');
+         $('#phoneIcon').addClass('hoverOnHold');
+      }
+   });
+};
+
+hidePhone();
