@@ -29,7 +29,7 @@ header {
    position: fixed;
    width: 100%;
    display: grid;
-   grid-template-columns: 1fr 2fr 7fr repeat(2, 1fr);
+   grid-template-columns: 0.5fr 2fr 8fr 1fr 0.5fr;
    background-color: rgba(0, 60, 120, 0);
    color: var(--speedyDarkGrey);
    z-index: 10;
@@ -126,23 +126,47 @@ main {
    background-size: cover;
    background-position: 50% 80%;
    display: grid;
-   grid-template: repeat(3, 4fr) / 1fr 10fr 1fr;
+   grid-template: repeat(3, 4fr) / 0.5fr 11fr 0.5fr;
 }
 .firstSentence {
-   grid-area: 2 / 2 / span 1 / span 1;
+   grid-area: 3 / 2 / span 1 / span 1;
    color: var(--speedyWhite);
    position: relative;
-   top: 20px;
+   top: -35px;
 }
 
-.firstSentence h1 {
+.firstSentence h2 span {
    font-size: 3rem;
-   font-weight: 600;
 }
 
 .firstSentence h2 {
    font-size: 2.5rem;
-   font-weight: 400;
+}
+
+.button {
+   font-weight: 600;
+   padding: 0.5rem 1.5rem;
+   position: relative;
+   top: 1.5rem;
+   border: 2px solid var(--speedyWhite);
+   border-radius: 0.25rem;
+   animation: buttonOff .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes buttonOff {
+   0% {color: var(--speedyDarkGrey); background-color: var(--speedyWhite);}
+   100% {color: var(--speedyWhite); background-color: transparent;}
+}
+
+.button:hover {
+   animation: buttonOn .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes buttonOn {
+   0% {color: var(--speedyWhite); background-color: transparent;}
+   100% {color: var(--speedyDarkGrey); background-color: var(--speedyWhite);}
 }
 
 #secondSection {
@@ -153,16 +177,20 @@ main {
 
 footer {
    display: grid;
-   grid-template: 450px repeat(2, 1fr) / 1fr 2fr 6fr 2fr 1fr;
+   grid-template: 450px 1fr 75px / 0.5fr 2fr 7fr 2fr 0.5fr;
    align-items: center;
    background-color: var(--speedyDarkGrey);
    color: var(--speedyGrey);
 }
 
-footer p,
-footer p a {
+footer p {
    font-size: 0.8rem;
    padding: 1.75rem 0;
+}
+
+footer p a {
+   font-size: 0.8rem;
+   padding: .75rem 0;
 }
 
 .socialMedia {
@@ -173,8 +201,8 @@ footer p a {
 
 .socialMedia a i {
    font-size: 1.5rem;
-   padding: 1.5rem .5rem 1.6rem 0;
-   margin-right: .5rem;
+   padding: .75rem .5rem .75rem 0;
+   margin: .75rem .5rem 0 0;
 }
 
 .socialMedia a i:hover {
