@@ -112,7 +112,10 @@ nav ul li a:hover {
    opacity: 1;
 }
 
-#getPhone {
+/* This section is part of the information boxes which are displayed
+after clicking the getLocation and getPhone icon on the nav */
+
+.infoBox {
    position: absolute;
    left: -17rem;
    top: 4.4rem;
@@ -123,19 +126,19 @@ nav ul li a:hover {
    grid-column: 5 / span 1;
    border-radius: 0 0 0.5rem 0.5rem;
    display: grid;
-   grid-template: 1fr repeat(2, .5fr) 1fr / repeat(2, 1fr);
+   grid-template: 1fr repeat(2, .5fr) 1fr / 1fr;
    align-items: center;
    padding: 0 1rem;
 }
 
-#getPhone.hideInformation {
-   visibility: hidden;
+#getPhone {
+   grid-template: 1fr repeat(2, .5fr) 1fr / repeat(2, 1fr);
 }
 
-#getPhone .arrowUp {
+.arrowUp {
    position: absolute;
-   top: -.7rem;
-   left: 13.25rem;
+   top: -0.7rem;
+   left: 10.1rem;
    width: 0;
    height: 0;
    border-left: 0.75rem solid transparent;
@@ -143,21 +146,39 @@ nav ul li a:hover {
    border-bottom: 0.75rem solid var(--speedyDarkGrey);
 }
 
+#getPhone .arrowUp {
+   left: 13.25rem;
+}
+
+#getLocation h3 {
+   grid-row: 1 / span 1;
+}
+
 #getPhone h3 {
    grid-area: 1 / 1 / span 1 / span 2;
+}
+
+.infoBox h3 {
    text-align: center;
-   padding: .5rem;
+   padding: 0.5rem;
    border-bottom: 1px solid var(--speedyWhite);
 }
 
-#getPhone p {
+.infoBox p {
    font-size: 0.75rem;
    font-weight: 400;
    padding: 0.25rem 0.5rem;
 }
 
+#getDirectionsButton {
+   grid-row: 4 / span 1;
+}
+
 #callUsButton {
    grid-area: 4 / 1 / span 1 / span 2;
+}
+
+#getDirectionsButton, #callUsButton {
    justify-self: center;
    align-self: center;
    font-size: 0.75rem;
@@ -171,9 +192,13 @@ nav ul li a:hover {
    top: -3px;
 }
 
-#callUsButton:hover {
+#getDirectionsButton:hover, #callUsButton:hover {
    animation: buttonOn .25s linear;
    animation-fill-mode: forwards;
+}
+
+#getLocation.hideInformation, #getPhone.hideInformation {
+   visibility: hidden;
 }
 
 /* This section modifies the main section */

@@ -24,16 +24,26 @@ navAnimation();
 //This function shows and hides the phone and location information displayed
 //when clicking the respective nav icons.
 
-const hidePhone = () => {
+const hideInfoBoxes = () => {
    $(document).mouseup(e => {
-       if (!$('#phoneIcon').is(e.target)) {
-         $('#getPhone').addClass('hideInformation');
-         $('#phoneIcon').removeClass('hoverOnHold');
+       if ($('#locationIcon').is(e.target) || $('#getDirectionsButton').is(e.target)) {
+         $('#getLocation').removeClass('hideInformation');
+         $('#locationIcon').addClass('hoverOnHold');
       } else {
+         $('#getLocation').addClass('hideInformation');
+         $('#locationIcon').removeClass('hoverOnHold');
+      }
+   });
+
+   $(document).mouseup(e => {
+       if ($('#phoneIcon').is(e.target) || $('#callUsButton').is(e.target)) {
          $('#getPhone').removeClass('hideInformation');
          $('#phoneIcon').addClass('hoverOnHold');
+      } else {
+         $('#getPhone').addClass('hideInformation');
+         $('#phoneIcon').removeClass('hoverOnHold');
       }
    });
 };
 
-hidePhone();
+hideInfoBoxes();
