@@ -138,16 +138,16 @@ after clicking the getLocation and getPhone icon on the nav */
 .arrowUp {
    position: absolute;
    top: -0.7rem;
-   left: 10.1rem;
+   left: 9.6rem;
    width: 0;
    height: 0;
-   border-left: 0.75rem solid transparent;
-   border-right: 0.75rem solid transparent;
-   border-bottom: 0.75rem solid var(--speedyDarkGrey);
+   border-left: 1.25rem solid transparent;
+   border-right: 1.25rem solid transparent;
+   border-bottom: 1.25rem solid var(--speedyDarkGrey);
 }
 
 #getPhone .arrowUp {
-   left: 13.25rem;
+   left: 12.75rem;
 }
 
 #getLocation h3 {
@@ -178,9 +178,11 @@ after clicking the getLocation and getPhone icon on the nav */
    grid-area: 4 / 1 / span 1 / span 2;
 }
 
-#getDirectionsButton, #callUsButton {
+.infoBox a {
    justify-self: center;
    align-self: center;
+   width: 9rem;
+   text-align: center;
    font-size: 0.75rem;
    font-weight: 600;
    padding: 0.25rem 1rem;
@@ -192,12 +194,12 @@ after clicking the getLocation and getPhone icon on the nav */
    top: -3px;
 }
 
-#getDirectionsButton:hover, #callUsButton:hover {
+.infoBox a:hover {
    animation: buttonOn .25s linear;
    animation-fill-mode: forwards;
 }
 
-#getLocation.hideInformation, #getPhone.hideInformation {
+.hideInformation {
    visibility: hidden;
 }
 

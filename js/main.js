@@ -22,28 +22,52 @@ const navAnimation = () => {
 navAnimation();
 
 //This function shows and hides the phone and location information displayed
-//when clicking the respective nav icons.
+//when hovering the respective nav icons.
 
 const hideInfoBoxes = () => {
-   $(document).mouseup(e => {
-       if ($('#locationIcon').is(e.target) || $('#getDirectionsButton').is(e.target)) {
-         $('#getLocation').removeClass('hideInformation');
-         $('#locationIcon').addClass('hoverOnHold');
-      } else {
-         $('#getLocation').addClass('hideInformation');
-         $('#locationIcon').removeClass('hoverOnHold');
-      }
+
+   $('#locationIcon').mouseover(() => {
+      $('#getLocation').removeClass('hideInformation');
+      $('#locationIcon').addClass('hoverOnHold');
    });
 
-   $(document).mouseup(e => {
-       if ($('#phoneIcon').is(e.target) || $('#callUsButton').is(e.target)) {
-         $('#getPhone').removeClass('hideInformation');
-         $('#phoneIcon').addClass('hoverOnHold');
-      } else {
-         $('#getPhone').addClass('hideInformation');
-         $('#phoneIcon').removeClass('hoverOnHold');
-      }
+   $('#locationIcon').mouseleave(() => {
+      $('#getLocation').addClass('hideInformation');
+      $('#locationIcon').removeClass('hoverOnHold');
    });
+
+   $('#phoneIcon').mouseover(() => {
+      $('#getPhone').removeClass('hideInformation');
+      $('#phoneIcon').addClass('hoverOnHold');
+   });
+
+   $('#phoneIcon').mouseleave(() => {
+      $('#getPhone').addClass('hideInformation');
+      $('#phoneIcon').removeClass('hoverOnHold');
+   });
+
+   //This function shows and hides the phone and location information displayed
+   //when clicking the respective nav icons.
+
+   // $(document).mouseup(e => {
+   //     if ($('#locationIcon').is(e.target) || $('#getDirectionsButton').is(e.target)) {
+   //       $('#getLocation').removeClass('hideInformation');
+   //       $('#locationIcon').addClass('hoverOnHold');
+   //    } else {
+   //       $('#getLocation').addClass('hideInformation');
+   //       $('#locationIcon').removeClass('hoverOnHold');
+   //    }
+   // });
+   //
+   // $(document).mouseup(e => {
+   //     if ($('#phoneIcon').is(e.target) || $('#callUsButton').is(e.target)) {
+   //       $('#getPhone').removeClass('hideInformation');
+   //       $('#phoneIcon').addClass('hoverOnHold');
+   //    } else {
+   //       $('#getPhone').addClass('hideInformation');
+   //       $('#phoneIcon').removeClass('hoverOnHold');
+   //    }
+   // });
 };
 
 hideInfoBoxes();
