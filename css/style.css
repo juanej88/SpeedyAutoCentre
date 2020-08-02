@@ -20,7 +20,7 @@ website elements from scratch */
    --speedyWhite: rgba(255, 255, 255, 1);
    --speedyDarkGrey: rgba(30, 30, 30, 1);
    --speedyGrey: rgba(120, 120, 120, 1);
-   --speedyRed: rgba(227, 8, 21, 1);
+   --speedyRed: rgba(220, 50, 35, 1);
 }
 
 /* This section modifies the header section */
@@ -113,7 +113,7 @@ nav ul li a:hover {
 }
 
 /* This section is part of the information boxes which are displayed
-after clicking the getLocation and getPhone icon on the nav */
+after hovering the getLocation and getPhone icon on the nav */
 
 .infoBox {
    position: absolute;
@@ -129,6 +129,7 @@ after clicking the getLocation and getPhone icon on the nav */
    grid-template: 1fr repeat(2, .5fr) 1fr / 1fr;
    align-items: center;
    padding: 0 1rem;
+   cursor: auto;
 }
 
 #getPhone {
@@ -165,9 +166,12 @@ after clicking the getLocation and getPhone icon on the nav */
 }
 
 .infoBox p {
-   font-size: 0.75rem;
-   font-weight: 400;
-   padding: 0.25rem 0.5rem;
+   font-size: 0.8rem;
+   padding: 0.25rem 0;
+}
+
+.closedToday.weekendColour {
+   color: var(--speedyRed);
 }
 
 #getDirectionsButton {
@@ -181,11 +185,11 @@ after clicking the getLocation and getPhone icon on the nav */
 .infoBox a {
    justify-self: center;
    align-self: center;
-   width: 9rem;
+   width: 10rem;
    text-align: center;
-   font-size: 0.75rem;
+   font-size: 0.8rem;
    font-weight: 600;
-   padding: 0.25rem 1rem;
+   padding: 0.5rem 1rem;
    border: 1px solid var(--speedyWhite);
    border-radius: 0.25rem;
    animation: buttonOff .25s linear;

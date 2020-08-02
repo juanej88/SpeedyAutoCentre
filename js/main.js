@@ -46,28 +46,32 @@ const hideInfoBoxes = () => {
       $('#phoneIcon').removeClass('hoverOnHold');
    });
 
-   //This function shows and hides the phone and location information displayed
-   //when clicking the respective nav icons.
+   //This section hides the .infoBox for any touchcreen device
 
-   // $(document).mouseup(e => {
-   //     if ($('#locationIcon').is(e.target) || $('#getDirectionsButton').is(e.target)) {
-   //       $('#getLocation').removeClass('hideInformation');
-   //       $('#locationIcon').addClass('hoverOnHold');
-   //    } else {
-   //       $('#getLocation').addClass('hideInformation');
-   //       $('#locationIcon').removeClass('hoverOnHold');
-   //    }
-   // });
-   //
-   // $(document).mouseup(e => {
-   //     if ($('#phoneIcon').is(e.target) || $('#callUsButton').is(e.target)) {
-   //       $('#getPhone').removeClass('hideInformation');
-   //       $('#phoneIcon').addClass('hoverOnHold');
-   //    } else {
-   //       $('#getPhone').addClass('hideInformation');
-   //       $('#phoneIcon').removeClass('hoverOnHold');
-   //    }
-   // });
+   $(document).mouseup(e => {
+       if (!$('#locationIcon').is(e.target) || !$('#getDirectionsButton').is(e.target)) {
+          $('#getLocation').addClass('hideInformation');
+          $('#locationIcon').removeClass('hoverOnHold');
+      };
+   });
+
+   $(document).mouseup(e => {
+       if (!$('#phoneIcon').is(e.target) || !$('#callUsButton').is(e.target)) {
+          $('#getPhone').addClass('hideInformation');
+          $('#phoneIcon').removeClass('hoverOnHold');
+      };
+   });
 };
 
 hideInfoBoxes();
+
+const closedColour = () => {
+   let actualDate = new Date();
+   let actualDay = actualDate.getDay();
+
+   if (actualDay === 0 || actualDay === 6) {
+      $('.closedToday').addClass('weekendColour');
+   };
+};
+
+closedColour();
