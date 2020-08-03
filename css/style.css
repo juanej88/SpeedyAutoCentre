@@ -20,6 +20,7 @@ website elements from scratch */
    --speedyWhite: rgba(255, 255, 255, 1);
    --speedyDarkGrey: rgba(30, 30, 30, 1);
    --speedyGrey: rgba(120, 120, 120, 1);
+   --speedyLightGrey: hsla(210, 10%, 95%, 1);
    --speedyRed: rgba(220, 50, 35, 1);
 }
 
@@ -107,10 +108,10 @@ nav ul li a:hover {
    cursor: pointer;
 }
 
-.hoverOnHold {
+/* .hoverOnHold {
    color: var(--speedyWhite);
    opacity: 1;
-}
+} */
 
 /* This section is part of the information boxes which are displayed
 after hovering the getLocation and getPhone icon on the nav */
@@ -238,7 +239,7 @@ main {
    font-size: 2.5rem;
 }
 
-.button {
+.bookNowButton {
    font-weight: 600;
    padding: 0.5rem 1.5rem;
    position: relative;
@@ -254,7 +255,7 @@ main {
    100% {color: var(--speedyWhite); background-color: transparent;}
 }
 
-.button:hover {
+.bookNowButton:hover {
    animation: buttonOn .25s linear;
    animation-fill-mode: forwards;
 }
@@ -265,7 +266,59 @@ main {
 }
 
 #secondSection {
-   height: 100vh
+   height: 100vh;
+   display: grid;
+   grid-template: 70px 100px 1fr 100px / 0.5fr 5fr 1fr 3fr 0.5fr;
+   background-color: var(--speedyLightGrey);
+}
+
+#secondSection .briefIntro {
+   grid-area: 3 / 2 / span 1 / span 2;
+   line-height: 1.5;
+   background-color: var(--speedyWhite);
+   padding: 3rem 5rem;
+   text-align: justify;
+}
+
+#secondSection h2 {
+   font-size: 2rem;
+   text-align: center;
+   padding-bottom: 1rem;
+}
+
+.verticalImage {
+   grid-area: 3 / 4 / span 1 / span 2;
+   height: calc(100vh - 270px);
+   width: 35vw;
+   background-image: url(../images/extra/steeringWheel.jpg);
+   background-size: cover;
+   background-position: 20% 50%;
+}
+
+.bookNowButtonRed {
+   font-weight: 600;
+   padding: 0.5rem 1.5rem;
+   position: relative;
+   top: 1.5rem;
+   border: 2px solid var(--speedyBlue);
+   border-radius: 0.25rem;
+   animation: buttonRedOff .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes buttonRedOff {
+   0% {color: var(--speedyWhite); background-color: var(--speedyBlue);}
+   100% {color: var(--speedyBlue); background-color: transparent;}
+}
+
+.bookNowButtonRed:hover {
+   animation: buttonRedOn .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes buttonRedOn {
+   0% {color: var(--speedyBlue); background-color: transparent;}
+   100% {color: var(--speedyWhite); background-color: var(--speedyBlue);}
 }
 
 /* This section modifies the footer section */

@@ -28,37 +28,37 @@ const hideInfoBoxes = () => {
 
    $('#locationIcon').mouseover(() => {
       $('#getLocation').removeClass('hideInformation');
-      $('#locationIcon').addClass('hoverOnHold');
+      // $('#locationIcon').addClass('hoverOnHold');
    });
 
    $('#locationIcon').mouseleave(() => {
       $('#getLocation').addClass('hideInformation');
-      $('#locationIcon').removeClass('hoverOnHold');
+      // $('#locationIcon').removeClass('hoverOnHold');
    });
 
    $('#phoneIcon').mouseover(() => {
       $('#getPhone').removeClass('hideInformation');
-      $('#phoneIcon').addClass('hoverOnHold');
+      // $('#phoneIcon').addClass('hoverOnHold');
    });
 
    $('#phoneIcon').mouseleave(() => {
       $('#getPhone').addClass('hideInformation');
-      $('#phoneIcon').removeClass('hoverOnHold');
+      // $('#phoneIcon').removeClass('hoverOnHold');
    });
 
    //This section hides the .infoBox for any touchcreen device
 
    $(document).mouseup(e => {
        if (!$('#locationIcon').is(e.target) || !$('#getDirectionsButton').is(e.target)) {
+          // $('#locationIcon').removeClass('hoverOnHold');
           $('#getLocation').addClass('hideInformation');
-          $('#locationIcon').removeClass('hoverOnHold');
       };
    });
 
    $(document).mouseup(e => {
        if (!$('#phoneIcon').is(e.target) || !$('#callUsButton').is(e.target)) {
+          // $('#phoneIcon').removeClass('hoverOnHold');
           $('#getPhone').addClass('hideInformation');
-          $('#phoneIcon').removeClass('hoverOnHold');
       };
    });
 };
