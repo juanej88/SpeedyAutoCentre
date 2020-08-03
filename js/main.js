@@ -65,11 +65,13 @@ const hideInfoBoxes = () => {
 
 hideInfoBoxes();
 
+// This function adds the class .weekendColour to the word "Closed" on Sundays
+
 const closedColour = () => {
    let actualDate = new Date();
    let actualDay = actualDate.getDay();
 
-   if (actualDay === 0 || actualDay === 6) {
+   if (actualDay === 0) {
       $('.closedToday').addClass('weekendColour');
    };
 };

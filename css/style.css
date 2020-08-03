@@ -114,16 +114,16 @@ after hovering the getLocation and getPhone icon on the nav */
 
 .infoBox {
    position: absolute;
-   left: -17rem;
+   left: -18rem;
    top: 4.4rem;
-   height: 10rem;
-   width: 17rem;
+   height: 12rem;
+   width: 18rem;
    background-color: var(--speedyDarkGrey);
    color: var(--speedyWhite);
    grid-column: 5 / span 1;
    border-radius: 0 0 0.5rem 0.5rem;
    display: grid;
-   grid-template: 1fr repeat(2, .5fr) 1fr / 1fr;
+   grid-template-rows: 1fr repeat(3, .5fr) 1fr;
    align-items: center;
    padding: 0 1rem;
    cursor: auto;
@@ -131,13 +131,13 @@ after hovering the getLocation and getPhone icon on the nav */
 }
 
 #getPhone {
-   grid-template: 1fr repeat(2, .5fr) 1fr / repeat(2, 1fr);
+   grid-template: 1fr repeat(3, .5fr) 1fr / 1fr 1.25fr;
 }
 
 .arrowUp {
    position: absolute;
    top: -0.7rem;
-   left: 9.6rem;
+   left: 10.6rem;
    width: 0;
    height: 0;
    border-left: 1.25rem solid transparent;
@@ -146,7 +146,7 @@ after hovering the getLocation and getPhone icon on the nav */
 }
 
 #getPhone .arrowUp {
-   left: 12.75rem;
+   left: 13.75rem;
 }
 
 #getLocation h3 {
@@ -175,11 +175,11 @@ after hovering the getLocation and getPhone icon on the nav */
 }
 
 #getDirectionsButton {
-   grid-row: 4 / span 1;
+   grid-row: 5;
 }
 
 #callUsButton {
-   grid-area: 4 / 1 / span 1 / span 2;
+   grid-area: 5 / 1 / span 1 / span 2;
 }
 
 .infoBox a {
@@ -219,7 +219,7 @@ main {
    height: 100vh;
    background-image: url(../images/background/background1.jpg);
    background-size: cover;
-   background-position: 50% 80%;
+   background-position: 0% 80%;
    display: grid;
    grid-template: repeat(3, 4fr) / 0.5fr 11fr 0.5fr;
 }
@@ -270,12 +270,13 @@ main {
 #secondSection {
    height: 100vh;
    display: grid;
-   grid-template: 70px 100px 1fr 100px / 0.5fr 5fr 1fr 3fr 0.5fr;
+   grid-template: 100px 1fr 100px / 0.5fr 5fr 1fr 3fr 0.5fr;
    background-color: var(--speedyLightGrey);
 }
 
 #secondSection .briefIntro {
-   grid-area: 3 / 2 / span 1 / span 2;
+   color: var(--speedyBlue);
+   grid-area: 2 / 2 / span 1 / span 2;
    line-height: 1.5;
    background-color: var(--speedyWhite);
    padding: 3rem 5rem;
@@ -289,8 +290,8 @@ main {
 }
 
 .verticalImage {
-   grid-area: 3 / 4 / span 1 / span 2;
-   height: calc(100vh - 270px);
+   grid-area: 2 / 4 / span 1 / span 2;
+   height: calc(100vh - 200px);
    width: 35vw;
    background-image: url(../images/extra/steeringWheel.jpg);
    background-size: cover;
@@ -331,6 +332,7 @@ main {
 }
 
 #thirdSection h2 {
+   color: var(--speedyBlue);
    grid-area: 1 / 2 / span 1 / span 5;
    font-size: 2rem;
    text-align: center;
@@ -338,6 +340,7 @@ main {
 }
 
 #thirdSection .comments {
+   color: var(--speedyBlue);
    text-align: center;
    background-color: var(--speedyLightGrey);
    padding: 2.5rem;
@@ -359,7 +362,6 @@ main {
 
 .comments h3 {
    font-size: 1.25rem;
-   font-weight: 600;
 }
 
 .comments h4 {
@@ -384,7 +386,7 @@ main {
 
 footer {
    display: grid;
-   grid-template: 450px 1fr 75px / 0.5fr 2fr 7fr 2fr 0.5fr;
+   grid-template: 400px 1fr 75px / 0.5fr 2fr 7fr 2fr 0.5fr;
    align-items: center;
    background-color: var(--speedyDarkGrey);
    color: var(--speedyGrey);
