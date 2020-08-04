@@ -146,17 +146,17 @@ after hovering the getLocation and getPhone icon on the nav */
    border-bottom: 1.25rem solid var(--speedyDarkGrey);
 }
 
-#getPhone .arrowUp {
-   left: 13.75rem;
-}
-
-#getLocation h3 {
-   grid-row: 1 / span 1;
-   font-weight: 700;
+#getLocation .arrowUp {
+   left: 13.85rem;
 }
 
 #getPhone h3 {
    grid-area: 1 / 1 / span 1 / span 2;
+   font-weight: 700;
+}
+
+#getLocation h3 {
+   grid-row: 1 / span 1;
    font-weight: 700;
 }
 
@@ -175,12 +175,12 @@ after hovering the getLocation and getPhone icon on the nav */
    color: var(--speedyRed);
 }
 
-#getDirectionsButton {
-   grid-row: 5;
-}
-
 #callUsButton {
    grid-area: 5 / 1 / span 1 / span 2;
+}
+
+#getDirectionsButton {
+   grid-row: 5;
 }
 
 .infoBox a {
@@ -210,10 +210,6 @@ after hovering the getLocation and getPhone icon on the nav */
 
 /* This section modifies the main section */
 
-main {
-
-}
-
 #firstSection {
    width: 100%;
    min-width: 300px;
@@ -232,11 +228,6 @@ main {
    top: -2.5rem;
 }
 
-.firstSentence h2 span {
-   font-size: 3rem;
-   font-weight: 700;
-}
-
 .firstSentence h2 {
    font-size: 2.5rem;
    font-weight: 700;
@@ -245,7 +236,7 @@ main {
 .bookNowButton {
    font-size: 1.25rem;
    font-weight: 700;
-   padding: 0.5rem 2.5rem;
+   padding: 0.5rem 3rem;
    position: relative;
    top: 2rem;
    border: 2px solid var(--speedyWhite);
@@ -287,7 +278,7 @@ main {
 }
 
 #secondSection h2 {
-   font-size: 2rem;
+   font-size: 2.5rem;
    font-weight: 900;
    text-align: center;
    padding-bottom: 1rem;
@@ -297,9 +288,9 @@ main {
    grid-area: 2 / 4 / span 1 / span 2;
    height: calc(100vh - 200px);
    width: 35vw;
-   background-image: url(../images/extra/steeringWheel.jpg);
+   background-image: url(../images/extra/carKey.jpg);
    background-size: cover;
-   background-position: 20% 50%;
+   background-position: 0% 50%;
 }
 
 .bookNowBlueButton {
@@ -336,10 +327,10 @@ main {
 }
 
 #thirdSection h2 {
+   font-size: 2.5rem;
    font-weight: 900;
    color: var(--speedyBlue);
    grid-area: 1 / 2 / span 1 / span 5;
-   font-size: 2rem;
    text-align: center;
    align-self: center;
 }
@@ -392,10 +383,60 @@ main {
 
 footer {
    display: grid;
-   grid-template: 400px 1fr 75px / 0.5fr 2fr 7fr 2fr 0.5fr;
+   grid-template: 300px 1fr 75px / 0.5fr 2.75fr 0.375fr 2.75fr 0.375fr 2.75fr 0.5fr;
    align-items: center;
    background-color: var(--speedyDarkGrey);
    color: var(--speedyGrey);
+}
+
+footer .footerColumn .footerButton {
+   width: 12rem;
+   text-align: center;
+   border: 2px solid var(--speedyGrey);
+   border-radius: 2rem;
+   padding: 0.5rem 2.5rem;
+   animation: footerButtonOff .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes footerButtonOff {
+   0% {color: var(--speedyDarkGrey); background-color: var(--speedyWhite); border-color: var(--speedyWhite);}
+   100% {color: var(--speedyGrey); background-color: transparent; border-color: var(--speedyGrey);}
+}
+
+footer .footerColumn .footerButton:hover {
+   animation: footerButtonOn .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes footerButtonOn {
+   0% {color: var(--speedyGrey); background-color: transparent; border-color: var(--speedyGrey);}
+   100% {color: var(--speedyDarkGrey); background-color: var(--speedyWhite); border-color: var(--speedyWhite);}
+}
+
+footer .firstFooterColumn {
+   grid-area: 1 / 2;
+   height: 250px;
+   display: grid;
+   align-items: center;
+   justify-content: center;
+}
+
+footer .secondFooterColumn {
+   grid-area: 1 / 4;
+   height: 250px;
+   display: grid;
+   align-items: center;
+   justify-content: center;
+}
+
+footer .thirdFooterColumn {
+   grid-area: 1 / 6;
+   justify-self: center;
+   height: 250px;
+   display: grid;
+   align-items: center;
+   justify-content: center;
 }
 
 footer p {
@@ -428,14 +469,14 @@ footer p a {
 #copyright {
    height: 75px;
    text-align: center;
-   grid-area: 3 / 3 / span 1 / span 1;
+   grid-area: 3 / 3 / span 1 / span 3;
    border-top: 1px solid var(--speedyGrey);
 }
 
 #createdBy {
    height: 75px;
    text-align: right;
-   grid-area: 3 / 4 / span 1 / span 1;
+   grid-area: 3 / 6 / span 1 / span 1;
    border-top: 1px solid var(--speedyGrey);
 }
 
