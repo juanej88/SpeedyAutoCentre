@@ -5,7 +5,8 @@ website elements from scratch */
     padding: 0;
     border: 0;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Mulish', sans-serif;
     font-size: 16px;
     text-decoration: none;
     list-style: none;
@@ -35,7 +36,7 @@ header {
    background-color: rgba(0, 60, 120, 0);
    color: var(--speedyDarkGrey);
    z-index: 10;
-   font-weight: 600;
+   font-weight: 700;
 }
 
 .showNav {
@@ -115,7 +116,7 @@ after hovering the getLocation and getPhone icon on the nav */
 .infoBox {
    position: absolute;
    left: -18rem;
-   top: 4.4rem;
+   top: 4.25rem;
    height: 12rem;
    width: 18rem;
    background-color: var(--speedyDarkGrey);
@@ -127,7 +128,7 @@ after hovering the getLocation and getPhone icon on the nav */
    align-items: center;
    padding: 0 1rem;
    cursor: auto;
-   font-weight: 600;
+   font-weight: 700;
 }
 
 #getPhone {
@@ -151,12 +152,12 @@ after hovering the getLocation and getPhone icon on the nav */
 
 #getLocation h3 {
    grid-row: 1 / span 1;
-   font-weight: 600;
+   font-weight: 700;
 }
 
 #getPhone h3 {
    grid-area: 1 / 1 / span 1 / span 2;
-   font-weight: 600;
+   font-weight: 700;
 }
 
 .infoBox h3 {
@@ -188,7 +189,7 @@ after hovering the getLocation and getPhone icon on the nav */
    width: 10rem;
    text-align: center;
    font-size: 0.8rem;
-   font-weight: 600;
+   font-weight: 700;
    padding: 0.5rem 1rem;
    border: 1px solid var(--speedyWhite);
    border-radius: 1rem;
@@ -233,16 +234,17 @@ main {
 
 .firstSentence h2 span {
    font-size: 3rem;
-   font-weight: 600;
+   font-weight: 700;
 }
 
 .firstSentence h2 {
    font-size: 2.5rem;
-   font-weight: 600;
+   font-weight: 700;
 }
 
 .bookNowButton {
-   font-weight: 600;
+   font-size: 1.25rem;
+   font-weight: 700;
    padding: 0.5rem 2.5rem;
    position: relative;
    top: 2rem;
@@ -281,10 +283,12 @@ main {
    background-color: var(--speedyWhite);
    padding: 3rem 5rem;
    text-align: justify;
+   border-radius: 1rem 0 0 1rem;
 }
 
 #secondSection h2 {
    font-size: 2rem;
+   font-weight: 900;
    text-align: center;
    padding-bottom: 1rem;
 }
@@ -299,10 +303,10 @@ main {
 }
 
 .bookNowBlueButton {
-   font-weight: 600;
+   font-weight: 500;
    padding: 0.5rem 2.5rem;
    position: relative;
-   top: 1.5rem;
+   top: 1.25rem;
    border: 2px solid var(--speedyBlue);
    border-radius: 2rem;
    animation: buttonRedOff .25s linear;
@@ -332,6 +336,7 @@ main {
 }
 
 #thirdSection h2 {
+   font-weight: 900;
    color: var(--speedyBlue);
    grid-area: 1 / 2 / span 1 / span 5;
    font-size: 2rem;
@@ -340,6 +345,7 @@ main {
 }
 
 #thirdSection .comments {
+   border-radius: 1rem;
    color: var(--speedyBlue);
    text-align: center;
    background-color: var(--speedyLightGrey);
@@ -361,12 +367,12 @@ main {
 }
 
 .comments h3 {
+   font-weight: 900;
    font-size: 1.25rem;
 }
 
 .comments h4 {
    font-size: 1.1rem;
-   font-weight: 600;
 }
 
 .comments p {
