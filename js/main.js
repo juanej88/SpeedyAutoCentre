@@ -48,19 +48,19 @@ const hideInfoBoxes = () => {
 
    //This section hides the .infoBox for any touchcreen device
 
-   $(document).mouseup(e => {
-       if (!$('#locationIcon').is(e.target) || !$('#getDirectionsButton').is(e.target)) {
-          // $('#locationIcon').removeClass('hoverOnHold');
-          $('#getLocation').addClass('hideInformation');
-      };
-   });
-
-   $(document).mouseup(e => {
-       if (!$('#phoneIcon').is(e.target) || !$('#callUsButton').is(e.target)) {
-          // $('#phoneIcon').removeClass('hoverOnHold');
-          $('#getPhone').addClass('hideInformation');
-      };
-   });
+   // $(document).mouseup(e => {
+   //     if (!$('#locationIcon').is(e.target) || !$('#getDirectionsButton').is(e.target)) {
+   //        // $('#locationIcon').removeClass('hoverOnHold');
+   //        $('#getLocation').addClass('hideInformation');
+   //    };
+   // });
+   //
+   // $(document).mouseup(e => {
+   //     if (!$('#phoneIcon').is(e.target) || !$('#callUsButton').is(e.target)) {
+   //        // $('#phoneIcon').removeClass('hoverOnHold');
+   //        $('#getPhone').addClass('hideInformation');
+   //    };
+   // });
 };
 
 hideInfoBoxes();
