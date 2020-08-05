@@ -3,21 +3,30 @@
 
 const navAnimation = () => {
 
-     $(window).scroll(() => {
+  $(window).scroll(() => {
 
-        const windowPosition = $(window).scrollTop();
-        let $firstSection = $('#firstSection').height();
-        let transitionHeight = $firstSection * 0.20;
+     const windowPosition = $(window).scrollTop();
+     let $firstSection = $(window).height();
+     let homeHeight = $firstSection * 0.2;
+     let bookingHeight = $firstSection * 0.4;
 
-        if (windowPosition < transitionHeight) {
-           $('#header').removeClass('showNav');
-           $('#header').addClass('hideNav');
-        } else if (windowPosition >= transitionHeight) {
-           $('#header').addClass('showNav');
-           $('#header').removeClass('hideNav');
-        }
-     });
-  };
+     if (windowPosition < homeHeight) {
+        $('#homeHeader').removeClass('showNav');
+        $('#homeHeader').addClass('hideNav');
+     } else if (windowPosition >= homeHeight) {
+        $('#homeHeader').addClass('showNav');
+        $('#homeHeader').removeClass('hideNav');
+     }
+
+     if (windowPosition < bookingHeight) {
+        $('#bookingHeader').removeClass('showBookingNav');
+        $('#bookingHeader').addClass('hideBookingNav');
+     } else if (windowPosition >= bookingHeight) {
+        $('#bookingHeader').addClass('showBookingNav');
+        $('#bookingHeader').removeClass('hideBookingNav');
+     }
+  });
+};
 
 navAnimation();
 
@@ -28,39 +37,33 @@ const hideInfoBoxes = () => {
 
    $('#locationIcon').mouseover(() => {
       $('#getLocation').removeClass('hideInformation');
-      // $('#locationIcon').addClass('hoverOnHold');
    });
 
    $('#locationIcon').mouseleave(() => {
       $('#getLocation').addClass('hideInformation');
-      // $('#locationIcon').removeClass('hoverOnHold');
    });
 
    $('#phoneIcon').mouseover(() => {
       $('#getPhone').removeClass('hideInformation');
-      // $('#phoneIcon').addClass('hoverOnHold');
    });
 
    $('#phoneIcon').mouseleave(() => {
       $('#getPhone').addClass('hideInformation');
-      // $('#phoneIcon').removeClass('hoverOnHold');
    });
 
    //This section hides the .infoBox for any touchcreen device
 
-   // $(document).mouseup(e => {
-   //     if (!$('#locationIcon').is(e.target) || !$('#getDirectionsButton').is(e.target)) {
-   //        // $('#locationIcon').removeClass('hoverOnHold');
-   //        $('#getLocation').addClass('hideInformation');
-   //    };
-   // });
-   //
-   // $(document).mouseup(e => {
-   //     if (!$('#phoneIcon').is(e.target) || !$('#callUsButton').is(e.target)) {
-   //        // $('#phoneIcon').removeClass('hoverOnHold');
-   //        $('#getPhone').addClass('hideInformation');
-   //    };
-   // });
+   $(document).mouseup(e => {
+       if (!$('#locationIcon').is(e.target) || !$('#getDirectionsButton').is(e.target)) {
+          $('#getLocation').addClass('hideInformation');
+      };
+   });
+
+   $(document).mouseup(e => {
+       if (!$('#phoneIcon').is(e.target) || !$('#callUsButton').is(e.target)) {
+          $('#getPhone').addClass('hideInformation');
+      };
+   });
 };
 
 hideInfoBoxes();
@@ -77,3 +80,15 @@ const closedColour = () => {
 };
 
 closedColour();
+
+// This function changes the copyright year on the footer accordingly to
+// the actual year
+
+const changeCopyrightYear = () => {
+   let actualDate = new Date();
+   let actualYear = actualDate.getFullYear();
+
+   $('.thisYear').html(actualYear);
+};
+
+changeCopyrightYear();
