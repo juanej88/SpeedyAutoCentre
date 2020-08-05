@@ -265,14 +265,14 @@ Home Page */
    100% {color: var(--speedyDarkGrey); background-color: var(--speedyWhite);}
 }
 
-#secondSection {
+#homeSecondSection {
    height: 100vh;
    display: grid;
    grid-template: 100px 1fr 100px / 0.5fr 5fr 1fr 3fr 0.5fr;
    background-color: var(--speedyLightGrey);
 }
 
-#secondSection .briefIntro {
+#homeSecondSection .briefIntro {
    color: var(--speedyBlue);
    grid-area: 2 / 2 / span 1 / span 2;
    line-height: 1.5;
@@ -282,7 +282,7 @@ Home Page */
    border-radius: 1rem 0 0 1rem;
 }
 
-#secondSection h2 {
+#homeSecondSection h2 {
    font-size: 2.5rem;
    font-weight: 900;
    text-align: center;
@@ -324,14 +324,14 @@ Home Page */
    100% {color: var(--speedyWhite); background-color: var(--speedyBlue);}
 }
 
-#thirdSection {
+#homeThirdSection {
    height: 100vh;
    display: grid;
    grid-template: 1fr 3fr 100px / 0.5fr 2.75fr 0.375fr 2.75fr 0.375fr 2.75fr 0.5fr;
    background-color: var(--speedyWhite);
 }
 
-#thirdSection h2 {
+#homeThirdSection h2 {
    font-size: 2.5rem;
    font-weight: 900;
    color: var(--speedyBlue);
@@ -340,7 +340,7 @@ Home Page */
    align-self: center;
 }
 
-#thirdSection .comments {
+#homeThirdSection .comments {
    border-radius: 1rem;
    color: var(--speedyBlue);
    text-align: center;
@@ -573,8 +573,41 @@ Booking Main */
    height: 60vh;
    background-image: url(../images/background/bookingBackground.jpg);
    background-size: cover;
-   background-position: 0% 30%;
+   background-position: 0% 50%;
    background-attachment: fixed;
+   display: grid;
+   grid-template: repeat(2, 1fr) / 0.5fr 4fr 3fr 4fr 0.5fr;
+}
+
+#bookingFirstSection .bookingHeader {
+   grid-area: 2 / 2;
+   font-size: 2.5rem;
+   color: var(--speedyWhite);
+   font-weight: 900;
+   animation: showBookingHeader .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes showBookingHeader {
+   0% {opacity: 0}
+   100% {opacity: 1}
+}
+
+#bookingFirstSection .hideBookingHeader {
+   animation: hideBookingHeader .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes hideBookingHeader {
+   0% {opacity: 1}
+   100% {opacity: 0}
+}
+
+#bookingFirstSection h2 {
+   grid-area: 2 / 4;
+   font-size: 2.5rem;
+   color: var(--speedyWhite);
+   font-weight: 900;
 }
 
 #bookingSecondSection {
@@ -586,24 +619,17 @@ Booking Main */
 }
 
 #bookingSecondSection h1 {
-   grid-area: 1 / 2;
-   font-size: 3.5rem;
    text-align: center;
+   grid-area: 1 / 2;
+   font-size: 3rem;
    color: var(--speedyBlue);
-   padding: 2rem;
    font-weight: 900;
+   padding: 2rem 0;
 }
 
 #bookingSecondSection h2 {
    grid-area: 2 / 2;
-   font-size: 2.5rem;
-   color: var(--speedyBlue);
-   font-weight: 900;
-}
-
-#bookingSecondSection h3 {
-   grid-area: 3 / 2;
-   font-size: 1.25rem;
+   font-size: 1.3rem;
    color: var(--speedyBlue);
    font-weight: 900;
 }
@@ -612,4 +638,4 @@ Booking Main */
 Booking Main */
 
 /* End of
-Booking Section */
+Booking Page */

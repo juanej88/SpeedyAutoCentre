@@ -8,7 +8,7 @@ const navAnimation = () => {
      const windowPosition = $(window).scrollTop();
      let $firstSection = $(window).height();
      let homeHeight = $firstSection * 0.2;
-     let bookingHeight = $firstSection * 0.4;
+     let bookingHeight = $firstSection * 0.25;
 
      if (windowPosition < homeHeight) {
         $('#homeHeader').removeClass('showNav');
@@ -92,3 +92,23 @@ const changeCopyrightYear = () => {
 };
 
 changeCopyrightYear();
+
+// This function shows and hides the booking header 1 when scrolling
+
+const bookingheaderAnimation = () => {
+
+  $(window).scroll(() => {
+
+     const $windowPosition = $(window).scrollTop();
+     let $windowSection = $(window).height();
+     let bookingHeight = $windowSection * 0.1;
+
+     if ($windowPosition < bookingHeight) {
+        $('.bookingHeader').removeClass('hideBookingHeader');
+     } else if ($windowPosition >= bookingHeight) {
+        $('.bookingHeader').addClass('hideBookingHeader');
+     }
+  });
+};
+
+bookingheaderAnimation();
