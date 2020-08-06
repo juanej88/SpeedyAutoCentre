@@ -613,7 +613,8 @@ Booking Main */
 #bookingSecondSection {
    width: 100%;
    height: 100vh;
-   background-color: var(--speedyWhite);
+   background-color: var(--speedyLightGrey);
+   color: var(--speedyBlue);
    display: grid;
    grid-template: repeat(10, 4fr) / 0.5fr 11fr 0.5fr;
 }
@@ -622,7 +623,6 @@ Booking Main */
    text-align: center;
    grid-area: 1 / 2;
    font-size: 3rem;
-   color: var(--speedyBlue);
    font-weight: 900;
    padding: 2rem 0;
 }
@@ -630,8 +630,60 @@ Booking Main */
 #bookingSecondSection h2 {
    grid-area: 2 / 2;
    font-size: 1.3rem;
-   color: var(--speedyBlue);
-   font-weight: 900;
+}
+
+#bookingSecondSection .bookingForm {
+   grid-area: 4 / 2;
+}
+
+#bookingSecondSection .bookingForm input {
+   border: 2px solid var(--speedyWhite);
+   border-radius: 2rem;
+   font-weight: 700;
+   padding: 0.5rem 1.25rem;
+}
+
+#bookingSecondSection .bookingForm input:focus {
+   border-color: var(--speedyBlue);
+   animation: focusedInput .4s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes focusedInput {
+   0% {border-color: var(--speedyWhite);}
+   100% {border-color: var(--speedyBlue);}
+}
+
+/* It removes the default border when an input has focus */
+.bookingForm input:focus,
+.bookingForm textarea:focus {
+    outline: none;
+}
+
+/* It removes the arrows inside the number inputs */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* It removes the default background colour and text colour when autofilling */
+input:-webkit-autofill {
+   -webkit-box-shadow: 0 0 0 20px var(--speedyWhite) inset;
+   -webkit-text-fill-color: var(--speedyBlue);
+}
+
+#bookingSecondSection .bookingForm label,
+#bookingSecondSection .bookingForm span {
+   font-weight: 700;
+   padding: 0 1.25rem;
+}
+
+.whiteInputBox {
+   width: 231px;
+   background-color: var(--speedyWhite);
+   border: 2px solid var(--speedyWhite);
+   border-radius: 2rem;
+   padding: 0.5rem 1.25rem;
 }
 
 /* End of
