@@ -612,11 +612,10 @@ Booking Main */
 
 #bookingSecondSection {
    width: 100%;
-   height: 150vh;
-   /* background-color: var(--speedyLightGrey); */
+   height: 110vh;
    color: var(--speedyBlue);
    display: grid;
-   grid-template: repeat(10, 4fr) / 0.5fr 2.5fr 0.5fr 6fr 0.5fr;
+   grid-template: repeat(10, 4fr) / 0.5fr 1.25fr 6.5fr 1.25fr 0.5fr;
 }
 
 #bookingSecondSection h1 {
@@ -627,33 +626,34 @@ Booking Main */
    padding: 2rem 0;
 }
 
-#bookingSecondSection .bookingForm {
-   grid-area: 2 / 4;
-   background-color: var(--speedyLightGrey);
-   border-radius: 1rem;
-   padding: 2rem;
-   display: grid;
-   grid-template-columns: repeat(6, 1fr);
+#bookingSecondSection h2 {
+   text-align: justify;
+   font-size: 1.25rem;
+   font-weight: 700;
+   grid-area: 2 / 3 / span 1 / span 1;
+   padding: 0 0 2rem 0;
 }
 
-#bookingSecondSection .bookingForm h2 {
-   text-align: justify;
-   font-size: 1.1rem;
-   font-weight: 500;
-   grid-area: 1 / 1 / span 1 / span 6;
-   padding-bottom: 1rem;
+#bookingSecondSection .bookingForm {
+   grid-area: 3 / 3;
+   background-color: var(--speedyLightGrey);
+   border-radius: 1rem;
+   padding: 0 2rem;
+   display: grid;
+   grid-template-columns: repeat(8, 1fr);
 }
 
 #bookingSecondSection .bookingForm .spanAllRow {
-   grid-column: span 6;
-   font-size: 1.1rem;
+   grid-column: span 8;
+   font-size: 1.2rem;
    font-weight: 700;
-   padding: 0.75rem 1.25rem 0 0.5rem;
+   padding: 1rem 1.25rem 0 0.5rem;
    margin: 0;
 }
 
 #bookingSecondSection .bookingForm section .blockText {
    display: block;
+   font-size: 0.9rem;
    font-weight: 500;
    padding: 1rem 1.25rem 0 1.25rem;
    margin: 0 0.5rem;
@@ -661,72 +661,78 @@ Booking Main */
    grid-column: span 2;
 }
 
-#bookingSecondSection .bookingForm .firstName {
-   grid-area: 3 / 1 / span 1 / span 3;
-}
-
-#bookingSecondSection .bookingForm .lastName {
-   grid-area: 3 / 4 / span 1 / span 3;
+#bookingSecondSection .bookingForm .fullName {
+   grid-area: 2 / 1 / span 1 / span 8;
 }
 
 #bookingSecondSection .bookingForm .email {
-   grid-area: 4 / 1 / span 1 / span 3;
+   grid-area: 3 / 1 / span 1 / span 4;
 }
 
 #bookingSecondSection .bookingForm .phoneNumber {
-   grid-area: 4 / 4 / span 1 / span 3;
+   grid-area: 3 / 5 / span 1 / span 4;
 }
 
 #bookingSecondSection .bookingForm .preferredDate {
-   grid-area: 6 / 1 / span 1 / span 2;
+   grid-area: 5 / 1 / span 1 / span 2;
 }
 
 #bookingSecondSection .bookingForm .preferredTime {
-   grid-area: 6 / 3 / span 1 / span 4;
+   grid-area: 5 / 3 / span 1 / span 2;
    align-self: start;
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
+   /* display: grid;
+   grid-template-columns: repeat(2, 1fr); */
 }
 
-#bookingSecondSection .bookingForm .preferredTime .whiteInputBox .radioButtons {
+#bookingSecondSection .bookingForm .service .whiteInputBox .checkboxes {
    position: relative;
-    top: 1px;
+   top: 1px;
     left: -10px;
 }
 
-#bookingSecondSection .bookingForm .preferredTime .whiteInputBox .contentInsideBox {
-   margin: 0;
-   padding: 0;
+#bookingSecondSection .bookingForm .service .whiteInputBox .contentInsideBox {
+   position: relative;
+   top: -1px;
+   left: -10px;
 }
 
 #bookingSecondSection .bookingForm .carYear {
-   grid-area: 8 / 1 / span 1 / span 2;
+   grid-area: 7 / 1 / span 1 / span 2;
 }
 
 #bookingSecondSection .bookingForm .carMake {
-   grid-area: 8 / 3 / span 1 / span 2;
+   grid-area: 7 / 3 / span 1 / span 2;
 }
 
 #bookingSecondSection .bookingForm .carModel {
-   grid-area: 8 / 5 / span 1 / span 2;
+   grid-area: 7 / 5 / span 1 / span 2;
+}
+
+#bookingSecondSection .bookingForm .rego {
+   grid-area: 7 / 7 / span 1 / span 2;
 }
 
 #bookingSecondSection .bookingForm .service {
-   grid-area: 9 / 1 / span 1 / span 6;
+   grid-area: 8 / 1 / span 1 / span 8;
    align-self: start;
    display: grid;
-   grid-template-columns: repeat(6, 1fr);
+   grid-template-columns: repeat(8, 1fr);
 }
 
 #bookingSecondSection .bookingForm .service .spanSixCol {
-   grid-column: span 6;
+   grid-column: span 8;
 }
 
 #bookingSecondSection .bookingForm .service .spanTwoCol {
    grid-column: span 2;
 }
 
-#bookingSecondSection .bookingForm input {
+#bookingSecondSection .bookingForm .service #typeService {
+   grid-column: span 8;
+}
+
+#bookingSecondSection .bookingForm input,
+#bookingSecondSection .bookingForm select {
    border: 2px solid var(--speedyWhite);
    border-radius: 2rem;
    font-weight: 700;
@@ -735,7 +741,8 @@ Booking Main */
    margin: 0.5rem;
 }
 
-#bookingSecondSection .bookingForm input:focus {
+#bookingSecondSection .bookingForm input:focus,
+#bookingSecondSection .bookingForm select:focus {
    border-color: var(--speedyBlue);
    animation: focusedInput .4s linear;
    animation-fill-mode: forwards;
@@ -748,6 +755,7 @@ Booking Main */
 
 /* It removes the default border when an input has focus */
 .bookingForm input:focus,
+.bookingForm select:focus,
 .bookingForm textarea:focus {
     outline: none;
 }
@@ -778,6 +786,7 @@ input:-webkit-autofill {
 .contentInsideBox,
 .checkboxes {
    cursor: pointer;
+   font-size: 0.9rem;
 }
 
 /* End of
