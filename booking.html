@@ -61,34 +61,34 @@
 
          <section id="bookingSecondSection">
             <h1>Booking</h1>
-            <h2>Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h2>
             <form class="bookingForm" action="index.html" method="POST">
+               <h2>Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h2>
                <label for="fullName">Name</label>
-               <br/>
-               <br/>
                <input id="fullName" type="text" name="name" required />
-               <br/>
-               <br/>
+               <label for="email">Email</label>
+               <input id="email" type="email" name="email" required />
                <label for="phoneNumber">Phone Number</label>
-               <br/>
-               <br/>
                <input id="phoneNumber" type="number" name="phone-number" required />
-               <br/>
-               <br/>
-               <span>Service</span>
-               <br/>
-               <br/>
+               <label for="preferredDate">Preferred Date</label>
+               <input id="preferredDate" type="text" name="preferred-date" required />
+               <span class="spanTwoTimes">Preferred Time</span>
+               <div class="whiteInputBox">
+                  <input id="morningTime" type="radio" name="prederred-time" value="morning" required />
+                  <label for="morningTime">Morning (8:00am - 12:00pm)</label>
+               </div>
+               <div class="whiteInputBox">
+                  <input id="afternoonTime" type="radio" name="prederred-time" value="afternoon" required />
+                  <label for="afternoonTime">Afternoon (12:00pm - 05:00pm)</label>
+               </div>
+               <span class="spanTwoTimes">Service</span>
                <div class="whiteInputBox">
                   <input id="bluePinkSlip" class="checkboxes" type="checkbox" name="service" value="blue-pink-slip" />
-                  <label for="bluePinkSlip">Blue/Pink Slip</label>
+                  <label for="bluePinkSlip" class="checkboxes">Blue/Pink Slip</label>
                </div>
-               <br>
                <div class="whiteInputBox">
-                  <input id="otherService" class="checkboxes" type="checkbox" name="service" value="otherService" />
-                  <label for="otherService">Other Service</label>
+                  <input id="otherService" class="checkboxes" type="checkbox" name="service" value="other-service" />
+                  <label for="otherService" class="checkboxes">Other Service</label>
                </div>
-               <br/>
-               <br/>
 
             </form>
          </section>

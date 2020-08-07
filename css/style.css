@@ -613,34 +613,60 @@ Booking Main */
 #bookingSecondSection {
    width: 100%;
    height: 100vh;
-   background-color: var(--speedyLightGrey);
+   /* background-color: var(--speedyLightGrey); */
    color: var(--speedyBlue);
    display: grid;
-   grid-template: repeat(10, 4fr) / 0.5fr 11fr 0.5fr;
+   grid-template: repeat(10, 4fr) / 0.5fr 2.5fr 0.5fr 6fr 0.5fr;
 }
 
 #bookingSecondSection h1 {
    text-align: center;
-   grid-area: 1 / 2;
+   grid-area: 1 / 2 / span 1 / span 3;
    font-size: 3rem;
    font-weight: 900;
    padding: 2rem 0;
 }
 
-#bookingSecondSection h2 {
-   grid-area: 2 / 2;
-   font-size: 1.3rem;
+#bookingSecondSection .bookingForm {
+   grid-area: 2 / 4;
+   background-color: var(--speedyLightGrey);
+   border-radius: 1rem;
+   padding: 2rem;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
 }
 
-#bookingSecondSection .bookingForm {
-   grid-area: 4 / 2;
+#bookingSecondSection .bookingForm h2 {
+   text-align: justify;
+   font-size: 1.3rem;
+   grid-area: 1 / 1 / span 1 / span 2;
+   padding-bottom: 1rem;
 }
+
+#bookingSecondSection .bookingForm #fullName {
+   grid-area: 3 / 1;
+}
+
+#bookingSecondSection .bookingForm #email {
+   grid-area: 3 / 2;
+}
+
+#bookingSecondSection .bookingForm #phoneNumber {
+   grid-area: 5 / 1;
+}
+
+#bookingSecondSection .bookingForm .spanTwoTimes {
+   grid-column: span 2;
+}
+
+
 
 #bookingSecondSection .bookingForm input {
    border: 2px solid var(--speedyWhite);
    border-radius: 2rem;
    font-weight: 700;
    padding: 0.5rem 1.25rem;
+   margin: 0.5rem;
 }
 
 #bookingSecondSection .bookingForm input:focus {
@@ -668,22 +694,29 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* It removes the default background colour and text colour when autofilling */
 input:-webkit-autofill {
-   -webkit-box-shadow: 0 0 0 20px var(--speedyWhite) inset;
+   -webkit-box-shadow: 0 0 0 50px var(--speedyWhite) inset;
    -webkit-text-fill-color: var(--speedyBlue);
 }
 
 #bookingSecondSection .bookingForm label,
 #bookingSecondSection .bookingForm span {
    font-weight: 700;
-   padding: 0 1.25rem;
+   padding: 0.5rem 1.25rem 0 1.25rem;
+   margin: 0 0.5rem;
 }
 
 .whiteInputBox {
-   width: 231px;
+   height: 40px;
    background-color: var(--speedyWhite);
    border: 2px solid var(--speedyWhite);
    border-radius: 2rem;
-   padding: 0.5rem 1.25rem;
+   padding: 0.2rem 1.25rem;
+   margin: 0.5rem;
+   align-self: center;
+}
+
+.checkboxes {
+   cursor: pointer;
 }
 
 /* End of
