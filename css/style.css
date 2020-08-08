@@ -612,7 +612,7 @@ Booking Main */
 
 #bookingSecondSection {
    width: 100%;
-   height: 110vh;
+   height: 130vh;
    color: var(--speedyBlue);
    display: grid;
    grid-template: repeat(10, 4fr) / 0.5fr 1.25fr 6.5fr 1.25fr 0.5fr;
@@ -623,7 +623,7 @@ Booking Main */
    grid-area: 1 / 2 / span 1 / span 3;
    font-size: 2.75rem;
    font-weight: 900;
-   padding: 2rem 0;
+   padding: 1.5rem 0 1rem 0;
 }
 
 #bookingSecondSection h2 {
@@ -631,23 +631,23 @@ Booking Main */
    font-size: 1.25rem;
    font-weight: 700;
    grid-area: 2 / 3 / span 1 / span 1;
-   padding: 0 0 2rem 0;
+   padding: 0 0 1.5rem 0;
 }
 
 #bookingSecondSection .bookingForm {
    grid-area: 3 / 3;
    background-color: var(--speedyLightGrey);
    border-radius: 1rem;
-   padding: 0 2rem;
+   padding: 1rem 2rem;
    display: grid;
-   grid-template-columns: repeat(8, 1fr);
+   grid-template-columns: repeat(6, 1fr);
 }
 
 #bookingSecondSection .bookingForm .spanAllRow {
-   grid-column: span 8;
+   grid-column: span 6;
    font-size: 1.2rem;
    font-weight: 700;
-   padding: 1rem 1.25rem 0 0.5rem;
+   padding: 1rem 1.25rem 0 0.75rem;
    margin: 0;
 }
 
@@ -655,22 +655,22 @@ Booking Main */
    display: block;
    font-size: 0.9rem;
    font-weight: 500;
-   padding: 1rem 1.25rem 0 1.25rem;
+   padding: 0.75rem 1.25rem 0 1.25rem;
    margin: 0 0.5rem;
    /* This spans the PreferredTime span */
    grid-column: span 2;
 }
 
 #bookingSecondSection .bookingForm .fullName {
-   grid-area: 2 / 1 / span 1 / span 8;
+   grid-area: 2 / 1 / span 1 / span 6;
 }
 
 #bookingSecondSection .bookingForm .email {
-   grid-area: 3 / 1 / span 1 / span 4;
+   grid-area: 3 / 1 / span 1 / span 3;
 }
 
 #bookingSecondSection .bookingForm .phoneNumber {
-   grid-area: 3 / 5 / span 1 / span 4;
+   grid-area: 3 / 4 / span 1 / span 3;
 }
 
 #bookingSecondSection .bookingForm .preferredDate {
@@ -696,53 +696,60 @@ Booking Main */
    left: -10px;
 }
 
+#bookingSecondSection .bookingForm .rego {
+   grid-area: 5 / 5 / span 1 / span 2;
+}
+
 #bookingSecondSection .bookingForm .carYear {
-   grid-area: 7 / 1 / span 1 / span 2;
+   grid-area: 6 / 1 / span 1 / span 2;
 }
 
 #bookingSecondSection .bookingForm .carMake {
-   grid-area: 7 / 3 / span 1 / span 2;
+   grid-area: 6 / 3 / span 1 / span 2;
 }
 
 #bookingSecondSection .bookingForm .carModel {
-   grid-area: 7 / 5 / span 1 / span 2;
-}
-
-#bookingSecondSection .bookingForm .rego {
-   grid-area: 7 / 7 / span 1 / span 2;
+   grid-area: 6 / 5 / span 1 / span 2;
 }
 
 #bookingSecondSection .bookingForm .service {
-   grid-area: 8 / 1 / span 1 / span 8;
+   grid-area: 7 / 1 / span 1 / span 8;
    align-self: start;
    display: grid;
-   grid-template-columns: repeat(8, 1fr);
+   grid-template-columns: repeat(3, 1fr);
+}
+
+#bookingSecondSection .bookingForm .addComments {
+   grid-area: 8 / 1 / span 1 / span 8;
+}
+
+#bookingSecondSection .bookingForm .submitButton {
+   grid-area: 9 / 3 / span 1 / span 2;
 }
 
 #bookingSecondSection .bookingForm .service .spanSixCol {
-   grid-column: span 8;
+   grid-column: span 3;
 }
 
 #bookingSecondSection .bookingForm .service .spanTwoCol {
-   grid-column: span 2;
-}
-
-#bookingSecondSection .bookingForm .service #typeService {
-   grid-column: span 8;
+   grid-column: span 1;
 }
 
 #bookingSecondSection .bookingForm input,
-#bookingSecondSection .bookingForm select {
+#bookingSecondSection .bookingForm select,
+#bookingSecondSection .bookingForm textarea {
    border: 2px solid var(--speedyWhite);
    border-radius: 2rem;
    font-weight: 700;
    width: -webkit-fill-available;
    padding: 0.5rem 1.25rem;
    margin: 0.5rem;
+   resize: none;
 }
 
 #bookingSecondSection .bookingForm input:focus,
-#bookingSecondSection .bookingForm select:focus {
+#bookingSecondSection .bookingForm select:focus,
+#bookingSecondSection .bookingForm textarea:focus {
    border-color: var(--speedyBlue);
    animation: focusedInput .4s linear;
    animation-fill-mode: forwards;
@@ -784,9 +791,26 @@ input:-webkit-autofill {
 
 .radioButtons,
 .contentInsideBox,
-.checkboxes {
+.checkboxes,
+#submitButton {
    cursor: pointer;
    font-size: 0.9rem;
+}
+
+.submitButton {
+   padding: 1rem 0 1rem 0;
+}
+
+#submitButton {
+   background-color: var(--speedyBlue);
+   border: 2px solid var(--speedyBlue);
+   color: var(--speedyWhite);
+   font-size: 1.2rem;
+   opacity: 0.9;
+}
+
+#submitButton:hover {
+   opacity: 1;
 }
 
 /* End of
