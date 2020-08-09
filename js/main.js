@@ -71,8 +71,8 @@ hideInfoBoxes();
 // This function adds the class .weekendColour to the word "Closed" on Sundays
 
 const closedColour = () => {
-   let actualDate = new Date();
-   let actualDay = actualDate.getDay();
+   const actualDate = new Date();
+   const actualDay = actualDate.getDay();
 
    if (actualDay === 0) {
       $('.closedToday').addClass('weekendColour');
@@ -85,8 +85,8 @@ closedColour();
 // the actual year
 
 const changeCopyrightYear = () => {
-   let actualDate = new Date();
-   let actualYear = actualDate.getFullYear();
+   const actualDate = new Date();
+   const actualYear = actualDate.getFullYear();
 
    $('.thisYear').html(actualYear);
 };
@@ -112,3 +112,171 @@ const bookingheaderAnimation = () => {
 };
 
 bookingheaderAnimation();
+
+// It restricts and updates the dates available to make a booking
+
+const updateBookingDate = () => {
+   const actualDate = new Date();
+   const dayOfTheWeek = actualDate.getDay();
+   let day = actualDate.getDate();
+   let month = actualDate.getMonth() + 1;
+   let year = actualDate.getFullYear();
+
+   console.log(dayOfTheWeek);
+   console.log(actualDate);
+   console.log(`${day}/${month}/${year}`);
+
+   let shortMonth = [4, 6, 9, 11];
+   let longMonth = [1, 3, 5, 7, 8, 10, 12];
+
+   // It gives a gap between 2 - 4 days
+   // Sunday to Thursday / Friday / Saturday
+   if (dayOfTheWeek <= 4) {
+
+      if (month === 2) {
+         if (day === 27) {
+            day = 1;
+            month += 1;
+         } else if (day >= 28) {
+            day = 2;
+            month += 1;
+         }
+         else {
+            day += 2;
+         }
+      } else if (shortMonth.includes(month)) {
+         if (day === 29) {
+            day = 1;
+            month += 1;
+         } else if (day === 30) {
+            day = 2;
+            month += 1;
+         } else {
+            day += 2;
+         }
+      } else if (longMonth.includes(month)) {
+         if (day === 30) {
+            day = 1;
+            month += 1;
+         } else if (day === 31) {
+            day = 2;
+            month += 1;
+         } else {
+            day += 2;
+         }
+      }
+
+   } else if (dayOfTheWeek === 5) {
+
+      if (month === 2) {
+         if (day === 26) {
+            day = 1;
+            month += 1;
+         } else if (day === 26) {
+            day = 2;
+            month += 1;
+         } else if (day === 27) {
+            day = 3;
+            month += 1;
+         } else if (day >= 28) {
+            day = 4;
+            month += 1;
+         } else {
+            day += 4;
+         }
+      } else if (shortMonth.includes(month)) {
+         if (day === 27) {
+            day = 1;
+            month += 1;
+         } else if (day === 28) {
+            day = 2;
+            month += 1;
+         } else if (day === 29) {
+            day = 3;
+            month += 1;
+         } else if (day === 30) {
+            day = 4;
+            month += 1;
+         } else {
+            day += 4;
+         }
+      } else if (longMonth.includes(month)) {
+         if (day === 28) {
+            day = 1;
+            month += 1;
+         } else if (day === 29) {
+            day = 2;
+            month += 1;
+         } else if (day === 30) {
+            day = 3;
+            month += 1;
+         } else if (day === 31) {
+            day = 4;
+            month += 1;
+         } else {
+            day += 4;
+         }
+      }
+
+   } else {
+
+      if (month === 2) {
+         if (day === 26) {
+            day = 1;
+            month += 1;
+         } else if (day === 27) {
+            day = 2;
+            month += 1;
+         } else if (day >= 28) {
+            day = 3;
+            month += 1;
+         } else {
+            day += 3;
+         }
+      } else if (shortMonth.includes(month)) {
+         if (day === 28) {
+            day = 1;
+            month += 1;
+         } else if (day === 29) {
+            day = 2;
+            month += 1;
+         } else if (day === 30) {
+            day = 3;
+            month += 1;
+         } else {
+            day += 3;
+         }
+      } else if (longMonth.includes(month)) {
+         if (day === 29) {
+            day = 1;
+            month += 1;
+         } else if (day === 30) {
+            day = 2;
+            month += 1;
+         } else if (day === 31) {
+            day = 3;
+            month += 1;
+         } else {
+            day += 3;
+         }
+      }
+
+   }
+
+   // It matches the format of the calendar
+   if (month < 10) {
+      month = '0' + month.toString();
+   }
+
+   if (day < 10) {
+      day = '0' + day.toString();
+   }
+
+   let minDate = year + "-" + month + "-" + day;
+
+   $('#preferredDate').attr('min', minDate);
+
+   console.log(`${day}/${month}/${year}`);
+};
+
+updateBookingDate();

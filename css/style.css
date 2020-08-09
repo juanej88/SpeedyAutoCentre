@@ -801,15 +801,16 @@ input:-webkit-autofill {
    padding: 1rem 0 1rem 0;
 }
 
-#submitButton {
+#bookingSecondSection .bookingForm .submitButton #submitButton {
    background-color: var(--speedyBlue);
-   border: 2px solid var(--speedyBlue);
+   border-color: var(--speedyBlue);
    color: var(--speedyWhite);
    font-size: 1.2rem;
+   padding: 0.4rem 1.25rem;
    opacity: 0.9;
 }
 
-#submitButton:hover {
+#bookingSecondSection .bookingForm .submitButton #submitButton:hover {
    opacity: 1;
 }
 

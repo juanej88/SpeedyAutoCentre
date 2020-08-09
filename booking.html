@@ -76,18 +76,19 @@
                <section class="phoneNumber">
                   <label for="phoneNumber" class="blockText">Phone Number</label>
                   <!-- <input id="phoneNumber" type="number" name="phone-number" required /> -->
-                  <input id="phoneNumber" type="tel" name="phone-number" required />
+                  <input id="phoneNumber" type="tel" name="phone-number" minlength="8" maxlength="12" required />
                </section>
 
                <span class="spanAllRow">Booking / Car Details</span>
                <section class="preferredDate">
                   <label for="preferredDate" class="blockText">Preferred Date</label>
-                  <input id="preferredDate" type="text" name="preferred-date" required />
+                  <input id="preferredDate" type="date" name="preferred-date" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" required />
                </section>
                <section class="preferredTime">
                   <label for="preferredTime" class="blockText">Preferred Time</label>
                   <select id="preferredTime" name="preferred-time">
                      <option value="8-30am-12pm">8:30am - 12:00pm</option>
+                     <!-- <option value="8-30am-12pm">9:00am - 12:00pm</option> Saturday -->
                      <option value="12pm-4pm">12:00pm - 4:00pm</option>
                   </select>
                </section>
