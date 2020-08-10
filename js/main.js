@@ -280,3 +280,14 @@ const updateBookingDate = () => {
 };
 
 updateBookingDate();
+
+
+// It shows or hides the comments section depending if the repective
+// checkbox is selected
+const hideComments = () => {
+   $('#otherService').on('click', () => {
+      $('.addComments').toggleClass('hideComments');
+   });
+}
+
+hideComments();

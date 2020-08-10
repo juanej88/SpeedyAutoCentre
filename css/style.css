@@ -723,8 +723,13 @@ Booking Main */
    grid-area: 8 / 1 / span 1 / span 8;
 }
 
+#bookingSecondSection .bookingForm .hideComments {
+   display: none;
+}
+
 #bookingSecondSection .bookingForm .submitButton {
    grid-area: 9 / 3 / span 1 / span 2;
+   padding: 1.25rem 0 1rem 0;
 }
 
 #bookingSecondSection .bookingForm .service .spanSixCol {
@@ -795,10 +800,6 @@ input:-webkit-autofill {
 #submitButton {
    cursor: pointer;
    font-size: 0.9rem;
-}
-
-.submitButton {
-   padding: 1rem 0 1rem 0;
 }
 
 #bookingSecondSection .bookingForm .submitButton #submitButton {
