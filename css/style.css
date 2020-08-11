@@ -719,6 +719,26 @@ Booking Main */
    grid-template-columns: repeat(3, 1fr);
 }
 
+.whiteInputBox {
+   height: 40px;
+   background-color: var(--speedyWhite);
+   border: 2px solid var(--speedyWhite);
+   border-radius: 2rem;
+   padding: 0.2rem 1.25rem;
+   margin: 0.5rem;
+   align-self: center;
+}
+
+#bookingSecondSection .bookingForm .service .selectedBox {
+   font-weight: 700;
+}
+
+#bookingSecondSection .bookingForm .service .focusBlueBorder {
+   border-color: var(--speedyBlue);
+   animation: focusedInput .4s linear;
+   animation-fill-mode: forwards;
+}
+
 #bookingSecondSection .bookingForm .addComments {
    grid-area: 8 / 1 / span 1 / span 8;
 }
@@ -784,17 +804,6 @@ input:-webkit-autofill {
    -webkit-text-fill-color: var(--speedyBlue);
 }
 
-.whiteInputBox {
-   height: 40px;
-   background-color: var(--speedyWhite);
-   border: 2px solid var(--speedyWhite);
-   border-radius: 2rem;
-   padding: 0.2rem 1.25rem;
-   margin: 0.5rem;
-   align-self: center;
-}
-
-.radioButtons,
 .contentInsideBox,
 .checkboxes,
 #submitButton {

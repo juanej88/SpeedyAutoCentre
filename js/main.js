@@ -281,6 +281,72 @@ const updateBookingDate = () => {
 
 updateBookingDate();
 
+// It gives a class .selectedBox to any selected checkboxes
+const outstandCheckbox = () => {
+   $('#bluePinkSlip').on('click', () => {
+      $('#bluePinkSlipBox').toggleClass('selectedBox');
+   });
+   $('#bluePinkSlip').on('focusin', () => {
+      $('#bluePinkSlipBox').addClass('focusBlueBorder');
+   });
+   $('#bluePinkSlip').on('focusout', () => {
+      $('#bluePinkSlipBox').removeClass('focusBlueBorder');
+   });
+
+   $('#engineService').on('click', () => {
+      $('#engineServiceBox').toggleClass('selectedBox');
+   });
+   $('#engineService').on('focusin', () => {
+      $('#engineServiceBox').addClass('focusBlueBorder');
+   });
+   $('#engineService').on('focusout', () => {
+      $('#engineServiceBox').removeClass('focusBlueBorder');
+   });
+
+   $('#safetyInspections').on('click', () => {
+      $('#safetyInspectionsBox').toggleClass('selectedBox');
+   });
+   $('#safetyInspections').on('focusin', () => {
+      $('#safetyInspectionsBox').addClass('focusBlueBorder');
+   });
+   $('#safetyInspections').on('focusout', () => {
+      $('#safetyInspectionsBox').removeClass('focusBlueBorder');
+   });
+
+   $('#tyreBrakeService').on('click', () => {
+      $('#tyreBrakeServiceBox').toggleClass('selectedBox');
+   });
+   $('#tyreBrakeService').on('focusin', () => {
+      $('#tyreBrakeServiceBox').addClass('focusBlueBorder');
+   });
+   $('#tyreBrakeService').on('focusout', () => {
+      $('#tyreBrakeServiceBox').removeClass('focusBlueBorder');
+   });
+
+   $('#repairs').on('click', () => {
+      $('#repairsBox').toggleClass('selectedBox');
+   });
+   $('#repairs').on('focusin', () => {
+      $('#repairsBox').addClass('focusBlueBorder');
+   });
+   $('#repairs').on('focusout', () => {
+      $('#repairsBox').removeClass('focusBlueBorder');
+   });
+
+   $('#otherService').on('click', () => {
+      $('#otherServiceBox').toggleClass('selectedBox');
+   });
+   $('#otherService').on('focusin', () => {
+      $('#otherServiceBox').addClass('focusBlueBorder');
+   });
+   $('#otherService').on('focusout', () => {
+      $('#otherServiceBox').removeClass('focusBlueBorder');
+   });
+
+}
+
+outstandCheckbox();
+
 
 // It shows or hides the comments section depending if the repective
 // checkbox is selected
