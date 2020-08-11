@@ -283,8 +283,15 @@ updateBookingDate();
 
 // It gives a class .selectedBox to any selected checkboxes
 const outstandCheckbox = () => {
+
    $('#bluePinkSlip').on('click', () => {
       $('#bluePinkSlipBox').toggleClass('selectedBox');
+
+      if ($('#bluePinkSlip').is(':checked')) {
+         $('#bluePinkSlipCircle').addClass('selectedCircle');
+      } else {
+         $('#bluePinkSlipCircle').removeClass('selectedCircle');
+      }
    });
    $('#bluePinkSlip').on('focusin', () => {
       $('#bluePinkSlipBox').addClass('focusBlueBorder');
@@ -295,6 +302,11 @@ const outstandCheckbox = () => {
 
    $('#engineService').on('click', () => {
       $('#engineServiceBox').toggleClass('selectedBox');
+      if ($('#engineService').is(':checked')) {
+         $('#engineServiceCircle').addClass('selectedCircle');
+      } else {
+         $('#engineServiceCircle').removeClass('selectedCircle');
+      }
    });
    $('#engineService').on('focusin', () => {
       $('#engineServiceBox').addClass('focusBlueBorder');
@@ -305,6 +317,11 @@ const outstandCheckbox = () => {
 
    $('#safetyInspections').on('click', () => {
       $('#safetyInspectionsBox').toggleClass('selectedBox');
+      if ($('#safetyInspections').is(':checked')) {
+         $('#safetyInspectionsCircle').addClass('selectedCircle');
+      } else {
+         $('#safetyInspectionsCircle').removeClass('selectedCircle');
+      }
    });
    $('#safetyInspections').on('focusin', () => {
       $('#safetyInspectionsBox').addClass('focusBlueBorder');
@@ -315,6 +332,11 @@ const outstandCheckbox = () => {
 
    $('#tyreBrakeService').on('click', () => {
       $('#tyreBrakeServiceBox').toggleClass('selectedBox');
+      if ($('#tyreBrakeService').is(':checked')) {
+         $('#tyreBrakeServiceCircle').addClass('selectedCircle');
+      } else {
+         $('#tyreBrakeServiceCircle').removeClass('selectedCircle');
+      }
    });
    $('#tyreBrakeService').on('focusin', () => {
       $('#tyreBrakeServiceBox').addClass('focusBlueBorder');
@@ -325,6 +347,11 @@ const outstandCheckbox = () => {
 
    $('#repairs').on('click', () => {
       $('#repairsBox').toggleClass('selectedBox');
+      if ($('#repairs').is(':checked')) {
+         $('#repairsCircle').addClass('selectedCircle');
+      } else {
+         $('#repairsCircle').removeClass('selectedCircle');
+      }
    });
    $('#repairs').on('focusin', () => {
       $('#repairsBox').addClass('focusBlueBorder');
@@ -335,6 +362,11 @@ const outstandCheckbox = () => {
 
    $('#otherService').on('click', () => {
       $('#otherServiceBox').toggleClass('selectedBox');
+      if ($('#otherService').is(':checked')) {
+         $('#otherServiceCircle').addClass('selectedCircle');
+      } else {
+         $('#otherServiceCircle').removeClass('selectedCircle');
+      }
    });
    $('#otherService').on('focusin', () => {
       $('#otherServiceBox').addClass('focusBlueBorder');
@@ -346,7 +378,6 @@ const outstandCheckbox = () => {
 }
 
 outstandCheckbox();
-
 
 // It shows or hides the comments section depending if the repective
 // checkbox is selected
