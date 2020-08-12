@@ -21,10 +21,10 @@
          </div>
          <nav>
             <ul>
-               <li><a  class="navLinks" href="./index.html">Home</a></li>
+               <li><a  class="navLinks" href="./index.php">Home</a></li>
                <li><a  class="navLinks" href="./aboutus.html">About Us</a></li>
                <li><a  class="navLinks" href="./services.html">Services</a></li>
-               <li><a  class="navLinks" href="./booking.html">Booking</a></li>
+               <li><a  class="navLinks" href="./booking.php">Booking</a></li>
                <li><a  class="navLinks" href="./contact.html">Contact</a></li>
             </ul>
          </nav>
@@ -58,7 +58,7 @@
          <section id="homeFirstSection">
             <div class="firstSentence">
                <h2>Yes, we can service<br />your brand new car</h2>
-               <a class="bookNowButton" href="./booking.html">Book Now</a>
+               <a class="bookNowButton" href="./booking.php">Book Now</a>
             </div>
          </section>
 
@@ -68,7 +68,7 @@
                <p>Speedy Auto Centre – the car experts. This is the right address for outstanding service quality for your car. Whether you are looking for advice, repair or service work, we can offer the full package.</p><br/>
                <p>The experts from Speedy Auto Centre are equipped to deal with the latest automotive technology in vehicles of all makes and keep them in perfect working order. And so your car is always in the best possible hands and your manufacturer’s warranty is safe with us, when you take it to Speedy Auto Centre Service for maintenance and repair.</p><br/>
                <p>For everything your car needs.</p><br/>
-               <a class="bookNowBlueButton" href="./booking.html">Book Now</a>
+               <a class="bookNowBlueButton" href="./booking.php">Book Now</a>
             </div>
             <div class="verticalImage"></div>
          </section>
@@ -121,7 +121,7 @@
          <div class="firstFooterColumn footerColumn">
             <h3>Speedy Auto Centre</h3>
             <p>Established in 2007. The experts from Speedy Auto Centre are equipped to deal with the latest automotive technology in vehicles of all makes and keep them in perfect working order.</p>
-            <a class="footerButton" href="./booking.html">Book Now</a>
+            <a class="footerButton" href="./booking.php">Book Now</a>
          </div>
          <div class="secondFooterColumn footerColumn">
             <h3>Working Hours</h3>

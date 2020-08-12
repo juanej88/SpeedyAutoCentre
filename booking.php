@@ -21,10 +21,10 @@
          </div>
          <nav>
             <ul>
-               <li><a  class="navLinks" href="./index.html">Home</a></li>
+               <li><a  class="navLinks" href="./index.php">Home</a></li>
                <li><a  class="navLinks" href="./aboutus.html">About Us</a></li>
                <li><a  class="navLinks" href="./services.html">Services</a></li>
-               <li><a  class="navLinks" href="./booking.html">Booking</a></li>
+               <li><a  class="navLinks" href="./booking.php">Booking</a></li>
                <li><a  class="navLinks" href="./contact.html">Contact</a></li>
             </ul>
          </nav>
@@ -62,7 +62,7 @@
          <section id="bookingSecondSection">
             <h1>Booking</h1>
             <h2>Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h2>
-            <form class="bookingForm" action="index.html" method="POST">
+            <form class="bookingForm" action="booking.php" method="POST">
 
                <span class="spanAllRow">Personal Details</span>
                <section class="fullName">
@@ -192,6 +192,8 @@
                </section>
             </form>
          </section>
+         <?php echo "<p>Hello</p>";?>
+         Your name is: <?=$_POST["full-name"];?>
       </main>
 
       <footer id="websiteFooter">

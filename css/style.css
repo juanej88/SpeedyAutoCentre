@@ -848,6 +848,10 @@ input:-webkit-autofill {
    color: var(--speedyWhite);
    font-size: 1.2rem;
    padding: 0.4rem 1.25rem;
+   opacity: 0.9;
+}
+
+#bookingSecondSection .bookingForm .submitButton #submitButton:hover {
    opacity: 1;
 }
 
