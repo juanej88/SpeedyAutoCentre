@@ -1,5 +1,5 @@
 <?php
-require("send-email-php/recaptcha.php");
+// require("send-email-php/recaptcha.php");
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
