@@ -1,2 +1,3 @@
 send-email-php/*
 sendgrid-php/*
+sendgrid.env

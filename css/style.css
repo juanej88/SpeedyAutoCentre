@@ -2,211 +2,223 @@
 website elements from scratch */
 
 * {
-    padding: 0;
-    border: 0;
-    margin: 0;
-    font-family: 'Mulish', sans-serif;
-    font-size: 16px;
-    text-decoration: none;
-    list-style: none;
-    color: inherit;
-    box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+  box-sizing: border-box;
 }
 
 /* Colours used on the website */
 
 :root {
-   --speedyBlue: rgba(0, 60, 120, 1);
-   --speedyWhite: hsl(0, 0%, 100%, 1);
-   --speedyDarkGrey: rgba(30, 30, 30, 1);
-   --speedyGrey: rgba(120, 120, 120, 1);
-   --speedyLightGrey: hsla(210, 10%, 95%, 1);
-   --speedyLightGrey2: hsla(210, 0%, 80%, 1);
-   --speedyYellow: hsla(45, 100%, 50%, 1);
-   --speedyRed: rgba(220, 50, 35, 1);
+  --speedyBlue: rgba(0, 60, 120, 1);
+  --speedyWhite: hsl(0, 0%, 100%, 1);
+  --speedyDarkGrey: rgba(30, 30, 30, 1);
+  --speedyGrey: rgba(120, 120, 120, 1);
+  --speedyLightGrey: hsla(210, 10%, 95%, 1);
+  --speedyLightGrey2: hsla(210, 0%, 80%, 1);
+  --speedyYellow: hsla(45, 100%, 50%, 1);
+  --speedyRed: rgba(220, 50, 35, 1);
 }
 
 /* Start of
 Header Section */
 
 header {
-   position: fixed;
-   width: 100%;
-   display: grid;
-   grid-template-columns: 0.5fr 2fr 8fr 1fr 0.5fr;
-   background-color: rgba(0, 60, 120, 0);
-   color: var(--speedyDarkGrey);
-   z-index: 10;
-   font-weight: 700;
+  position: fixed;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 8fr 1fr 0.5fr;
+  background-color: rgba(0, 60, 120, 0);
+  color: var(--speedyDarkGrey);
+  z-index: 10;
+  font-weight: 700;
 }
 
 .showNav {
-   animation: showNav .25s linear;
-   animation-fill-mode: forwards;
+  animation: showNav 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes showNav {
-   0% {background-color: rgba(0, 60, 120, 0); color: var(--speedyDarkGrey);}
-   100% {background-color: rgba(0, 60, 120, .98); color: var(--speedyWhite);}
+  0% {
+    background-color: rgba(0, 60, 120, 0);
+    color: var(--speedyDarkGrey);
+  }
+  100% {
+    background-color: rgba(0, 60, 120, 0.98);
+    color: var(--speedyWhite);
+  }
 }
 
 .hideNav {
-   animation: hideNav .25s linear;
-   animation-fill-mode: forwards;
+  animation: hideNav 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes hideNav {
-   0% {background-color: rgba(0, 60, 120, .98); color: var(--speedyWhite);}
-   100% {background-color: rgba(0, 60, 120, 0); color: var(--speedyDarkGrey);}
+  0% {
+    background-color: rgba(0, 60, 120, 0.98);
+    color: var(--speedyWhite);
+  }
+  100% {
+    background-color: rgba(0, 60, 120, 0);
+    color: var(--speedyDarkGrey);
+  }
 }
 
 #logo {
-   grid-column: 2 / span 1;
+  grid-column: 2 / span 1;
 }
 
 #logo img {
-   position: absolute;
-   height: 153px;
-   padding-top: 5px;
+  position: absolute;
+  height: 153px;
+  padding-top: 5px;
 }
 
 nav {
-   grid-column: 3 / span 1;
+  grid-column: 3 / span 1;
 }
 
 nav ul {
-   display: flex;
-   justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 nav ul li {
-   padding: 1rem;
-   margin: .5rem 0;
+  padding: 1rem;
+  margin: 0.5rem 0;
 }
 
 nav ul li a {
-   opacity: .75;
+  opacity: 0.75;
 }
 
 nav ul li a:hover {
-   color: var(--speedyWhite);
-   opacity: 1;
+  color: var(--speedyWhite);
+  opacity: 1;
 }
 
 #getMoreInfo {
-   grid-column: 4 / span 2;
-   align-self: center;
-   justify-self: start;
-   margin: .5rem 0;
+  grid-column: 4 / span 2;
+  align-self: center;
+  justify-self: start;
+  margin: 0.5rem 0;
 }
 
 .infoIcons {
-   opacity: .75;
-   padding: 1rem;
+  opacity: 0.75;
+  padding: 1rem;
 }
 
 .infoIcons:hover {
-   color: var(--speedyWhite);
-   opacity: 1;
-   cursor: pointer;
+  color: var(--speedyWhite);
+  opacity: 1;
+  cursor: pointer;
 }
 
 /* This section is part of the information boxes which are displayed
 after hovering the getLocation and getPhone icon on the nav */
 
 .infoBox {
-   position: absolute;
-   left: -18rem;
-   top: 4.25rem;
-   height: 12rem;
-   width: 18rem;
-   background-color: var(--speedyDarkGrey);
-   color: var(--speedyWhite);
-   grid-column: 5 / span 1;
-   border-radius: 0 0 0.5rem 0.5rem;
-   display: grid;
-   grid-template-rows: 1fr repeat(3, .5fr) 1fr;
-   align-items: center;
-   padding: 0 1rem;
-   cursor: auto;
-   font-weight: 700;
+  position: absolute;
+  left: -18rem;
+  top: 4.25rem;
+  height: 12rem;
+  width: 18rem;
+  background-color: var(--speedyDarkGrey);
+  color: var(--speedyWhite);
+  grid-column: 5 / span 1;
+  border-radius: 0 0 0.5rem 0.5rem;
+  display: grid;
+  grid-template-rows: 1fr repeat(3, 0.5fr) 1fr;
+  align-items: center;
+  padding: 0 1rem;
+  cursor: auto;
+  font-weight: 700;
 }
 
 #getPhone {
-   grid-template: 1fr repeat(3, .5fr) 1fr / 1fr 1.25fr;
+  grid-template: 1fr repeat(3, 0.5fr) 1fr / 1fr 1.25fr;
 }
 
 .arrowUp {
-   position: absolute;
-   top: -0.7rem;
-   left: 10.6rem;
-   width: 0;
-   height: 0;
-   border-left: 1.25rem solid transparent;
-   border-right: 1.25rem solid transparent;
-   border-bottom: 1.25rem solid var(--speedyDarkGrey);
+  position: absolute;
+  top: -0.7rem;
+  left: 10.6rem;
+  width: 0;
+  height: 0;
+  border-left: 1.25rem solid transparent;
+  border-right: 1.25rem solid transparent;
+  border-bottom: 1.25rem solid var(--speedyDarkGrey);
 }
 
 #getLocation .arrowUp {
-   left: 13.85rem;
+  left: 13.85rem;
 }
 
 #getPhone h3 {
-   grid-area: 1 / 1 / span 1 / span 2;
-   font-weight: 700;
+  grid-area: 1 / 1 / span 1 / span 2;
+  font-weight: 700;
 }
 
 #getLocation h3 {
-   grid-row: 1 / span 1;
-   font-weight: 700;
+  grid-row: 1 / span 1;
+  font-weight: 700;
 }
 
 .infoBox h3 {
-   text-align: center;
-   padding: 0.5rem;
-   border-bottom: 1px solid var(--speedyWhite);
+  text-align: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--speedyWhite);
 }
 
 .infoBox p {
-   font-size: 0.8rem;
-   padding: 0.25rem 0;
+  font-size: 0.8rem;
+  padding: 0.25rem 0;
 }
 
 .closedToday.weekendColour {
-   color: var(--speedyRed);
+  color: var(--speedyRed);
 }
 
 #callUsButton {
-   grid-area: 5 / 1 / span 1 / span 2;
+  grid-area: 5 / 1 / span 1 / span 2;
 }
 
 #getDirectionsButton {
-   grid-row: 5;
+  grid-row: 5;
 }
 
 .infoBox a {
-   justify-self: center;
-   align-self: center;
-   width: 10rem;
-   text-align: center;
-   font-size: 0.8rem;
-   font-weight: 700;
-   padding: 0.5rem 1rem;
-   border: 1px solid var(--speedyWhite);
-   border-radius: 1rem;
-   animation: buttonOff .25s linear;
-   animation-fill-mode: forwards;
-   position: relative;
-   top: -3px;
+  justify-self: center;
+  align-self: center;
+  width: 10rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--speedyWhite);
+  border-radius: 1rem;
+  animation: buttonOff 0.25s linear;
+  animation-fill-mode: forwards;
+  position: relative;
+  top: -3px;
 }
 
 .infoBox a:hover {
-   animation: buttonOn .25s linear;
-   animation-fill-mode: forwards;
+  animation: buttonOn 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 .hideInformation {
-   visibility: hidden;
+  visibility: hidden;
 }
 
 /* End of
@@ -216,172 +228,196 @@ Header Section */
 Home Page */
 
 #homeFirstSection {
-   width: 100%;
-   min-width: 300px;
-   height: 100vh;
-   background-image: url(../images/background/homeBackground.jpg);
-   background-size: cover;
-   background-position: 0% 80%;
-   display: grid;
-   grid-template: repeat(3, 4fr) / 0.5fr 11fr 0.5fr;
+  width: 100%;
+  min-width: 300px;
+  height: 100vh;
+  background-image: url(../images/background/homeBackground.jpg);
+  background-size: cover;
+  background-position: 0% 80%;
+  display: grid;
+  grid-template: repeat(3, 4fr) / 0.5fr 11fr 0.5fr;
 }
 
 .firstSentence {
-   grid-area: 3 / 2 / span 1 / span 1;
-   color: var(--speedyWhite);
-   position: relative;
-   top: -1.5rem;
+  grid-area: 3 / 2 / span 1 / span 1;
+  color: var(--speedyWhite);
+  position: relative;
+  top: -1.5rem;
 }
 
 .firstSentence h2 {
-   font-size: 2.5rem;
-   font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .bookNowButton {
-   font-size: 1.25rem;
-   font-weight: 700;
-   padding: 0.5rem 3rem;
-   position: relative;
-   top: 2rem;
-   border: 2px solid var(--speedyWhite);
-   border-radius: 2rem;
-   animation: buttonOff .25s linear;
-   animation-fill-mode: forwards;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.5rem 3rem;
+  position: relative;
+  top: 2rem;
+  border: 2px solid var(--speedyWhite);
+  border-radius: 2rem;
+  animation: buttonOff 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes buttonOff {
-   0% {color: var(--speedyDarkGrey); background-color: var(--speedyWhite);}
-   100% {color: var(--speedyWhite); background-color: transparent;}
+  0% {
+    color: var(--speedyDarkGrey);
+    background-color: var(--speedyWhite);
+  }
+  100% {
+    color: var(--speedyWhite);
+    background-color: transparent;
+  }
 }
 
 .bookNowButton:hover {
-   animation: buttonOn .25s linear;
-   animation-fill-mode: forwards;
+  animation: buttonOn 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes buttonOn {
-   0% {color: var(--speedyWhite); background-color: transparent;}
-   100% {color: var(--speedyDarkGrey); background-color: var(--speedyWhite);}
+  0% {
+    color: var(--speedyWhite);
+    background-color: transparent;
+  }
+  100% {
+    color: var(--speedyDarkGrey);
+    background-color: var(--speedyWhite);
+  }
 }
 
 #homeSecondSection {
-   height: 100vh;
-   display: grid;
-   grid-template: 100px 1fr 100px / 0.5fr 5fr 1fr 3fr 0.5fr;
-   background-color: var(--speedyLightGrey);
+  height: 100vh;
+  display: grid;
+  grid-template: 100px 1fr 100px / 0.5fr 5fr 1fr 3fr 0.5fr;
+  background-color: var(--speedyLightGrey);
 }
 
 #homeSecondSection .briefIntro {
-   color: var(--speedyBlue);
-   grid-area: 2 / 2 / span 1 / span 2;
-   line-height: 1.5;
-   background-color: var(--speedyWhite);
-   padding: 3rem 5rem;
-   text-align: justify;
-   border-radius: 1rem 0 0 1rem;
+  color: var(--speedyBlue);
+  grid-area: 2 / 2 / span 1 / span 2;
+  line-height: 1.5;
+  background-color: var(--speedyWhite);
+  padding: 3rem 5rem;
+  text-align: justify;
+  border-radius: 1rem 0 0 1rem;
 }
 
 #homeSecondSection h2 {
-   font-size: 2.5rem;
-   font-weight: 900;
-   text-align: center;
-   padding-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+  padding-bottom: 1rem;
 }
 
 .verticalImage {
-   grid-area: 2 / 4 / span 1 / span 2;
-   height: calc(100vh - 200px);
-   width: 35vw;
-   background-image: url(../images/extra/carKey.jpg);
-   background-size: cover;
-   background-position: 0% 50%;
+  grid-area: 2 / 4 / span 1 / span 2;
+  height: calc(100vh - 200px);
+  width: 35vw;
+  background-image: url(../images/extra/carKey.jpg);
+  background-size: cover;
+  background-position: 0% 50%;
 }
 
 .bookNowBlueButton {
-   font-weight: 500;
-   padding: 0.5rem 2.5rem;
-   position: relative;
-   top: 1.25rem;
-   border: 2px solid var(--speedyBlue);
-   border-radius: 2rem;
-   animation: buttonRedOff .25s linear;
-   animation-fill-mode: forwards;
+  font-weight: 500;
+  padding: 0.5rem 2.5rem;
+  position: relative;
+  top: 1.25rem;
+  border: 2px solid var(--speedyBlue);
+  border-radius: 2rem;
+  animation: buttonRedOff 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes buttonRedOff {
-   0% {color: var(--speedyWhite); background-color: var(--speedyBlue);}
-   100% {color: var(--speedyBlue); background-color: transparent;}
+  0% {
+    color: var(--speedyWhite);
+    background-color: var(--speedyBlue);
+  }
+  100% {
+    color: var(--speedyBlue);
+    background-color: transparent;
+  }
 }
 
 .bookNowBlueButton:hover {
-   animation: buttonRedOn .25s linear;
-   animation-fill-mode: forwards;
+  animation: buttonRedOn 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes buttonRedOn {
-   0% {color: var(--speedyBlue); background-color: transparent;}
-   100% {color: var(--speedyWhite); background-color: var(--speedyBlue);}
+  0% {
+    color: var(--speedyBlue);
+    background-color: transparent;
+  }
+  100% {
+    color: var(--speedyWhite);
+    background-color: var(--speedyBlue);
+  }
 }
 
 #homeThirdSection {
-   height: 100vh;
-   display: grid;
-   grid-template: 1fr 3fr 100px / 0.5fr 2.75fr 0.375fr 2.75fr 0.375fr 2.75fr 0.5fr;
-   background-color: var(--speedyWhite);
+  height: 100vh;
+  display: grid;
+  grid-template: 1fr 3fr 100px / 0.5fr 2.75fr 0.375fr 2.75fr 0.375fr 2.75fr 0.5fr;
+  background-color: var(--speedyWhite);
 }
 
 #homeThirdSection h2 {
-   font-size: 2.5rem;
-   font-weight: 900;
-   color: var(--speedyBlue);
-   grid-area: 1 / 2 / span 1 / span 5;
-   text-align: center;
-   align-self: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--speedyBlue);
+  grid-area: 1 / 2 / span 1 / span 5;
+  text-align: center;
+  align-self: center;
 }
 
 #homeThirdSection .comments {
-   border-radius: 1rem;
-   color: var(--speedyBlue);
-   text-align: center;
-   background-color: var(--speedyLightGrey);
-   padding: 2.5rem;
-   display: grid;
-   grid-template-rows: 3fr repeat(2, 2fr) 8fr 1fr;
+  border-radius: 1rem;
+  color: var(--speedyBlue);
+  text-align: center;
+  background-color: var(--speedyLightGrey);
+  padding: 2.5rem;
+  display: grid;
+  grid-template-rows: 3fr repeat(2, 2fr) 8fr 1fr;
 }
 
 #firstComment {
-   grid-area: 2 / 2;
+  grid-area: 2 / 2;
 }
 
 #secondComment {
-   grid-area: 2 / 4;
+  grid-area: 2 / 4;
 }
 
 #thirdComment {
-   grid-area: 2 / 6;
+  grid-area: 2 / 6;
 }
 
 .comments h3 {
-   font-weight: 900;
-   font-size: 1.25rem;
+  font-weight: 900;
+  font-size: 1.25rem;
 }
 
 .comments h4 {
-   font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 .comments p {
-   align-self: start;
+  align-self: start;
 }
 
 .profileImage {
-   height: 4rem;
-   justify-self: center;
+  height: 4rem;
+  justify-self: center;
 }
 
 .rating {
-   color: var(--speedyYellow);
+  color: var(--speedyYellow);
 }
 
 /* End of
@@ -391,141 +427,157 @@ Home Page */
 Footer Section */
 
 footer {
-   display: grid;
-   grid-template: 275px 75px / 0.5fr 2.75fr 0.375fr 2.75fr 0.375fr 2.75fr 0.5fr;
-   align-items: center;
-   background-color: var(--speedyDarkGrey);
-   color: var(--speedyLightGrey2);
+  display: grid;
+  grid-template: 275px 75px / 0.5fr 2.75fr 0.375fr 2.75fr 0.375fr 2.75fr 0.5fr;
+  align-items: center;
+  background-color: var(--speedyDarkGrey);
+  color: var(--speedyLightGrey2);
 }
 
 footer .footerColumn {
-   padding-top: 1.5rem;
-   height: 225px;
-   display: grid;
-   grid-template: 2.5fr repeat(4, 1fr) 1.5fr / 1fr 1.25fr;
-   padding: 0 2rem;
+  padding-top: 1.5rem;
+  height: 225px;
+  display: grid;
+  grid-template: 2.5fr repeat(4, 1fr) 1.5fr / 1fr 1.25fr;
+  padding: 0 2rem;
 }
 
 footer .footerColumn h3 {
-   color: var(--speedyWhite);
-   font-size: 1.1rem;
-   grid-area: 1 / 1 / span 1 / span 2;
-   align-self: center;
+  color: var(--speedyWhite);
+  font-size: 1.1rem;
+  grid-area: 1 / 1 / span 1 / span 2;
+  align-self: center;
 }
 
 footer .footerColumn p {
-   font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 footer .firstFooterColumn {
-   grid-area: 1 / 2;
+  grid-area: 1 / 2;
 }
 
 footer .firstFooterColumn p {
-   grid-area: 2 / 1 / span 3 / span 2;
-   text-align: justify;
-   line-height: 1.2rem;
+  grid-area: 2 / 1 / span 3 / span 2;
+  text-align: justify;
+  line-height: 1.2rem;
 }
 
 footer .footerColumn .footerButton {
-   grid-area: 5 / 1 / span 2 / span 2;
-   font-size: 0.8rem;
-   width: 10rem;
-   text-align: center;
-   align-self: center;
-   border: 1px solid var(--speedyLightGrey2);
-   border-radius: 2rem;
-   padding: 0.5rem 1rem;
-   animation: footerButtonOff .25s linear;
-   animation-fill-mode: forwards;
+  grid-area: 5 / 1 / span 2 / span 2;
+  font-size: 0.8rem;
+  width: 10rem;
+  text-align: center;
+  align-self: center;
+  border: 1px solid var(--speedyLightGrey2);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  animation: footerButtonOff 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes footerButtonOff {
-   0% {color: var(--speedyDarkGrey); background-color: var(--speedyWhite); border-color: var(--speedyWhite);}
-   100% {color: var(--speedyLightGrey2); background-color: transparent; border-color: var(--speedyLightGrey2);}
+  0% {
+    color: var(--speedyDarkGrey);
+    background-color: var(--speedyWhite);
+    border-color: var(--speedyWhite);
+  }
+  100% {
+    color: var(--speedyLightGrey2);
+    background-color: transparent;
+    border-color: var(--speedyLightGrey2);
+  }
 }
 
 footer .footerColumn .footerButton:hover {
-   animation: footerButtonOn .25s linear;
-   animation-fill-mode: forwards;
+  animation: footerButtonOn 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes footerButtonOn {
-   0% {color: var(--speedyLightGrey2); background-color: transparent; border-color: var(--speedyLightGrey2);}
-   100% {color: var(--speedyDarkGrey); background-color: var(--speedyWhite); border-color: var(--speedyWhite);}
+  0% {
+    color: var(--speedyLightGrey2);
+    background-color: transparent;
+    border-color: var(--speedyLightGrey2);
+  }
+  100% {
+    color: var(--speedyDarkGrey);
+    background-color: var(--speedyWhite);
+    border-color: var(--speedyWhite);
+  }
 }
 
 footer .secondFooterColumn {
-   grid-area: 1 / 4;
+  grid-area: 1 / 4;
 }
 
 footer .thirdFooterColumn {
-   grid-area: 1 / 6;
+  grid-area: 1 / 6;
 }
 
 footer .thirdFooterColumn .row1 {
-   grid-area: 3 / 1 /span 1 / span 2;
+  grid-area: 3 / 1 / span 1 / span 2;
 }
 
 footer .footerColumn .footerInfoLink {
-   font-size: 0.8rem;
-   padding: 0.25rem 1rem 0.25rem 0;
+  font-size: 0.8rem;
+  padding: 0.25rem 1rem 0.25rem 0;
 }
 
 footer .thirdFooterColumn .footerInfoLink:hover {
-   color: var(--speedyWhite);
-   opacity: 1;
+  color: var(--speedyWhite);
+  opacity: 1;
 }
 
 footer .thirdFooterColumn .socialMedia {
-   grid-area: 4 / 1 / span 1 / span 2;
+  grid-area: 4 / 1 / span 1 / span 2;
 }
 
 footer .thirdFooterColumn .socialMedia a {
-   padding: 0.5rem 0.5rem 0.5rem 0;
-   margin-right: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  margin-right: 0.5rem;
 }
 
 footer .thirdFooterColumn .socialMedia a:hover {
-   color: var(--speedyWhite);
-   opacity: 1;
+  color: var(--speedyWhite);
+  opacity: 1;
 }
 
 footer .thirdFooterColumn .socialMedia a i {
-   font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 footer #copyright,
 footer #createdBy {
-   font-size: 0.8rem;
-   padding: 1.75rem 0;
+  font-size: 0.8rem;
+  padding: 1.75rem 2rem;
 }
 
 footer #copyright span {
-   font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 footer #createdBy a {
-   font-size: 0.8rem;
-   padding: 0.75rem 0;
+  font-size: 0.8rem;
+  padding: 0.75rem 0;
 }
 
 #copyright {
-   height: 75px;
-   grid-area: 2 / 2 / span 1 / span 4;
-   border-top: 1px solid var(--speedyLightGrey2);
+  height: 75px;
+  grid-area: 2 / 2 / span 1 / span 4;
+  border-top: 1px solid var(--speedyLightGrey2);
 }
 
 #createdBy {
-   height: 75px;
-   text-align: right;
-   grid-area: 2 / 6 / span 1 / span 1;
-   border-top: 1px solid var(--speedyLightGrey2);
+  height: 75px;
+  text-align: right;
+  grid-area: 2 / 6 / span 1 / span 1;
+  border-top: 1px solid var(--speedyLightGrey2);
 }
 
 #createdBy a:hover {
-   color: var(--speedyWhite);
-   opacity: 1;
+  color: var(--speedyWhite);
+  opacity: 1;
 }
 
 /* End of
@@ -538,27 +590,35 @@ Booking Page */
 Booking Header */
 
 #bookingHeader {
-   color: var(--speedyWhite);
+  color: var(--speedyWhite);
 }
 
 .showBookingNav {
-   animation: showBookingNav .25s linear;
-   animation-fill-mode: forwards;
+  animation: showBookingNav 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes showBookingNav {
-   0% {background-color: rgba(0, 60, 120, 0);}
-   100% {background-color: rgba(0, 60, 120, .98);}
+  0% {
+    background-color: rgba(0, 60, 120, 0);
+  }
+  100% {
+    background-color: rgba(0, 60, 120, 0.98);
+  }
 }
 
 .hideBookingNav {
-   animation: hideBookingNav .25s linear;
-   animation-fill-mode: forwards;
+  animation: hideBookingNav 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes hideBookingNav {
-   0% {background-color: rgba(0, 60, 120, .98);}
-   100% {background-color: rgba(0, 60, 120, 0);}
+  0% {
+    background-color: rgba(0, 60, 120, 0.98);
+  }
+  100% {
+    background-color: rgba(0, 60, 120, 0);
+  }
 }
 
 /* End of
@@ -568,295 +628,311 @@ Booking Header */
 Booking Main */
 
 #bookingFirstSection {
-   width: 100%;
-   min-width: 300px;
-   height: 60vh;
-   background-image: url(../images/background/bookingBackground.jpg);
-   background-size: cover;
-   background-position: 50% 50%;
-   background-attachment: fixed;
-   display: grid;
-   grid-template: repeat(2, 1fr) / 0.5fr 4fr 3fr 4fr 0.5fr;
+  width: 100%;
+  min-width: 300px;
+  height: 60vh;
+  background-image: url(../images/background/bookingBackground.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  display: grid;
+  grid-template: repeat(2, 1fr) / 0.5fr 4fr 3fr 4fr 0.5fr;
 }
 
 #bookingFirstSection .bookingHeader {
-   grid-area: 2 / 2;
-   font-size: 2.5rem;
-   color: var(--speedyWhite);
-   font-weight: 900;
-   animation: showBookingHeader .25s linear;
-   animation-fill-mode: forwards;
+  grid-area: 2 / 2;
+  font-size: 2.5rem;
+  color: var(--speedyWhite);
+  font-weight: 900;
+  animation: showBookingHeader 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes showBookingHeader {
-   0% {opacity: 0}
-   100% {opacity: 1}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #bookingFirstSection .hideBookingHeader {
-   animation: hideBookingHeader .25s linear;
-   animation-fill-mode: forwards;
+  animation: hideBookingHeader 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes hideBookingHeader {
-   0% {opacity: 1}
-   100% {opacity: 0}
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 #bookingFirstSection h2 {
-   grid-area: 2 / 4;
-   font-size: 2.5rem;
-   color: var(--speedyWhite);
-   font-weight: 900;
+  grid-area: 2 / 4;
+  font-size: 2.5rem;
+  color: var(--speedyWhite);
+  font-weight: 900;
 }
 
 #bookingSecondSection {
-   width: 100%;
-   height: 130vh;
-   color: var(--speedyBlue);
-   display: grid;
-   grid-template: repeat(10, 4fr) / 0.5fr 1.25fr 6.5fr 1.25fr 0.5fr;
+  width: 100%;
+  height: 130vh;
+  color: var(--speedyBlue);
+  display: grid;
+  grid-template: repeat(10, 4fr) / 0.5fr 1.25fr 6.5fr 1.25fr 0.5fr;
 }
 
 #bookingSecondSection h1 {
-   text-align: center;
-   grid-area: 1 / 2 / span 1 / span 3;
-   font-size: 2.75rem;
-   font-weight: 900;
-   padding: 1.5rem 0 1rem 0;
+  text-align: center;
+  grid-area: 1 / 2 / span 1 / span 3;
+  font-size: 2.75rem;
+  font-weight: 900;
+  padding: 1.5rem 0 1rem 0;
 }
 
 #bookingSecondSection h2 {
-   text-align: justify;
-   font-size: 1.25rem;
-   font-weight: 700;
-   grid-area: 2 / 3 / span 1 / span 1;
-   padding: 0 0 1.5rem 0;
+  text-align: justify;
+  font-size: 1.25rem;
+  font-weight: 700;
+  grid-area: 2 / 3 / span 1 / span 1;
+  padding: 0 0 1.5rem 0;
 }
 
 #bookingSecondSection .bookingForm {
-   grid-area: 3 / 3;
-   background-color: var(--speedyLightGrey);
-   border-radius: 1rem;
-   padding: 1rem 2rem;
-   display: grid;
-   grid-template-columns: repeat(6, 1fr);
+  grid-area: 3 / 3;
+  background-color: var(--speedyLightGrey);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 }
 
 #bookingSecondSection .bookingForm .spanAllRow {
-   grid-column: span 6;
-   font-size: 1.2rem;
-   font-weight: 700;
-   padding: 1rem 1.25rem 0 0.75rem;
-   margin: 0;
+  grid-column: span 6;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1rem 1.25rem 0 0.75rem;
+  margin: 0;
 }
 
 #bookingSecondSection .bookingForm section .blockText {
-   display: block;
-   font-size: 0.9rem;
-   font-weight: 500;
-   padding: 0.75rem 1.25rem 0 1.25rem;
-   margin: 0 0.5rem;
-   /* This spans the PreferredTime span */
-   grid-column: span 2;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.75rem 1.25rem 0 1.25rem;
+  margin: 0 0.5rem;
+  /* This spans the PreferredTime span */
+  grid-column: span 2;
 }
 
 #bookingSecondSection .bookingForm .fullName {
-   grid-area: 2 / 1 / span 1 / span 6;
+  grid-area: 2 / 1 / span 1 / span 6;
 }
 
 #bookingSecondSection .bookingForm .email {
-   grid-area: 3 / 1 / span 1 / span 3;
+  grid-area: 3 / 1 / span 1 / span 3;
 }
 
 #bookingSecondSection .bookingForm .phoneNumber {
-   grid-area: 3 / 4 / span 1 / span 3;
+  grid-area: 3 / 4 / span 1 / span 3;
 }
 
 #bookingSecondSection .bookingForm .preferredDate {
-   grid-area: 5 / 1 / span 1 / span 2;
+  grid-area: 5 / 1 / span 1 / span 2;
 }
 
 #bookingSecondSection .bookingForm .preferredTime {
-   grid-area: 5 / 3 / span 1 / span 2;
-   align-self: start;
-   /* display: grid;
+  grid-area: 5 / 3 / span 1 / span 2;
+  align-self: start;
+  /* display: grid;
    grid-template-columns: repeat(2, 1fr); */
 }
 
 #bookingSecondSection .bookingForm .rego {
-   grid-area: 5 / 5 / span 1 / span 2;
+  grid-area: 5 / 5 / span 1 / span 2;
 }
 
 #bookingSecondSection .bookingForm .carYear {
-   grid-area: 6 / 1 / span 1 / span 2;
+  grid-area: 6 / 1 / span 1 / span 2;
 }
 
 #bookingSecondSection .bookingForm .carMake {
-   grid-area: 6 / 3 / span 1 / span 2;
+  grid-area: 6 / 3 / span 1 / span 2;
 }
 
 #bookingSecondSection .bookingForm .carModel {
-   grid-area: 6 / 5 / span 1 / span 2;
+  grid-area: 6 / 5 / span 1 / span 2;
 }
 
 #bookingSecondSection .bookingForm .service {
-   grid-area: 7 / 1 / span 1 / span 8;
-   align-self: start;
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
+  grid-area: 7 / 1 / span 1 / span 8;
+  align-self: start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .whiteInputBox {
-   height: 40px;
-   background-color: var(--speedyWhite);
-   border: 2px solid var(--speedyWhite);
-   border-radius: 2rem;
-   padding: 0.2rem 1.25rem;
-   margin: 0.5rem;
+  height: 40px;
+  background-color: var(--speedyWhite);
+  border: 2px solid var(--speedyWhite);
+  border-radius: 2rem;
+  padding: 0.2rem 1.25rem;
+  margin: 0.5rem;
 }
 
 #bookingSecondSection .bookingForm .service .checkboxes {
-   position: absolute;
-   opacity: 0;
+  position: absolute;
+  opacity: 0;
 }
 
 .textInBox {
-   display: block;
-   background-color: var(--speedyWhite);
-   border: 2px solid var(--speedyWhite);
-   border-radius: 2rem;
-   padding: 0.65rem 1rem 0.55rem 2.75rem;
-   margin: 0.5rem;
+  display: block;
+  background-color: var(--speedyWhite);
+  border: 2px solid var(--speedyWhite);
+  border-radius: 2rem;
+  padding: 0.65rem 1rem 0.55rem 2.75rem;
+  margin: 0.5rem;
 }
 
 .checkCircle {
-   position: relative;
-   top: -38px;
-   left: 22px;
-   height: 1.25rem;
-   width: 1.25rem;
-   border: 1px solid var(--speedyBlue);
-   border-radius: 50%;
+  position: relative;
+  top: -38px;
+  left: 22px;
+  height: 1.25rem;
+  width: 1.25rem;
+  border: 1px solid var(--speedyBlue);
+  border-radius: 50%;
 }
 
 .checkCircle.selectedCircle {
-   background-color: var(--speedyBlue);
+  background-color: var(--speedyBlue);
 }
 
 .checkMark {
-   height: 12px;
-   width: 6px;
-   border-right: 2px solid var(--speedyWhite);
-   border-bottom: 2px solid var(--speedyWhite);
-   transform: rotate(40deg);
-   position: absolute;
-   left: 6px;
-   top: 2px;
+  height: 12px;
+  width: 6px;
+  border-right: 2px solid var(--speedyWhite);
+  border-bottom: 2px solid var(--speedyWhite);
+  transform: rotate(40deg);
+  position: absolute;
+  left: 6px;
+  top: 2px;
 }
 
 #bookingSecondSection .bookingForm .service .selectedBox {
-   font-weight: 700;
+  font-weight: 700;
 }
 
 #bookingSecondSection .bookingForm .service .focusBlueBorder {
-   border-color: var(--speedyBlue);
-   animation: focusedInput .4s linear;
-   animation-fill-mode: forwards;
+  border-color: var(--speedyBlue);
+  animation: focusedInput 0.4s linear;
+  animation-fill-mode: forwards;
 }
 
 .checkboxes {
-   position: absolute;
+  position: absolute;
 }
 
 #bookingSecondSection .bookingForm .addComments {
-   grid-area: 8 / 1 / span 1 / span 8;
+  grid-area: 8 / 1 / span 1 / span 8;
 }
 
 #bookingSecondSection .bookingForm .hideComments {
-   display: none;
+  display: none;
 }
 
 #bookingSecondSection .bookingForm .submitButton {
-   grid-area: 9 / 3 / span 1 / span 2;
-   padding: 1.25rem 0 1rem 0;
+  grid-area: 9 / 3 / span 1 / span 2;
+  padding: 1.25rem 0 1rem 0;
 }
 
 #bookingSecondSection .bookingForm .service .spanSixCol {
-   grid-column: span 3;
+  grid-column: span 3;
 }
 
 #bookingSecondSection .bookingForm .service .spanTwoCol {
-   grid-column: span 1;
+  grid-column: span 1;
 }
 
 #bookingSecondSection .bookingForm input,
 #bookingSecondSection .bookingForm select,
 #bookingSecondSection .bookingForm textarea {
-   border: 2px solid var(--speedyWhite);
-   border-radius: 2rem;
-   font-weight: 700;
-   width: -webkit-fill-available;
-   padding: 0.5rem 1.25rem;
-   margin: 0.5rem;
-   resize: none;
+  border: 2px solid var(--speedyWhite);
+  border-radius: 2rem;
+  font-weight: 700;
+  width: -webkit-fill-available;
+  padding: 0.5rem 1.25rem;
+  margin: 0.5rem;
+  resize: none;
 }
 
 #bookingSecondSection .bookingForm input:focus,
 #bookingSecondSection .bookingForm select:focus,
 #bookingSecondSection .bookingForm textarea:focus {
-   border-color: var(--speedyBlue);
-   animation: focusedInput .4s linear;
-   animation-fill-mode: forwards;
+  border-color: var(--speedyBlue);
+  animation: focusedInput 0.4s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes focusedInput {
-   0% {border-color: var(--speedyWhite);}
-   100% {border-color: var(--speedyBlue);}
+  0% {
+    border-color: var(--speedyWhite);
+  }
+  100% {
+    border-color: var(--speedyBlue);
+  }
 }
 
 /* It removes the default border when an input has focus */
 .bookingForm input:focus,
 .bookingForm select:focus,
 .bookingForm textarea:focus {
-    outline: none;
+  outline: none;
 }
 
 /* It removes the arrows inside the number inputs */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
 /* It removes the default background colour and text colour when autofilling */
 input:-webkit-autofill {
-   -webkit-box-shadow: 0 0 0 50px var(--speedyWhite) inset;
-   -webkit-text-fill-color: var(--speedyBlue);
+  -webkit-box-shadow: 0 0 0 50px var(--speedyWhite) inset;
+  -webkit-text-fill-color: var(--speedyBlue);
 }
 
 .contentInsideBox,
 .textInBox,
 .checkboxes,
 #submitButton {
-   cursor: pointer;
-   font-size: 0.9rem;
+  cursor: pointer;
+  font-size: 0.9rem;
 }
 
 #bookingSecondSection .bookingForm .submitButton #submitButton {
-   background-color: var(--speedyBlue);
-   border-color: var(--speedyBlue);
-   color: var(--speedyWhite);
-   font-size: 1.2rem;
-   padding: 0.4rem 1.25rem;
-   opacity: 0.9;
+  background-color: var(--speedyBlue);
+  border-color: var(--speedyBlue);
+  color: var(--speedyWhite);
+  font-size: 1.2rem;
+  padding: 0.4rem 1.25rem;
+  opacity: 0.9;
 }
 
 #bookingSecondSection .bookingForm .submitButton #submitButton:hover {
-   opacity: 1;
+  opacity: 1;
 }
 
 /* End of
 Booking Main */
+
+.grecaptcha-badge {
+  bottom: 80px !important;
+}
 
 /* End of
 Booking Page */

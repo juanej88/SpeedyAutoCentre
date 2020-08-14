@@ -1,3 +1,6 @@
+<?php
+require("send-email-php/recaptcha.php");
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -13,7 +16,7 @@
    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500;700;900&display=swap" rel="stylesheet">
    <script src="https://kit.fontawesome.com/cdd38ef8d8.js"></script>
    <link href="./css/style.css" type="text/css" rel="stylesheet" />
-   <script src="https://www.google.com/recaptcha/api.js"></script>
+   <script src="https://www.google.com/recaptcha/api.js?render=6LfXT74ZAAAAAP1dpPcxjBryqxydqlfl3FO4X06n"></script>
 </head>
 
 <body>
@@ -65,7 +68,8 @@
          <h1>Booking</h1>
          <h2>Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h2>
 
-         <form class="bookingForm" action="./send-email-php/send-email.php" method="POST">
+         <!-- <form class="bookingForm" action="./send-email-php/send-email.php" method="POST"> -->
+         <form class="bookingForm" action="./booking.php" method="POST">
             <span class="spanAllRow">Personal Details</span>
             <section class="fullName">
                <label for="fullName" class="blockText">Full Name</label>
@@ -191,16 +195,9 @@
             <section class="submitButton">
                <input id="submitButton" type="submit" name="submit" value="Submit Booking" />
             </section>
-            
+            <input id="gToken" type="hidden" name="g-token" />
          </form>
       </section>
-      </form>
-      <button class="g-recaptcha" 
-         data-sitekey="6LfXT74ZAAAAAP1dpPcxjBryqxydqlfl3FO4X06n" 
-         data-callback='onSubmit' 
-         data-action='submit'>Submit</button>
-
-      <a href="./send-email-php/send-email.php">SENDGRID Email!</a>
    </main>
 
    <footer id="websiteFooter">
@@ -234,9 +231,11 @@
    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
    <script defer src="./js/main.js" type="text/javascript"></script>
    <script>
-      function onSubmit(token) {
-         document.getElementById("demo-form").submit();
-      }
+      grecaptcha.ready(function() {
+         grecaptcha.execute('6LfXT74ZAAAAAP1dpPcxjBryqxydqlfl3FO4X06n', {action: 'homepage'}).then(function(token) {
+            document.getElementById('gToken').value = token;
+         });
+      });
    </script>
 </body>
 </html>
