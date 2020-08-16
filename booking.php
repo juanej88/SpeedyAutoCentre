@@ -1,4 +1,5 @@
 <?php
+require("forms-php/booking-form.php");
 // require("send-email-php/recaptcha.php");
 ?>
 <!DOCTYPE html>
@@ -84,17 +85,17 @@
                <input id="phoneNumber" type="tel" name="phone-number" minlength="8" maxlength="12" required />
             </section>
 
-            <span class="spanAllRow">Booking / Car Details</span>
+            <span class="spanAllRow">Booking Details</span>
             <section class="preferredDate">
                <label for="preferredDate" class="blockText">Preferred Date</label>
-               <input id="preferredDate" type="date" name="preferred-date" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" required />
+               <input id="preferredDate" type="date" name="preferred-date" min="<?= $min_date ?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" required />
             </section>
             <section class="preferredTime">
                <label for="preferredTime" class="blockText">Preferred Time</label>
                <select id="preferredTime" name="preferred-time">
-                  <option value="8-30am-12pm">Mon-Fri: 8:30am - 12:00pm</option>
-                  <option value="12pm-4pm">Mon-Fri: 12:00pm - 4:00pm</option>
-                  <option value="8-30am-12pm">Sat: 9:00am - 12:00pm</option>
+                  <option value="8:30am - 12:00pm">Mon-Fri: 8:30am - 12:00pm</option>
+                  <option value="12:00pm - 4:00pm">Mon-Fri: 12:00pm - 4:00pm</option>
+                  <option value="9:00am - 12:00pm">Sat: 9:00am - 12:00pm</option>
                </select>
             </section>
             <section class="rego">
@@ -144,42 +145,42 @@
             <section class="service">
                <span class="blockText spanSixCol">Service</span>
                <div class="spanTwoCol">
-                  <input id="bluePinkSlip" class="checkboxes" type="checkbox" name="service" value="blue-pink-slip" />
+                  <input id="bluePinkSlip" class="checkboxes" type="checkbox" name="service[]" value="Blue/Pink Slip" />
                   <label id="bluePinkSlipBox" for="bluePinkSlip" class="textInBox">Blue / Pink Slip</label>
                   <div id="bluePinkSlipCircle" class="checkCircle">
                      <div class="checkMark"></div>
                   </div>
                </div>
                <div class="spanTwoCol">
-                  <input id="engineService" class="checkboxes" type="checkbox" name="service" value="engine-service" />
+                  <input id="engineService" class="checkboxes" type="checkbox" name="service[]" value="General Maintenance" />
                   <label id="engineServiceBox" for="engineService" class="textInBox">General Maintenance</label>
                   <div id="engineServiceCircle" class="checkCircle">
                      <div class="checkMark"></div>
                   </div>
                </div>
                <div class="spanTwoCol">
-                  <input id="safetyInspections" class="checkboxes" type="checkbox" name="service" value="safety-inspection" />
+                  <input id="safetyInspections" class="checkboxes" type="checkbox" name="service[]" value="Safety Inspection" />
                   <label id="safetyInspectionsBox" for="safetyInspections" class="textInBox">Safety Inspections</label>
                   <div id="safetyInspectionsCircle" class="checkCircle">
                      <div class="checkMark"></div>
                   </div>
                </div>
                <div class="spanTwoCol">
-                  <input id="tyreBrakeService" class="checkboxes" type="checkbox" name="service" value="tyre-brake-service" />
+                  <input id="tyreBrakeService" class="checkboxes" type="checkbox" name="service[]" value="Tyre/Brake Service" />
                   <label id="tyreBrakeServiceBox" for="tyreBrakeService" class="textInBox">Tyre / Brake Service</label>
                   <div id="tyreBrakeServiceCircle" class="checkCircle">
                      <div class="checkMark"></div>
                   </div>
                </div>
                <div class="spanTwoCol">
-                  <input id="repairs" class="checkboxes" type="checkbox" name="service" value="repairs" />
+                  <input id="repairs" class="checkboxes" type="checkbox" name="service[]" value="Repairs" />
                   <label id="repairsBox" for="repairs" class="textInBox">Repairs</label>
                   <div id="repairsCircle" class="checkCircle">
                      <div class="checkMark"></div>
                   </div>
                </div>
                <div class="spanTwoCol">
-                  <input id="otherService" class="checkboxes" type="checkbox" name="service" value="other-service" />
+                  <input id="otherService" class="checkboxes" type="checkbox" name="service[]" value="Other Service/Comments" />
                   <label id="otherServiceBox" for="otherService" class="textInBox">Other / Add Comments</label>
                   <div id="otherServiceCircle" class="checkCircle">
                      <div class="checkMark"></div>
