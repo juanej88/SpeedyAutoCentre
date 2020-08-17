@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set("Australia/Sydney");
+
 function getMinDate() {
     $getDay = date("D");
 

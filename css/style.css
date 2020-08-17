@@ -680,30 +680,30 @@ Booking Main */
 
 #bookingSecondSection {
   width: 100%;
-  height: 130vh;
   color: var(--speedyBlue);
-  display: grid;
-  grid-template: repeat(10, 4fr) / 0.5fr 1.25fr 6.5fr 1.25fr 0.5fr;
 }
 
 #bookingSecondSection h1 {
+  width: 65%;
+  margin: 0 auto;
   text-align: center;
-  grid-area: 1 / 2 / span 1 / span 3;
   font-size: 2.75rem;
   font-weight: 900;
   padding: 1.5rem 0 1rem 0;
 }
 
 #bookingSecondSection h2 {
+  width: 65%;
+  margin: 0 auto;
   text-align: justify;
   font-size: 1.25rem;
   font-weight: 700;
-  grid-area: 2 / 3 / span 1 / span 1;
   padding: 0 0 1.5rem 0;
 }
 
 #bookingSecondSection .bookingForm {
-  grid-area: 3 / 3;
+  width: 65%;
+  margin: 0 auto;
   background-color: var(--speedyLightGrey);
   border-radius: 1rem;
   padding: 1rem 2rem;
@@ -711,12 +711,65 @@ Booking Main */
   grid-template-columns: repeat(6, 1fr);
 }
 
-#bookingSecondSection .bookingForm .spanAllRow {
+@media (max-width: 1250px) {
+  #bookingSecondSection h1 {
+    width: 75%;
+  }
+
+  #bookingSecondSection h2 {
+    width: 75%;
+  }
+
+  #bookingSecondSection .bookingForm {
+    width: 75%;
+  }
+}
+
+@media (max-width: 850px) {
+  #bookingSecondSection h1 {
+    width: 90%;
+  }
+
+  #bookingSecondSection h2 {
+    width: 90%;
+  }
+
+  #bookingSecondSection .bookingForm {
+    width: 90%;
+  }
+}
+
+.bigSpan {
   grid-column: span 6;
+}
+
+.mediumSpan {
+  grid-column: span 3;
+}
+
+.smallSpan {
+  grid-column: span 2;
+}
+
+@media (max-width: 1250px) {
+  .smallSpan {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 850px) {
+  .mediumSpan {
+    grid-column: span 6;
+  }
+  .smallSpan {
+    grid-column: span 6;
+  }
+}
+
+#bookingSecondSection .bookingForm .formTitles {
   font-size: 1.2rem;
   font-weight: 700;
   padding: 1rem 1.25rem 0 0.75rem;
-  margin: 0;
 }
 
 #bookingSecondSection .bookingForm section .blockText {
@@ -729,47 +782,7 @@ Booking Main */
   grid-column: span 2;
 }
 
-#bookingSecondSection .bookingForm .fullName {
-  grid-area: 2 / 1 / span 1 / span 6;
-}
-
-#bookingSecondSection .bookingForm .email {
-  grid-area: 3 / 1 / span 1 / span 3;
-}
-
-#bookingSecondSection .bookingForm .phoneNumber {
-  grid-area: 3 / 4 / span 1 / span 3;
-}
-
-#bookingSecondSection .bookingForm .preferredDate {
-  grid-area: 5 / 1 / span 1 / span 2;
-}
-
-#bookingSecondSection .bookingForm .preferredTime {
-  grid-area: 5 / 3 / span 1 / span 2;
-  align-self: start;
-  /* display: grid;
-   grid-template-columns: repeat(2, 1fr); */
-}
-
-#bookingSecondSection .bookingForm .rego {
-  grid-area: 5 / 5 / span 1 / span 2;
-}
-
-#bookingSecondSection .bookingForm .carYear {
-  grid-area: 6 / 1 / span 1 / span 2;
-}
-
-#bookingSecondSection .bookingForm .carMake {
-  grid-area: 6 / 3 / span 1 / span 2;
-}
-
-#bookingSecondSection .bookingForm .carModel {
-  grid-area: 6 / 5 / span 1 / span 2;
-}
-
 #bookingSecondSection .bookingForm .service {
-  grid-area: 7 / 1 / span 1 / span 8;
   align-self: start;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -846,7 +859,6 @@ Booking Main */
 }
 
 #bookingSecondSection .bookingForm .submitButton {
-  grid-area: 9 / 3 / span 1 / span 2;
   padding: 1.25rem 0 1rem 0;
 }
 

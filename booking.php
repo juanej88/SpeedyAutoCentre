@@ -68,42 +68,40 @@ require("forms-php/booking-form.php");
       <section id="bookingSecondSection">
          <h1>Booking</h1>
          <h2>Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h2>
-
-         <!-- <form class="bookingForm" action="./send-email-php/send-email.php" method="POST"> -->
          <form class="bookingForm" action="./booking.php" method="POST">
-            <span class="spanAllRow">Personal Details</span>
-            <section class="fullName">
+            <span class="formTitles bigSpan">Personal Details</span>
+            <section class="fullName bigSpan">
                <label for="fullName" class="blockText">Full Name</label>
                <input id="fullName" type="text" name="full-name" required />
             </section>
-            <section class="email">
+            <section class="email mediumSpan">
                <label for="email" class="blockText">Email</label>
                <input id="email" type="email" name="email" required />
             </section>
-            <section class="phoneNumber">
+            <section class="phoneNumber mediumSpan">
                <label for="phoneNumber" class="blockText">Phone Number</label>
                <input id="phoneNumber" type="tel" name="phone-number" minlength="8" maxlength="12" required />
             </section>
 
-            <span class="spanAllRow">Booking Details</span>
-            <section class="preferredDate">
+            <span class="formTitles bigSpan">Booking Details</span>
+            <section class="preferredDate smallSpan">
                <label for="preferredDate" class="blockText">Preferred Date</label>
-               <input id="preferredDate" type="date" name="preferred-date" min="<?= $min_date ?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" required />
+               <input id="preferredDate" type="date" name="preferred-date" min="<?=$min_date;?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" required />
             </section>
-            <section class="preferredTime">
+            <section class="preferredTime smallSpan">
                <label for="preferredTime" class="blockText">Preferred Time</label>
                <select id="preferredTime" name="preferred-time">
-                  <option value="8:30am - 12:00pm">Mon-Fri: 8:30am - 12:00pm</option>
-                  <option value="12:00pm - 4:00pm">Mon-Fri: 12:00pm - 4:00pm</option>
+                  <option value="8:30am - 12:00pm">8:30am - 12:00pm</option>
+                  <option value="12:00pm - 4:00pm">12:00pm - 4:00pm</option>
                   <option value="9:00am - 12:00pm">Sat: 9:00am - 12:00pm</option>
                </select>
             </section>
-            <section class="rego">
+            <section class="rego smallSpan">
                <label for="rego" class="blockText">Vehicle Registration Number</label>
                <input id="rego" type="text" name="car-rego" required />
             </section>
 
-            <section class="carYear">
+            <section class="carYear smallSpan">
                <label for="carYear" class="blockText">Year</label>
                <input id="carYear" list="carYears" name="car-year" required />
                <datalist id="carYears">
@@ -132,17 +130,17 @@ require("forms-php/booking-form.php");
                   <option value="Older than 2000"></option>
                </datalist>
             </section>
-            <section class="carMake">
+            <section class="carMake smallSpan">
                <label for="carMake" class="blockText">Make</label>
                <input id="carMake" type="text" name="car-make" required />
             </section>
-            <section class="carModel">
+            <section class="carModel smallSpan">
                <label for="carModel" class="blockText">Model</label>
                <label for=""></label>
                <input id="carModel" type="text" name="car-model" required />
             </section>
 
-            <section class="service">
+            <section class="service bigSpan">
                <span class="blockText spanSixCol">Service</span>
                <div class="spanTwoCol">
                   <input id="bluePinkSlip" class="checkboxes" type="checkbox" name="service[]" value="Blue/Pink Slip" />
@@ -193,7 +191,7 @@ require("forms-php/booking-form.php");
                <textarea id="addComments" name="comments" rows="4"></textarea>
             </section>
 
-            <section class="submitButton">
+            <section class="submitButton smallSpan">
                <input id="submitButton" type="submit" name="submit" value="Submit Booking" />
             </section>
             <input id="gToken" type="hidden" name="g-token" />
