@@ -26,6 +26,35 @@ website elements from scratch */
   --speedyRed: rgba(220, 50, 35, 1);
 }
 
+/* Typography */
+
+h1 {
+  font-size: 2.75rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  h1 {
+    font-size: 5.5rem;
+  }
+
+  h2 {
+    font-size: 5rem;
+  }
+
+  h3 {
+    font-size: 0.9rem;
+  }
+}
+
 /* Start of
 Header Section */
 
@@ -245,11 +274,6 @@ Home Page */
   top: -1.5rem;
 }
 
-.firstSentence h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
 .bookNowButton {
   font-size: 1.25rem;
   font-weight: 700;
@@ -307,7 +331,6 @@ Home Page */
 }
 
 #homeSecondSection h2 {
-  font-size: 2.5rem;
   font-weight: 900;
   text-align: center;
   padding-bottom: 1rem;
@@ -368,7 +391,6 @@ Home Page */
 }
 
 #homeThirdSection h2 {
-  font-size: 2.5rem;
   font-weight: 900;
   color: var(--speedyBlue);
   grid-area: 1 / 2 / span 1 / span 5;
@@ -641,7 +663,6 @@ Booking Main */
 
 #bookingFirstSection .bookingHeader {
   grid-area: 2 / 2;
-  font-size: 2.5rem;
   color: var(--speedyWhite);
   font-weight: 900;
   animation: showBookingHeader 0.25s linear;
@@ -673,7 +694,6 @@ Booking Main */
 
 #bookingFirstSection h2 {
   grid-area: 2 / 4;
-  font-size: 2.5rem;
   color: var(--speedyWhite);
   font-weight: 900;
 }
@@ -687,17 +707,14 @@ Booking Main */
   width: 65%;
   margin: 0 auto;
   text-align: center;
-  font-size: 2.75rem;
   font-weight: 900;
   padding: 1.5rem 0 1rem 0;
 }
 
-#bookingSecondSection h2 {
+#bookingSecondSection h3 {
   width: 65%;
   margin: 0 auto;
   text-align: justify;
-  font-size: 1.25rem;
-  font-weight: 700;
   padding: 0 0 1.5rem 0;
 }
 
@@ -712,30 +729,30 @@ Booking Main */
 }
 
 @media (max-width: 1250px) {
-  #bookingSecondSection h1 {
-    width: 75%;
-  }
-
-  #bookingSecondSection h2 {
-    width: 75%;
-  }
-
+  #bookingSecondSection h1,
+  #bookingSecondSection h3,
   #bookingSecondSection .bookingForm {
     width: 75%;
   }
 }
 
 @media (max-width: 850px) {
-  #bookingSecondSection h1 {
+  #bookingSecondSection h1,
+  #bookingSecondSection h3,
+  #bookingSecondSection .bookingForm {
     width: 90%;
   }
+}
 
-  #bookingSecondSection h2 {
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #bookingSecondSection h1,
+  #bookingSecondSection h3,
+  #bookingSecondSection .bookingForm {
     width: 90%;
   }
 
   #bookingSecondSection .bookingForm {
-    width: 90%;
+    width: 100%;
   }
 }
 
@@ -751,13 +768,22 @@ Booking Main */
   grid-column: span 2;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1100px) {
   .smallSpan {
     grid-column: span 3;
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 650px) {
+  .mediumSpan {
+    grid-column: span 6;
+  }
+  .smallSpan {
+    grid-column: span 6;
+  }
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .mediumSpan {
     grid-column: span 6;
   }
@@ -772,20 +798,13 @@ Booking Main */
   padding: 1rem 1.25rem 0 0.75rem;
 }
 
-#bookingSecondSection .bookingForm section .blockText {
+#bookingSecondSection .bookingForm section .blockText,
+#bookingSecondSection .bookingForm .blockText {
   display: block;
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.75rem 1.25rem 0 1.25rem;
   margin: 0 0.5rem;
-  /* This spans the PreferredTime span */
-  grid-column: span 2;
-}
-
-#bookingSecondSection .bookingForm .service {
-  align-self: start;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
 }
 
 .whiteInputBox {
@@ -797,7 +816,7 @@ Booking Main */
   margin: 0.5rem;
 }
 
-#bookingSecondSection .bookingForm .service .checkboxes {
+#bookingSecondSection .bookingForm .checkboxes {
   position: absolute;
   opacity: 0;
 }
@@ -836,11 +855,11 @@ Booking Main */
   top: 2px;
 }
 
-#bookingSecondSection .bookingForm .service .selectedBox {
+#bookingSecondSection .bookingForm .selectedBox {
   font-weight: 700;
 }
 
-#bookingSecondSection .bookingForm .service .focusBlueBorder {
+#bookingSecondSection .bookingForm .focusBlueBorder {
   border-color: var(--speedyBlue);
   animation: focusedInput 0.4s linear;
   animation-fill-mode: forwards;
@@ -850,36 +869,45 @@ Booking Main */
   position: absolute;
 }
 
-#bookingSecondSection .bookingForm .addComments {
-  grid-area: 8 / 1 / span 1 / span 8;
-}
-
 #bookingSecondSection .bookingForm .hideComments {
   display: none;
 }
 
 #bookingSecondSection .bookingForm .submitButton {
+  grid-column: 3 / 5;
   padding: 1.25rem 0 1rem 0;
 }
 
-#bookingSecondSection .bookingForm .service .spanSixCol {
-  grid-column: span 3;
+@media (max-width: 1100px) {
+  #bookingSecondSection .bookingForm .submitButton {
+    grid-column: 2 / 6;
+  }
 }
 
-#bookingSecondSection .bookingForm .service .spanTwoCol {
-  grid-column: span 1;
+@media (max-width: 650px) {
+  #bookingSecondSection .bookingForm .submitButton {
+    grid-column: 1 / 7;
+  }
 }
 
 #bookingSecondSection .bookingForm input,
 #bookingSecondSection .bookingForm select,
 #bookingSecondSection .bookingForm textarea {
   border: 2px solid var(--speedyWhite);
-  border-radius: 2rem;
+  border-radius: 2em;
   font-weight: 700;
   width: -webkit-fill-available;
-  padding: 0.5rem 1.25rem;
-  margin: 0.5rem;
+  padding: 0.5em 1.25em;
+  margin: 0.5em;
   resize: none;
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #bookingSecondSection .bookingForm input,
+  #bookingSecondSection .bookingForm select,
+  #bookingSecondSection .bookingForm textarea {
+    font-size: 2.75rem;
+  }
 }
 
 #bookingSecondSection .bookingForm input:focus,
@@ -914,7 +942,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* It removes the default background colour and text colour when autofilling */
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 50px var(--speedyWhite) inset;
+  -webkit-box-shadow: 0 0 0 2em var(--speedyWhite) inset;
   -webkit-text-fill-color: var(--speedyBlue);
 }
 
