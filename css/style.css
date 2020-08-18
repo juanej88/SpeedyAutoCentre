@@ -13,6 +13,12 @@ website elements from scratch */
   box-sizing: border-box;
 }
 
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  * {
+    font-size: 32px;
+  }
+}
+
 /* Colours used on the website */
 
 :root {
@@ -39,20 +45,6 @@ h2 {
 
 h3 {
   font-size: 1.25rem;
-}
-
-@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
-  h1 {
-    font-size: 5.5rem;
-  }
-
-  h2 {
-    font-size: 5rem;
-  }
-
-  h3 {
-    font-size: 0.9rem;
-  }
 }
 
 /* Start of
@@ -262,7 +254,7 @@ Home Page */
   height: 100vh;
   background-image: url(../images/background/homeBackground.jpg);
   background-size: cover;
-  background-position: 0% 80%;
+  background-position: 50% 80%;
   display: grid;
   grid-template: repeat(3, 1fr) / 5% 90% 5%;
 }
@@ -658,7 +650,7 @@ Booking Main */
   background-position: 50% 50%;
   background-attachment: fixed;
   display: grid;
-  grid-template: repeat(2, 1fr) / 0.5fr 4fr 3fr 4fr 0.5fr;
+  grid-template: repeat(2, 50%) / 5% repeat(3, 30%) 5%;
 }
 
 #bookingFirstSection .bookingHeader {
@@ -667,6 +659,35 @@ Booking Main */
   font-weight: 900;
   animation: showBookingHeader 0.25s linear;
   animation-fill-mode: forwards;
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #bookingFirstSection {
+    background-size: auto;
+    background-attachment: scroll;
+    background-position: 50% 0%;
+    grid-template: repeat(2, 50%) / 5% repeat(2, 45%) 5%;
+    height: 36vh;
+  }
+
+  #bookingFirstSection .bookingHeader {
+    visibility: hidden;
+  }
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  #bookingFirstSection {
+    background-size: cover;
+    height: 68vh;
+    background-position: 50% 10%;
+  }
+
+  #bookingFirstSection .bookingHeader {
+    position: relative;
+    top: 0.5em;
+    font-size: 2rem;
+    visibility: visible;
+  }
 }
 
 @keyframes showBookingHeader {
@@ -722,21 +743,13 @@ Booking Main */
   width: 65%;
   margin: 0 auto;
   background-color: var(--speedyLightGrey);
-  border-radius: 1rem;
-  padding: 1rem 2rem;
+  border-radius: 1em;
+  padding: 1em 2em;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
 }
 
-@media (max-width: 1250px) {
-  #bookingSecondSection h1,
-  #bookingSecondSection h3,
-  #bookingSecondSection .bookingForm {
-    width: 75%;
-  }
-}
-
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
   #bookingSecondSection h1,
   #bookingSecondSection h3,
   #bookingSecondSection .bookingForm {
@@ -746,13 +759,13 @@ Booking Main */
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   #bookingSecondSection h1,
-  #bookingSecondSection h3,
-  #bookingSecondSection .bookingForm {
+  #bookingSecondSection h3 {
     width: 90%;
   }
 
   #bookingSecondSection .bookingForm {
     width: 100%;
+    border-radius: 0;
   }
 }
 
@@ -768,7 +781,7 @@ Booking Main */
   grid-column: span 2;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1250px) {
   .smallSpan {
     grid-column: span 3;
   }
@@ -793,7 +806,7 @@ Booking Main */
 }
 
 #bookingSecondSection .bookingForm .formTitles {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
   padding: 1rem 1.25rem 0 0.75rem;
 }
@@ -825,18 +838,18 @@ Booking Main */
   display: block;
   background-color: var(--speedyWhite);
   border: 2px solid var(--speedyWhite);
-  border-radius: 2rem;
-  padding: 0.65rem 1rem 0.55rem 2.75rem;
-  margin: 0.5rem;
+  border-radius: 2em;
+  padding: 0.5em 1em 0.5em 2.75em;
+  margin: 0.5em;
 }
 
 .checkCircle {
   position: relative;
-  top: -38px;
-  left: 22px;
-  height: 1.25rem;
-  width: 1.25rem;
-  border: 1px solid var(--speedyBlue);
+  top: -2.37em;
+  left: 1.37em;
+  height: 1.25em;
+  width: 1.25em;
+  border: 0.0625em solid var(--speedyBlue);
   border-radius: 50%;
 }
 
@@ -845,14 +858,33 @@ Booking Main */
 }
 
 .checkMark {
-  height: 12px;
-  width: 6px;
-  border-right: 2px solid var(--speedyWhite);
-  border-bottom: 2px solid var(--speedyWhite);
+  height: 0.75em;
+  width: 0.35em;
+  border-right: 0.125em solid var(--speedyWhite);
+  border-bottom: 0.125em solid var(--speedyWhite);
   transform: rotate(40deg);
   position: absolute;
-  left: 6px;
-  top: 2px;
+  left: 0.375em;
+  top: 0.125em;
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .textInBox {
+    font-size: 1.25rem;
+  }
+
+  .checkCircle {
+    top: -2.7em;
+    left: 1.75em;
+    height: 1.25em;
+    width: 1.25em;
+  }
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .checkCircle {
+    top: -2.65em;
+  }
 }
 
 #bookingSecondSection .bookingForm .selectedBox {
@@ -890,6 +922,12 @@ Booking Main */
   }
 }
 
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #bookingSecondSection .bookingForm .submitButton {
+    grid-column: 1 / 7;
+  }
+}
+
 #bookingSecondSection .bookingForm input,
 #bookingSecondSection .bookingForm select,
 #bookingSecondSection .bookingForm textarea {
@@ -902,11 +940,19 @@ Booking Main */
   resize: none;
 }
 
-@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   #bookingSecondSection .bookingForm input,
   #bookingSecondSection .bookingForm select,
   #bookingSecondSection .bookingForm textarea {
-    font-size: 2.75rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  #bookingSecondSection .bookingForm input,
+  #bookingSecondSection .bookingForm select,
+  #bookingSecondSection .bookingForm textarea {
+    font-size: 1.5rem;
   }
 }
 
@@ -951,16 +997,21 @@ input:-webkit-autofill {
 .checkboxes,
 #submitButton {
   cursor: pointer;
-  font-size: 0.9rem;
 }
 
 #bookingSecondSection .bookingForm .submitButton #submitButton {
   background-color: var(--speedyBlue);
   border-color: var(--speedyBlue);
   color: var(--speedyWhite);
-  font-size: 1.2rem;
-  padding: 0.4rem 1.25rem;
+  font-size: 1.25rem;
+  padding: 0.315em;
   opacity: 0.9;
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #bookingSecondSection .bookingForm .submitButton #submitButton {
+    font-size: 1.5rem;
+  }
 }
 
 #bookingSecondSection .bookingForm .submitButton #submitButton:hover {
