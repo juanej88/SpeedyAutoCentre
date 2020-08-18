@@ -22,7 +22,7 @@ require("forms-php/booking-form.php");
 
 <body>
    <header id="bookingHeader" class="hideBookingNav">
-      <div id="logo">
+      <div class="logoContainer">
          <img class="navLogo bigLogo" src="./images/logo/logo_Speedy.png" alt="Speedy Auto Centre's Logo">
       </div>
       <nav>
@@ -30,33 +30,44 @@ require("forms-php/booking-form.php");
             <li><a  class="navLinks" href="./index.php">Home</a></li>
             <li><a  class="navLinks" href="./aboutus.html">About Us</a></li>
             <li><a  class="navLinks" href="./services.html">Services</a></li>
-            <li><a  class="navLinks" href="./booking.php">Booking</a></li>
+            <li><a  class="navLinks currentPage" href="./booking.php">Booking</a></li>
             <li><a  class="navLinks" href="./contact.html">Contact</a></li>
+            <li>
+               <a href="#">
+                  <i id="phoneIcon" class="infoIcons fas fa-phone-alt">
+                     <!-- <div id="getPhone" class="infoBox hideInformation">
+                        <div class="arrowUp"></div>
+                        <h3>Working Hours</h3>
+                        <p>Monday-Friday:</p>
+                        <p>8:00am - 5:00pm</p>
+                        <p>Saturday:</p>
+                        <p>By Appointment Only</p>
+                        <p>Sunday:</p>
+                        <p class="closedToday">Closed</p>
+                        <a id="callUsButton" href="tel:0296821772">Call - 02 9682 1772</a>
+                     </div> -->
+                  </i>
+               </a>
+            </li>
+            <li>
+               <a class="lastIcon" href="#">
+                  <i id="locationIcon" class="infoIcons fas fa-map-marker-alt">
+                     <!-- <div id="getLocation" class="infoBox hideInformation">
+                        <div class="arrowUp"></div>
+                        <h3>Location</h3>
+                        <p>171 Clyde St</p>
+                        <p>South Granville NSW 2142</p>
+                        <a id="getDirectionsButton" href="https://maps.google.com/maps?ll=-33.847435,151.013035&z=16&t=m&hl=en&gl=AU&mapclient=embed&cid=6736138543682432416" target="_blank">Get Directions</a>
+                     </div> -->
+                  </i>
+               </a>
+            </li>
          </ul>
       </nav>
-      <div id="getMoreInfo">
-         <i id="phoneIcon" class="infoIcons fas fa-phone-alt">
-            <div id="getPhone" class="infoBox hideInformation">
-               <div class="arrowUp"></div>
-               <h3>Working Hours</h3>
-               <p>Monday-Friday:</p>
-               <p>8:00am - 5:00pm</p>
-               <p>Saturday:</p>
-               <p>By Appointment Only</p>
-               <p>Sunday:</p>
-               <p class="closedToday">Closed</p>
-               <a id="callUsButton" href="tel:0296821772">Call - 02 9682 1772</a>
-            </div>
-         </i>
-         <i id="locationIcon" class="infoIcons fas fa-map-marker-alt">
-            <div id="getLocation" class="infoBox hideInformation">
-               <div class="arrowUp"></div>
-               <h3>Location</h3>
-               <p>171 Clyde St</p>
-               <p>South Granville NSW 2142</p>
-               <a id="getDirectionsButton" href="https://maps.google.com/maps?ll=-33.847435,151.013035&z=16&t=m&hl=en&gl=AU&mapclient=embed&cid=6736138543682432416" target="_blank">Get Directions</a>
-            </div>
-         </i>
+      <div class="menuBars">
+         <div class="barLines firstLine"></div>
+         <div class="barLines secondLine"></div>
+         <div class="barLines thirdLine"></div>
       </div>
    </header>
 
