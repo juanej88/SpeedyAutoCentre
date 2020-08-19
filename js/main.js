@@ -127,7 +127,7 @@ const bookingheaderAnimation = () => {
   $(window).scroll(() => {
     const $windowPosition = $(window).scrollTop();
     let $windowSection = $(window).height();
-    let bookingHeight = $windowSection * 0.1;
+    let bookingHeight = $windowSection * 0.06;
 
     if ($windowPosition < bookingHeight) {
       $(".bookingHeader").removeClass("hideBookingHeader");

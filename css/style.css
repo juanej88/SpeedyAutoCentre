@@ -12,6 +12,10 @@
   list-style: none;
   color: inherit;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
 }
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -29,7 +33,7 @@
   --speedyWhite: hsl(0, 0%, 100%, 1);
   --speedyDarkGrey: rgba(30, 30, 30, 1);
   --speedyGrey: rgba(120, 120, 120, 1);
-  --speedyLightGrey: hsla(210, 10%, 95%, 1);
+  --speedyLightGrey: hsla(210, 0%, 95%, 1);
   --speedyLightGrey2: hsla(210, 0%, 80%, 1);
   --speedyYellow: hsla(45, 100%, 50%, 1);
   --speedyRed: rgba(220, 50, 35, 1);
@@ -126,6 +130,7 @@ nav {
 
   nav {
     grid-area: 2 / 3;
+    visibility: hidden;
   }
 }
 
@@ -863,7 +868,10 @@ Booking Main */
   }
 
   #bookingFirstSection .bookingHeader {
-    visibility: hidden;
+    /* visibility: hidden; */
+    font-size: 1.5rem;
+    position: relative;
+    top: -0.25em;
   }
 }
 
@@ -914,10 +922,11 @@ Booking Main */
 #bookingSecondSection {
   width: 100%;
   color: var(--speedyBlue);
+  background-color: var(--speedyLightGrey);
 }
 
 #bookingSecondSection h1 {
-  width: 65%;
+  width: 60%;
   margin: 0 auto;
   text-align: center;
   font-weight: 900;
@@ -925,7 +934,7 @@ Booking Main */
 }
 
 #bookingSecondSection h3 {
-  width: 65%;
+  width: 60%;
   margin: 0 auto;
   text-align: justify;
   padding: 0 0 1.5rem 0;
@@ -934,9 +943,7 @@ Booking Main */
 #bookingSecondSection .bookingForm {
   width: 65%;
   margin: 0 auto;
-  background-color: var(--speedyLightGrey);
-  border-radius: 1em;
-  padding: 1em 2em;
+  padding: 0 1em 3em 1em;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
 }
@@ -1027,6 +1034,7 @@ Booking Main */
 }
 
 .textInBox {
+  height: 2.5em;
   display: block;
   background-color: var(--speedyWhite);
   border: 2px solid var(--speedyWhite);
@@ -1043,6 +1051,10 @@ Booking Main */
   width: 1.25em;
   border: 0.0625em solid var(--speedyBlue);
   border-radius: 50%;
+}
+
+.checkCircle:hover {
+  cursor: pointer;
 }
 
 .checkCircle.selectedCircle {
@@ -1066,7 +1078,7 @@ Booking Main */
   }
 
   .checkCircle {
-    top: -2.7em;
+    top: -2.8em;
     left: 1.75em;
     height: 1.25em;
     width: 1.25em;
@@ -1120,16 +1132,21 @@ Booking Main */
   }
 }
 
+#bookingSecondSection .bookingForm #preferredDate {
+  height: 2.5em;
+}
+
 #bookingSecondSection .bookingForm input,
 #bookingSecondSection .bookingForm select,
 #bookingSecondSection .bookingForm textarea {
-  border: 2px solid var(--speedyWhite);
+  border: 0.125em solid var(--speedyWhite);
   border-radius: 2em;
   font-weight: 700;
   width: -webkit-fill-available;
   padding: 0.5em 1.25em;
   margin: 0.5em;
   resize: none;
+  background-color: var(--speedyWhite);
 }
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -1163,19 +1180,6 @@ Booking Main */
   100% {
     border-color: var(--speedyBlue);
   }
-}
-
-/* It removes the default border when an input has focus */
-.bookingForm input:focus,
-.bookingForm select:focus,
-.bookingForm textarea:focus {
-  outline: none;
-}
-
-/* It removes the arrows inside the number inputs */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
 }
 
 /* It removes the default background colour and text colour when autofilling */
