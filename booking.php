@@ -64,7 +64,7 @@ require("forms-php/booking-form.php");
             </li>
          </ul>
       </nav>
-      <div class="menuBars">
+      <div class="menuBars open">
          <div class="barLines firstLine"></div>
          <div class="barLines secondLine"></div>
          <div class="barLines thirdLine"></div>

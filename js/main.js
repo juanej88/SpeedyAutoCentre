@@ -28,6 +28,34 @@ const navAnimation = () => {
 
 navAnimation();
 
+const animateMenuIcon = () => {
+  $(".menuBars").on("click", () => {
+    if ($(".menuBars").hasClass("open")) {
+      $(".menuBars").removeClass("open");
+      $(".menuBars").addClass("rotateBarsOpen");
+      $(".firstLine").addClass("firstLineOpen");
+      $(".secondLine").addClass("secondLineOpen");
+      $(".thirdLine").addClass("thirdLineOpen");
+      $(".menuBars").removeClass("rotateBarsClose");
+      $(".firstLine").removeClass("firstLineClose");
+      $(".secondLine").removeClass("secondLineClose");
+      $(".thirdLine").removeClass("thirdLineClose");
+    } else {
+      $(".menuBars").addClass("open");
+      $(".menuBars").removeClass("rotateBarsOpen");
+      $(".firstLine").removeClass("firstLineOpen");
+      $(".secondLine").removeClass("secondLineOpen");
+      $(".thirdLine").removeClass("thirdLineOpen");
+      $(".menuBars").addClass("rotateBarsClose");
+      $(".firstLine").addClass("firstLineClose");
+      $(".secondLine").addClass("secondLineClose");
+      $(".thirdLine").addClass("thirdLineClose");
+    }
+  });
+};
+
+animateMenuIcon();
+
 //This function shows and hides the phone and location information displayed
 //when hovering the respective nav icons.
 
@@ -216,22 +244,3 @@ const hideComments = () => {
 };
 
 hideComments();
-
-let app = [
-  { first: "AFT", second: "More information" },
-  { first: "AFT", second: "More, more information" },
-  { first: "CAP", second: "Other information" },
-];
-
-console.log(app);
-
-let control;
-
-for (let i = 0; i < app.length; i++) {
-  if (app[i].first !== control) {
-    console.log(app[i].first);
-    control = app[i].first;
-  }
-
-  console.log(app[i].second);
-}

@@ -117,6 +117,18 @@ nav {
   align-self: center;
 }
 
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .navLogo {
+    position: relative;
+    height: 6.6rem;
+    padding-top: 0;
+  }
+
+  nav {
+    grid-area: 2 / 3;
+  }
+}
+
 nav ul {
   display: flex;
   justify-content: flex-end;
@@ -251,12 +263,11 @@ nav .currentPage:focus {
     ================================================= */
 
 header .menuBars {
-  /* visibility: visible; */
   visibility: hidden;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2.75rem;
+  width: 2.75rem;
   border-radius: 50%;
-  background: green;
+  margin: 0.75rem 0;
 }
 
 header .barLines {
@@ -269,25 +280,151 @@ header .barLines {
 .firstLine {
   width: 1.5rem;
   position: relative;
-  top: 18px;
+  top: 22px;
 }
 
 .secondLine {
   width: 2rem;
   position: relative;
-  top: 33px;
+  top: 37px;
 }
 
 .thirdLine {
   width: 1.5rem;
   position: relative;
-  top: 48px;
+  top: 52px;
 }
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   header .menuBars {
     visibility: visible;
     grid-column: 3;
+  }
+
+  header .rotateBarsOpen {
+    animation: rotateBarsOpen linear 0.2s forwards;
+  }
+
+  @keyframes rotateBarsOpen {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(135deg);
+    }
+  }
+
+  header .rotateBarsClose {
+    animation: rotateBarsClose linear 0.2s forwards;
+  }
+
+  @keyframes rotateBarsClose {
+    0% {
+      transform: rotate(135deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  header .firstLineOpen {
+    animation: firstLineOpen linear 0.2s forwards;
+  }
+
+  @keyframes firstLineOpen {
+    0% {
+      top: 22px;
+    }
+    50% {
+      top: 42px;
+    }
+    100% {
+      top: 42px;
+    }
+  }
+
+  .secondLineOpen {
+    animation: secondLineOpen linear 0.2s forwards;
+  }
+
+  @keyframes secondLineOpen {
+    0% {
+      width: 2rem;
+    }
+    50% {
+      width: 1.5rem;
+    }
+    100% {
+      width: 1.5rem;
+    }
+  }
+
+  .thirdLineOpen {
+    animation: thirdLineOpen linear 0.2s forwards;
+  }
+
+  @keyframes thirdLineOpen {
+    0% {
+      top: 52px;
+    }
+    50% {
+      top: 32px;
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 32px;
+      transform: rotate(90deg);
+    }
+  }
+
+  .firstLineClose {
+    animation: firstLineClose linear 0.2s forwards;
+  }
+
+  @keyframes firstLineClose {
+    0% {
+      top: 42px;
+    }
+    50% {
+      top: 42px;
+    }
+    100% {
+      top: 22px;
+    }
+  }
+
+  .secondLineClose {
+    animation: secondLineClose linear 0.2s forwards;
+  }
+
+  @keyframes secondLineClose {
+    0% {
+      width: 1.5rem;
+    }
+    50% {
+      width: 1.5rem;
+    }
+    100% {
+      width: 2rem;
+    }
+  }
+
+  .thirdLineClose {
+    animation: thirdLineClose linear 0.2s forwards;
+  }
+
+  @keyframes thirdLineClose {
+    0% {
+      top: 32px;
+      transform: rotate(90deg);
+    }
+    50% {
+      top: 32px;
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 52px;
+    }
   }
 }
 
