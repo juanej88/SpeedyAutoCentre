@@ -163,7 +163,7 @@ nav a.lastIcon {
   }
 
   nav.slideIn {
-    animation: slideIn linear 0.2s forwards;
+    animation: slideIn linear 0.1s forwards;
   }
 
   @keyframes slideIn {
@@ -176,7 +176,7 @@ nav a.lastIcon {
   }
 
   nav.slideOut {
-    animation: slideOut linear 0.2s forwards;
+    animation: slideOut linear 0.1s forwards;
   }
 
   @keyframes slideOut {
@@ -398,7 +398,7 @@ header .barLines {
   }
 
   header .rotateBarsOpen {
-    animation: rotateBarsOpen linear 0.2s forwards;
+    animation: rotateBarsOpen linear 0.15s forwards;
   }
 
   @keyframes rotateBarsOpen {
@@ -411,7 +411,7 @@ header .barLines {
   }
 
   header .rotateBarsClose {
-    animation: rotateBarsClose linear 0.2s forwards;
+    animation: rotateBarsClose linear 0.15s forwards;
   }
 
   @keyframes rotateBarsClose {
@@ -424,7 +424,7 @@ header .barLines {
   }
 
   .firstLineOpen {
-    animation: firstLineOpen linear 0.2s forwards;
+    animation: firstLineOpen linear 0.15s forwards;
   }
 
   @keyframes firstLineOpen {
@@ -440,7 +440,7 @@ header .barLines {
   }
 
   .thirdLineOpen {
-    animation: thirdLineOpen linear 0.2s forwards;
+    animation: thirdLineOpen linear 0.15s forwards;
   }
 
   @keyframes thirdLineOpen {
@@ -458,7 +458,7 @@ header .barLines {
   }
 
   .firstLineClose {
-    animation: firstLineClose linear 0.2s forwards;
+    animation: firstLineClose linear 0.15s forwards;
   }
 
   @keyframes firstLineClose {
@@ -474,7 +474,7 @@ header .barLines {
   }
 
   .thirdLineClose {
-    animation: thirdLineClose linear 0.2s forwards;
+    animation: thirdLineClose linear 0.15s forwards;
   }
 
   @keyframes thirdLineClose {
@@ -856,8 +856,9 @@ footer #createdBy a {
     Start of Booking Page
     ================================================= */
 
-/* Start of
-Booking Header */
+/*  =================================================
+    Start of Booking Header
+    ================================================= */
 
 #bookingHeader {
   color: var(--speedyWhite);
@@ -891,11 +892,13 @@ Booking Header */
   }
 }
 
-/* End of
-Booking Header */
+/*  =================================================
+    End of Booking Header
+    ================================================= */
 
-/* Start of
-Booking Main */
+/*  =================================================
+    Start of Booking Main
+    ================================================= */
 
 #bookingFirstSection {
   width: 100%;
@@ -1007,7 +1010,7 @@ Booking Main */
   grid-template-columns: repeat(6, 1fr);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 850px) {
   #bookingSecondSection h1,
   #bookingSecondSection h3,
   #bookingSecondSection .bookingForm {
@@ -1041,7 +1044,7 @@ Booking Main */
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
   .mediumSpan {
     grid-column: span 6;
   }
@@ -1092,7 +1095,7 @@ Booking Main */
   height: 2.5em;
   display: block;
   background-color: var(--speedyWhite);
-  border: 2px solid var(--speedyWhite);
+  border: 0.125em solid var(--speedyWhite);
   border-radius: 2em;
   padding: 0.5em 1em 0.5em 2.75em;
   margin: 0.5em;
@@ -1100,8 +1103,8 @@ Booking Main */
 
 .checkCircle {
   position: relative;
-  top: -2.37em;
-  left: 1.37em;
+  top: -1.25em;
+  left: -2em;
   height: 1.25em;
   width: 1.25em;
   border: 0.0625em solid var(--speedyBlue);
@@ -1127,22 +1130,34 @@ Booking Main */
   top: 0.125em;
 }
 
-@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .textInBox {
     font-size: 1.25rem;
   }
 
   .checkCircle {
-    top: -2.8em;
-    left: 1.75em;
-    height: 1.25em;
-    width: 1.25em;
+    top: -1.5em;
+    left: -2.5em;
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+  .checkMark {
+    height: 0.95em;
+    width: 0.45em;
+    left: 0.45em;
+  }
+
+  #bookingSecondSection .bookingForm .textInBox:hover {
+    border-color: var(--speedyBlue);
+    animation: focusedInput 0.4s linear;
+    animation-fill-mode: forwards;
   }
 }
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .checkCircle {
-    top: -2.65em;
+    top: -1.65em;
   }
 }
 
@@ -1202,6 +1217,7 @@ Booking Main */
   margin: 0.5em;
   resize: none;
   background-color: var(--speedyWhite);
+  caret-color: var(--speedyBlue);
 }
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {

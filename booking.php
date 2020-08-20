@@ -188,45 +188,58 @@ require("forms-php/booking-form.php");
             <span class="blockText bigSpan">Service</span>
             <section class="smallSpan">
                <input id="bluePinkSlip" class="checkboxes" type="checkbox" name="service[]" value="Blue/Pink Slip" />
-               <label id="bluePinkSlipBox" for="bluePinkSlip" class="textInBox">Blue / Pink Slip</label>
-               <div id="bluePinkSlipCircle" class="checkCircle">
-                  <div class="checkMark"></div>
-               </div>
+               <label id="bluePinkSlipBox" for="bluePinkSlip" class="textInBox">
+                  Blue / Pink Slip
+                  <div id="bluePinkSlipCircle" class="checkCircle">
+                     <div class="checkMark"></div>
+                  </div>
+               </label>
             </section>
             <section class="smallSpan">
                <input id="engineService" class="checkboxes" type="checkbox" name="service[]" value="General Maintenance" />
-               <label id="engineServiceBox" for="engineService" class="textInBox">General Maintenance</label>
-               <div id="engineServiceCircle" class="checkCircle">
-                  <div class="checkMark"></div>
-               </div>
+               <label id="engineServiceBox" for="engineService" class="textInBox">
+                  General Maintenance
+                  <div id="engineServiceCircle" class="checkCircle">
+                     <div class="checkMark"></div>
+                  </div>
+               </label>
             </section>
             <section class="smallSpan">
                <input id="safetyInspections" class="checkboxes" type="checkbox" name="service[]" value="Safety Inspection" />
-               <label id="safetyInspectionsBox" for="safetyInspections" class="textInBox">Safety Inspections</label>
-               <div id="safetyInspectionsCircle" class="checkCircle">
-                  <div class="checkMark"></div>
-               </div>
+               <label id="safetyInspectionsBox" for="safetyInspections" class="textInBox">
+                  Safety Inspections
+                  <div id="safetyInspectionsCircle" class="checkCircle">
+                     <div class="checkMark"></div>
+                  </div>
+               </label>
+               
             </section>
             <section class="smallSpan">
                <input id="tyreBrakeService" class="checkboxes" type="checkbox" name="service[]" value="Tyre/Brake Service" />
-               <label id="tyreBrakeServiceBox" for="tyreBrakeService" class="textInBox">Tyre / Brake Service</label>
-               <div id="tyreBrakeServiceCircle" class="checkCircle">
-                  <div class="checkMark"></div>
-               </div>
+               <label id="tyreBrakeServiceBox" for="tyreBrakeService" class="textInBox">
+                  Tyre / Brake Service
+                  <div id="tyreBrakeServiceCircle" class="checkCircle">
+                     <div class="checkMark"></div>
+                  </div>
+               </label>
             </section>
             <section class="smallSpan">
                <input id="repairs" class="checkboxes" type="checkbox" name="service[]" value="Repairs" />
-               <label id="repairsBox" for="repairs" class="textInBox">Repairs</label>
-               <div id="repairsCircle" class="checkCircle">
-                  <div class="checkMark"></div>
-               </div>
+               <label id="repairsBox" for="repairs" class="textInBox">
+                  Repairs
+                  <div id="repairsCircle" class="checkCircle">
+                     <div class="checkMark"></div>
+                  </div>
+               </label>
             </section>
             <section class="smallSpan">
                <input id="otherService" class="checkboxes" type="checkbox" name="service[]" value="Other Service/Comments" />
-               <label id="otherServiceBox" for="otherService" class="textInBox">Other / Add Comments</label>
-               <div id="otherServiceCircle" class="checkCircle">
-                  <div class="checkMark"></div>
-               </div>
+               <label id="otherServiceBox" for="otherService" class="textInBox">
+                  Other / Add Comments
+                  <div id="otherServiceCircle" class="checkCircle">
+                     <div class="checkMark"></div>
+                  </div>
+               </label>
             </section>
 
             <section class="addComments hideComments bigSpan">
