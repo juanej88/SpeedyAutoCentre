@@ -21,11 +21,46 @@
       </div>
       <nav>
          <ul>
-            <li><a  class="navLinks currentPage" href="./index.php">Home</a></li>
-            <li><a  class="navLinks" href="./aboutus.html">About Us</a></li>
-            <li><a  class="navLinks" href="./services.html">Services</a></li>
-            <li><a  class="navLinks" href="./booking.php">Booking</a></li>
-            <li><a  class="navLinks" href="./contact.html">Contact</a></li>
+            <li class="homeLink">
+               <a class="navLinks currentPage" href="./index.php">
+                  Home
+                  <div class="menuArrowContainer">
+                     <div class="menuArrow"></div>
+                  </div>
+               </a>
+            </li>
+            <li>
+               <a class="navLinks" href="./aboutus.html">
+                  About Us
+                  <div class="menuArrowContainer">
+                     <div class="menuArrow"></div>
+                  </div>
+               </a>
+            </li>
+            <li>
+               <a class="navLinks" href="./services.html">
+                  Services
+                  <div class="menuArrowContainer">
+                     <div class="menuArrow"></div>
+                  </div>
+               </a>
+            </li>
+            <li>
+               <a class="navLinks" href="./booking.php">
+               Booking
+               <div class="menuArrowContainer">
+                  <div class="menuArrow"></div>
+               </div>
+               </a>
+            </li>
+            <li>
+               <a class="navLinks" href="./contact.html">
+                  Contact
+                  <div class="menuArrowContainer">
+                     <div class="menuArrow"></div>
+                  </div>
+               </a>
+            </li>
             <li>
                <a href="#">
                   <i id="phoneIcon" class="infoIcons fas fa-phone-alt">
@@ -58,7 +93,7 @@
             </li>
          </ul>
       </nav>
-      <div class="menuBars close">
+      <div class="menuBars open">
          <div class="barLines firstLine"></div>
          <div class="barLines secondLine"></div>
          <div class="barLines thirdLine"></div>
@@ -84,7 +119,7 @@
          <div class="verticalImage"></div>
       </section>
 
-      <section id="homeThirdSection">
+      <!-- <section id="homeThirdSection">
          <h2>What our clients say</h2>
          <div id="firstComment" class="comments">
             <img class="profileImage" src="./images/profile/profile1.png" alt="Profile Image 1">
@@ -125,7 +160,7 @@
             <p>Excellent customer service and also my car service was great!</p>
             <h4>Gaston Gonzalez</h4>
          </div>
-      </section>
+      </section> -->
    </main>
 
    <footer id="websiteFooter">

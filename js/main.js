@@ -32,20 +32,24 @@ const animateMenuIcon = () => {
   $(".menuBars").on("click", () => {
     if ($(".menuBars").hasClass("open")) {
       $(".menuBars").removeClass("open");
+      $("nav").addClass("slideIn");
       $(".menuBars").addClass("rotateBarsOpen");
       $(".firstLine").addClass("firstLineOpen");
       $(".secondLine").addClass("secondLineOpen");
       $(".thirdLine").addClass("thirdLineOpen");
+      $("nav").removeClass("slideOut");
       $(".menuBars").removeClass("rotateBarsClose");
       $(".firstLine").removeClass("firstLineClose");
       $(".secondLine").removeClass("secondLineClose");
       $(".thirdLine").removeClass("thirdLineClose");
     } else {
       $(".menuBars").addClass("open");
+      $("nav").removeClass("slideIn");
       $(".menuBars").removeClass("rotateBarsOpen");
       $(".firstLine").removeClass("firstLineOpen");
       $(".secondLine").removeClass("secondLineOpen");
       $(".thirdLine").removeClass("thirdLineOpen");
+      $("nav").addClass("slideOut");
       $(".menuBars").addClass("rotateBarsClose");
       $(".firstLine").addClass("firstLineClose");
       $(".secondLine").addClass("secondLineClose");

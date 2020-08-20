@@ -19,7 +19,6 @@ require("forms-php/booking-form.php");
    <link href="./css/style.css" type="text/css" rel="stylesheet" />
    <script src="https://www.google.com/recaptcha/api.js?render=6LfXT74ZAAAAAP1dpPcxjBryqxydqlfl3FO4X06n"></script>
 </head>
-
 <body>
    <header id="bookingHeader" class="hideBookingNav">
       <div class="logoContainer">
@@ -27,11 +26,46 @@ require("forms-php/booking-form.php");
       </div>
       <nav>
          <ul>
-            <li><a  class="navLinks" href="./index.php">Home</a></li>
-            <li><a  class="navLinks" href="./aboutus.html">About Us</a></li>
-            <li><a  class="navLinks" href="./services.html">Services</a></li>
-            <li><a  class="navLinks currentPage" href="./booking.php">Booking</a></li>
-            <li><a  class="navLinks" href="./contact.html">Contact</a></li>
+            <li class="homeLink">
+               <a class="navLinks" href="./index.php">
+                  Home
+                  <div class="menuArrowContainer">
+                     <div class="menuArrow"></div>
+                  </div>
+               </a>
+            </li>
+            <li>
+               <a class="navLinks" href="./aboutus.html">
+                  About Us
+                  <div class="menuArrowContainer">
+                     <div class="menuArrow"></div>
+                  </div>
+               </a>
+            </li>
+            <li>
+               <a class="navLinks" href="./services.html">
+                  Services
+                  <div class="menuArrowContainer">
+                     <div class="menuArrow"></div>
+                  </div>
+               </a>
+            </li>
+            <li>
+               <a class="navLinks currentPage" href="./booking.php">
+               Booking
+               <div class="menuArrowContainer">
+                  <div class="menuArrow"></div>
+               </div>
+               </a>
+            </li>
+            <li>
+               <a class="navLinks" href="./contact.html">
+                  Contact
+                  <div class="menuArrowContainer">
+                     <div class="menuArrow"></div>
+                  </div>
+               </a>
+            </li>
             <li>
                <a href="#">
                   <i id="phoneIcon" class="infoIcons fas fa-phone-alt">
@@ -49,7 +83,7 @@ require("forms-php/booking-form.php");
                   </i>
                </a>
             </li>
-            <li>
+            <li class="bottomIcon">
                <a class="lastIcon" href="#">
                   <i id="locationIcon" class="infoIcons fas fa-map-marker-alt">
                      <!-- <div id="getLocation" class="infoBox hideInformation">

@@ -33,7 +33,7 @@
   --speedyWhite: hsl(0, 0%, 100%, 1);
   --speedyDarkGrey: rgba(30, 30, 30, 1);
   --speedyGrey: rgba(120, 120, 120, 1);
-  --speedyLightGrey: hsla(210, 0%, 95%, 1);
+  --speedyLightGrey: hsla(210, 10%, 92%, 1);
   --speedyLightGrey2: hsla(210, 0%, 80%, 1);
   --speedyYellow: hsla(45, 100%, 50%, 1);
   --speedyRed: rgba(220, 50, 35, 1);
@@ -63,7 +63,6 @@ h3 {
 header {
   position: fixed;
   width: 100%;
-  height: 4.25rem;
   background-color: rgba(0, 60, 120, 0);
   color: var(--speedyDarkGrey);
   font-weight: 700;
@@ -114,24 +113,12 @@ header {
   position: absolute;
   height: 9.3rem;
   padding-top: 0.5em;
+  z-index: 11;
 }
 
 nav {
   grid-column: 3;
   align-self: center;
-}
-
-@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  .navLogo {
-    position: relative;
-    height: 6.6rem;
-    padding-top: 0;
-  }
-
-  nav {
-    grid-area: 2 / 3;
-    visibility: hidden;
-  }
 }
 
 nav ul {
@@ -140,6 +127,7 @@ nav ul {
 }
 
 nav li {
+  display: flex;
   padding: 0.5em 0 0.5em 2em;
   margin: 0.5em 0;
 }
@@ -151,6 +139,111 @@ nav a {
 
 nav a.lastIcon {
   padding: 0.7em 0em 0.7em 0.5em;
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  header {
+    height: 4.25rem;
+  }
+
+  .navLogo {
+    height: 6.9rem;
+    padding-top: 0.5em;
+  }
+
+  nav {
+    position: relative;
+    top: -4.25em;
+    left: 100%;
+    width: 100%;
+    grid-area: 2 / 1 / span 1 / span 4;
+    visibility: visible;
+    background-color: var(--speedyBlue);
+    padding-top: 4.25em;
+  }
+
+  nav.slideIn {
+    animation: slideIn linear 0.2s forwards;
+  }
+
+  @keyframes slideIn {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: 0%;
+    }
+  }
+
+  nav.slideOut {
+    animation: slideOut linear 0.2s forwards;
+  }
+
+  @keyframes slideOut {
+    0% {
+      left: 0%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  nav li {
+    display: block;
+    position: relative;
+    left: 5%;
+    width: 90%;
+    padding: 1.25em 0 1.25em 0;
+    margin: 0;
+    border-top: 0.125em solid var(--speedyLightGrey);
+  }
+
+  nav li.homeLink {
+    position: relative;
+    left: 0%;
+    width: 100%;
+    padding-top: 3.25em;
+    padding-left: 5%;
+  }
+
+  nav li.bottomIcon {
+    border-top: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    font-size: 1.25rem;
+    padding: 1em 10em 1em 0;
+  }
+
+  nav a.lastIcon {
+    padding: 0;
+  }
+
+  nav a .menuArrowContainer {
+    position: absolute;
+    height: 4em;
+    width: 13.75em;
+    bottom: 0em;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  nav a .menuArrow {
+    position: relative;
+    left: -1.25em;
+    height: 1em;
+    width: 1em;
+    border-bottom: 0.15em solid var(--speedyWhite);
+    border-right: 0.15em solid var(--speedyWhite);
+    transform: rotate(-45deg);
+  }
 }
 
 nav a:hover,
@@ -276,6 +369,7 @@ header .menuBars {
 }
 
 header .barLines {
+  width: 2rem;
   height: 5px;
   background-color: var(--speedyWhite);
   border-radius: 5px;
@@ -283,19 +377,16 @@ header .barLines {
 }
 
 .firstLine {
-  width: 1.5rem;
   position: relative;
   top: 22px;
 }
 
 .secondLine {
-  width: 2rem;
   position: relative;
   top: 37px;
 }
 
 .thirdLine {
-  width: 1.5rem;
   position: relative;
   top: 52px;
 }
@@ -332,7 +423,7 @@ header .barLines {
     }
   }
 
-  header .firstLineOpen {
+  .firstLineOpen {
     animation: firstLineOpen linear 0.2s forwards;
   }
 
@@ -345,22 +436,6 @@ header .barLines {
     }
     100% {
       top: 42px;
-    }
-  }
-
-  .secondLineOpen {
-    animation: secondLineOpen linear 0.2s forwards;
-  }
-
-  @keyframes secondLineOpen {
-    0% {
-      width: 2rem;
-    }
-    50% {
-      width: 1.5rem;
-    }
-    100% {
-      width: 1.5rem;
     }
   }
 
@@ -395,22 +470,6 @@ header .barLines {
     }
     100% {
       top: 22px;
-    }
-  }
-
-  .secondLineClose {
-    animation: secondLineClose linear 0.2s forwards;
-  }
-
-  @keyframes secondLineClose {
-    0% {
-      width: 1.5rem;
-    }
-    50% {
-      width: 1.5rem;
-    }
-    100% {
-      width: 2rem;
     }
   }
 
@@ -841,7 +900,7 @@ Booking Main */
 #bookingFirstSection {
   width: 100%;
   min-width: 300px;
-  height: 60vh;
+  height: 57vh;
   background-image: url(../images/background/bookingBackground.jpg);
   background-size: cover;
   background-position: 50% 50%;
@@ -864,7 +923,7 @@ Booking Main */
     background-attachment: scroll;
     background-position: 50% 0%;
     grid-template: repeat(2, 50%) / 5% repeat(2, 45%) 5%;
-    height: 36vh;
+    height: 36.25vh;
   }
 
   #bookingFirstSection .bookingHeader {
@@ -926,7 +985,7 @@ Booking Main */
 }
 
 #bookingSecondSection h1 {
-  width: 60%;
+  width: 65%;
   margin: 0 auto;
   text-align: center;
   font-weight: 900;
@@ -934,16 +993,16 @@ Booking Main */
 }
 
 #bookingSecondSection h3 {
-  width: 60%;
+  width: 65%;
   margin: 0 auto;
   text-align: justify;
-  padding: 0 0 1.5rem 0;
+  padding: 0 1.75rem 0.75em 1.75rem;
 }
 
 #bookingSecondSection .bookingForm {
   width: 65%;
   margin: 0 auto;
-  padding: 0 1em 3em 1em;
+  padding: 0 1rem 3rem 1rem;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
 }
@@ -958,13 +1017,9 @@ Booking Main */
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   #bookingSecondSection h1,
-  #bookingSecondSection h3 {
-    width: 90%;
-  }
-
+  #bookingSecondSection h3,
   #bookingSecondSection .bookingForm {
     width: 100%;
-    border-radius: 0;
   }
 }
 
@@ -1007,7 +1062,7 @@ Booking Main */
 #bookingSecondSection .bookingForm .formTitles {
   font-size: 1.25rem;
   font-weight: 700;
-  padding: 1rem 1.25rem 0 0.75rem;
+  padding: 0.75rem 0.75rem 0 0.75rem;
 }
 
 #bookingSecondSection .bookingForm section .blockText,
@@ -1029,7 +1084,7 @@ Booking Main */
 }
 
 #bookingSecondSection .bookingForm .checkboxes {
-  position: absolute;
+  position: fixed;
   opacity: 0;
 }
 
