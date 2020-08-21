@@ -5,7 +5,7 @@ const navAnimation = () => {
   $(window).scroll(() => {
     const windowPosition = $(window).scrollTop();
     let $firstSection = $(window).height();
-    let homeHeight = $firstSection * 0.2;
+    let homeHeight = $firstSection * 0.125;
     let bookingHeight = $firstSection * 0.25;
 
     if (windowPosition < homeHeight) {

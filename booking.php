@@ -69,13 +69,13 @@ require "forms-php/booking-form.php";
             <li class="bottomIcons phoneIconContainer">
                <a class="lastLinks" href="tel:0296821772">
                   <i id="phoneIcon" class="infoIcons fas fa-phone-alt"></i>
-                  <p class="phoneBtn">02 9682 1772</p>
+                  <p class="iconBtn">02 9682 1772</p>
                </a>
             </li>
             <li class="bottomIcons locationIconContainer">
                <a class="lastLinks" href="https://maps.google.com/maps?ll=-33.847435,151.013035&z=16&t=m&hl=en&gl=AU&mapclient=embed&cid=6736138543682432416" target="_blank">
                   <i id="locationIcon" class="infoIcons fas fa-map-marker-alt"></i>
-                  <p class="phoneBtn">Get Directions</p>
+                  <p class="iconBtn">Get Directions</p>
                </a>
             </li>
             <!-- <li class="infoBox">
@@ -106,7 +106,7 @@ require "forms-php/booking-form.php";
          <h1>Booking</h1>
          <h3>Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h3>
          <form class="bookingForm" action="./booking.php" method="POST">
-            <span class="formTitles bigSpan">Personal Details</span>
+            <h3 class="formTitles bigSpan">Personal Details</h3>
             <section class="fullName bigSpan">
                <label for="fullName" class="blockText">Full Name</label>
                <input id="fullName" type="text" name="full-name" required />
@@ -120,7 +120,7 @@ require "forms-php/booking-form.php";
                <input id="phoneNumber" type="tel" name="phone-number" minlength="8" maxlength="12" required />
             </section>
 
-            <span class="formTitles bigSpan">Booking Details</span>
+            <h3 class="formTitles bigSpan">Booking Details</h3>
             <section class="preferredDate smallSpan">
                <label for="preferredDate" class="blockText">Preferred Date</label>
                <input id="preferredDate" type="date" name="preferred-date" min="<?=$min_date;?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" required />

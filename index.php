@@ -15,7 +15,7 @@
    <link href="./css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-   <header id="bookingHeader" class="hideBookingNav">
+   <header id="homeHeader" class="hideNav">
       <div class="logoContainer">
          <img class="navLogo bigLogo" src="./images/logo/logo_Speedy.png" alt="Speedy Auto Centre's Logo">
       </div>
@@ -64,13 +64,13 @@
             <li class="bottomIcons phoneIconContainer">
                <a class="lastLinks" href="tel:0296821772">
                   <i id="phoneIcon" class="infoIcons fas fa-phone-alt"></i>
-                  <p class="phoneBtn">02 9682 1772</p>
+                  <p class="iconBtn">02 9682 1772</p>
                </a>
             </li>
             <li class="bottomIcons locationIconContainer">
                <a class="lastLinks" href="https://maps.google.com/maps?ll=-33.847435,151.013035&z=16&t=m&hl=en&gl=AU&mapclient=embed&cid=6736138543682432416" target="_blank">
                   <i id="locationIcon" class="infoIcons fas fa-map-marker-alt"></i>
-                  <p class="phoneBtn">Get Directions</p>
+                  <p class="iconBtn">Get Directions</p>
                </a>
             </li>
             <!-- <li class="infoBox">
