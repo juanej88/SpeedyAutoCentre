@@ -60,45 +60,57 @@ const animateMenuIcon = () => {
 
 animateMenuIcon();
 
-//This function shows and hides the phone and location information displayed
-//when hovering the respective nav icons.
-
-const hideInfoBoxes = () => {
-  $("#locationIcon").mouseover(() => {
-    $("#getLocation").removeClass("hideInformation");
-  });
-
-  $("#locationIcon").mouseleave(() => {
-    $("#getLocation").addClass("hideInformation");
-  });
-
-  $("#phoneIcon").mouseover(() => {
-    $("#getPhone").removeClass("hideInformation");
-  });
-
-  $("#phoneIcon").mouseleave(() => {
-    $("#getPhone").addClass("hideInformation");
-  });
-
-  //This section hides the .infoBox for any touchcreen device
-
-  $(document).mouseup((e) => {
-    if (
-      !$("#locationIcon").is(e.target) ||
-      !$("#getDirectionsButton").is(e.target)
-    ) {
-      $("#getLocation").addClass("hideInformation");
-    }
-  });
-
-  $(document).mouseup((e) => {
-    if (!$("#phoneIcon").is(e.target) || !$("#callUsButton").is(e.target)) {
-      $("#getPhone").addClass("hideInformation");
+const stopScrolling = () => {
+  $(".menuBars").on("click", () => {
+    if (!$(".menuBars").hasClass("open")) {
+      $("body").css({ position: "fixed" });
+    } else {
+      $("body").css({ position: "" });
     }
   });
 };
 
-hideInfoBoxes();
+stopScrolling();
+
+//This function shows and hides the phone and location information displayed
+//when hovering the respective nav icons.
+
+// const hideInfoBoxes = () => {
+//   $("#locationIcon").mouseover(() => {
+//     $("#getLocation").removeClass("hideInformation");
+//   });
+
+//   $("#locationIcon").mouseleave(() => {
+//     $("#getLocation").addClass("hideInformation");
+//   });
+
+//   $("#phoneIcon").mouseover(() => {
+//     $("#getPhone").removeClass("hideInformation");
+//   });
+
+//   $("#phoneIcon").mouseleave(() => {
+//     $("#getPhone").addClass("hideInformation");
+//   });
+
+//   //This section hides the .infoBox for any touchcreen device
+
+//   $(document).mouseup((e) => {
+//     if (
+//       !$("#locationIcon").is(e.target) ||
+//       !$("#getDirectionsButton").is(e.target)
+//     ) {
+//       $("#getLocation").addClass("hideInformation");
+//     }
+//   });
+
+//   $(document).mouseup((e) => {
+//     if (!$("#phoneIcon").is(e.target) || !$("#callUsButton").is(e.target)) {
+//       $("#getPhone").addClass("hideInformation");
+//     }
+//   });
+// };
+
+// hideInfoBoxes();
 
 // This function adds the class .weekendColour to the word "Closed" on Sundays
 

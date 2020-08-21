@@ -159,7 +159,7 @@ nav a.lastIcon {
     grid-area: 2 / 1 / span 1 / span 4;
     visibility: visible;
     background-color: var(--speedyBlue);
-    padding-top: 4.25em;
+    padding: 4.25em 0 1em 0;
   }
 
   nav.slideIn {
@@ -198,7 +198,7 @@ nav a.lastIcon {
     border-top: 0.125em solid var(--speedyLightGrey);
   }
 
-  nav li.homeLink {
+  li.homeLink {
     position: relative;
     left: 0%;
     width: 100%;
@@ -206,8 +206,23 @@ nav a.lastIcon {
     padding-left: 5%;
   }
 
-  nav li.bottomIcon {
+  li.contactContainer {
+    border-bottom: 0.125em solid var(--speedyLightGrey);
+  }
+
+  li.bottomIcons {
+    width: 40%;
     border-top: 0;
+  }
+
+  li.phoneIconContainer {
+    padding-top: 11em;
+    width: 40%;
+  }
+
+  li.locationIconContainer {
+    position: absolute;
+    left: 55%;
   }
 
   nav ul {
@@ -218,9 +233,10 @@ nav a.lastIcon {
   nav a {
     font-size: 1.25rem;
     padding: 1em 10em 1em 0;
+    opacity: 1;
   }
 
-  nav a.lastIcon {
+  nav a.lastLinks {
     padding: 0;
   }
 
@@ -262,6 +278,7 @@ nav .currentPage:focus {
     ================================================= */
 
 .infoBox {
+  visibility: hidden;
   position: absolute;
   left: -18rem;
   top: 4.25rem;
@@ -272,15 +289,11 @@ nav .currentPage:focus {
   grid-column: 5 / span 1;
   border-radius: 0 0 0.5rem 0.5rem;
   display: grid;
-  grid-template-rows: 1fr repeat(3, 0.5fr) 1fr;
+  grid-template: 1fr repeat(3, 0.5fr) 1fr / 1fr 1.25fr;
   align-items: center;
   padding: 0 1rem;
   cursor: auto;
   font-weight: 700;
-}
-
-#getPhone {
-  grid-template: 1fr repeat(3, 0.5fr) 1fr / 1fr 1.25fr;
 }
 
 .arrowUp {
@@ -298,7 +311,7 @@ nav .currentPage:focus {
   left: 12.4rem;
 }
 
-#getPhone h3 {
+.infoBox h3 {
   grid-area: 1 / 1 / span 1 / span 2;
   font-weight: 700;
 }
@@ -352,8 +365,63 @@ nav .currentPage:focus {
   animation-fill-mode: forwards;
 }
 
+.phoneBtn {
+  display: none;
+}
+
 .hideInformation {
   visibility: hidden;
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .infoBox {
+    visibility: visible;
+    left: 5%;
+    top: 28em;
+    height: 8.5em;
+    width: 90%;
+    background-color: var(--speedyBlue);
+    padding: 0;
+    border-top: 0;
+    grid-template: 40% repeat(3, 20%) / 45% 55%;
+  }
+
+  .arrowUp {
+    display: none;
+  }
+
+  .infoBox h3 {
+    text-align: left;
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  .infoBox p {
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  .infoIcons {
+    position: absolute;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0.15em 1em;
+    color: var(--speedyBlue);
+    z-index: 1;
+  }
+
+  .phoneBtn {
+    position: relative;
+    width: 100%;
+    height: 2.25em;
+    padding-left: 3em;
+    display: flex;
+    align-items: center;
+    color: var(--speedyBlue);
+    background-color: var(--speedyWhite);
+    border-radius: 2.5em;
+  }
 }
 
 /*  =================================================
@@ -925,15 +993,15 @@ footer #createdBy a {
     background-size: auto;
     background-attachment: scroll;
     background-position: 50% 0%;
-    grid-template: repeat(2, 50%) / 5% repeat(2, 45%) 5%;
+    grid-template: repeat(2, 50%) / 5% 50% 40% 5%;
     height: 36.25vh;
   }
 
   #bookingFirstSection .bookingHeader {
     /* visibility: hidden; */
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     position: relative;
-    top: -0.25em;
+    top: -0.75em;
   }
 }
 
