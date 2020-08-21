@@ -53,7 +53,7 @@
                </div>
                </a>
             </li>
-            <li>
+            <li class="contactContainer">
                <a class="navLinks" href="./contact.html">
                   Contact
                   <div class="menuArrowContainer">
@@ -61,36 +61,28 @@
                   </div>
                </a>
             </li>
-            <li>
-               <a href="#">
-                  <i id="phoneIcon" class="infoIcons fas fa-phone-alt">
-                     <!-- <div id="getPhone" class="infoBox hideInformation">
-                        <div class="arrowUp"></div>
-                        <h3>Working Hours</h3>
-                        <p>Monday-Friday:</p>
-                        <p>8:00am - 5:00pm</p>
-                        <p>Saturday:</p>
-                        <p>By Appointment Only</p>
-                        <p>Sunday:</p>
-                        <p class="closedToday">Closed</p>
-                        <a id="callUsButton" href="tel:0296821772">Call - 02 9682 1772</a>
-                     </div> -->
-                  </i>
+            <li class="bottomIcons phoneIconContainer">
+               <a class="lastLinks" href="tel:0296821772">
+                  <i id="phoneIcon" class="infoIcons fas fa-phone-alt"></i>
+                  <p class="phoneBtn">02 9682 1772</p>
                </a>
             </li>
-            <li>
-               <a class="lastIcon" href="#">
-                  <i id="locationIcon" class="infoIcons fas fa-map-marker-alt">
-                     <!-- <div id="getLocation" class="infoBox hideInformation">
-                        <div class="arrowUp"></div>
-                        <h3>Location</h3>
-                        <p>171 Clyde St</p>
-                        <p>South Granville NSW 2142</p>
-                        <a id="getDirectionsButton" href="https://maps.google.com/maps?ll=-33.847435,151.013035&z=16&t=m&hl=en&gl=AU&mapclient=embed&cid=6736138543682432416" target="_blank">Get Directions</a>
-                     </div> -->
-                  </i>
+            <li class="bottomIcons locationIconContainer">
+               <a class="lastLinks" href="https://maps.google.com/maps?ll=-33.847435,151.013035&z=16&t=m&hl=en&gl=AU&mapclient=embed&cid=6736138543682432416" target="_blank">
+                  <i id="locationIcon" class="infoIcons fas fa-map-marker-alt"></i>
+                  <p class="phoneBtn">Get Directions</p>
                </a>
             </li>
+            <!-- <li class="infoBox">
+               <div class="arrowUp"></div>
+               <h3>Working Hours</h3>
+               <p>Monday - Friday:</p>
+               <p>8:00am - 5:00pm</p>
+               <p>Saturday:</p>
+               <p>By Appointment Only</p>
+               <p>Sunday:</p>
+               <p class="closedToday">Closed</p>
+            </li> -->
          </ul>
       </nav>
       <div class="menuBars open">

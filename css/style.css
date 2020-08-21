@@ -141,6 +141,10 @@ nav a.lastIcon {
   padding: 0.7em 0em 0.7em 0.5em;
 }
 
+.phoneBtn {
+  display: none;
+}
+
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   header {
     height: 4.25rem;
@@ -195,7 +199,7 @@ nav a.lastIcon {
     width: 90%;
     padding: 1.25em 0 1.25em 0;
     margin: 0;
-    border-top: 0.125em solid var(--speedyLightGrey);
+    border-top: 0.125em solid hsla(0, 0%, 100%, 0.25);
   }
 
   li.homeLink {
@@ -207,7 +211,7 @@ nav a.lastIcon {
   }
 
   li.contactContainer {
-    border-bottom: 0.125em solid var(--speedyLightGrey);
+    border-bottom: 0.125em solid hsla(0, 0%, 100%, 0.25);
   }
 
   li.bottomIcons {
@@ -216,7 +220,7 @@ nav a.lastIcon {
   }
 
   li.phoneIconContainer {
-    padding-top: 11em;
+    padding-top: 2.25em;
     width: 40%;
   }
 
@@ -238,6 +242,28 @@ nav a.lastIcon {
 
   nav a.lastLinks {
     padding: 0;
+  }
+
+  .infoIcons {
+    position: absolute;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0.15em 1em;
+    color: var(--speedyBlue);
+    z-index: 1;
+  }
+
+  .phoneBtn {
+    position: relative;
+    width: 100%;
+    height: 2.25em;
+    padding-left: 3em;
+    display: flex;
+    align-items: center;
+    color: var(--speedyBlue);
+    background-color: var(--speedyWhite);
+    border-radius: 2.5em;
   }
 
   nav a .menuArrowContainer {
@@ -365,63 +391,8 @@ nav .currentPage:focus {
   animation-fill-mode: forwards;
 }
 
-.phoneBtn {
-  display: none;
-}
-
 .hideInformation {
   visibility: hidden;
-}
-
-@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  .infoBox {
-    visibility: visible;
-    left: 5%;
-    top: 28em;
-    height: 8.5em;
-    width: 90%;
-    background-color: var(--speedyBlue);
-    padding: 0;
-    border-top: 0;
-    grid-template: 40% repeat(3, 20%) / 45% 55%;
-  }
-
-  .arrowUp {
-    display: none;
-  }
-
-  .infoBox h3 {
-    text-align: left;
-    padding: 0;
-    border-bottom: 0;
-  }
-
-  .infoBox p {
-    font-size: 1rem;
-    padding: 0;
-  }
-
-  .infoIcons {
-    position: absolute;
-    height: 2.5em;
-    display: flex;
-    align-items: center;
-    padding: 0 0 0.15em 1em;
-    color: var(--speedyBlue);
-    z-index: 1;
-  }
-
-  .phoneBtn {
-    position: relative;
-    width: 100%;
-    height: 2.25em;
-    padding-left: 3em;
-    display: flex;
-    align-items: center;
-    color: var(--speedyBlue);
-    background-color: var(--speedyWhite);
-    border-radius: 2.5em;
-  }
 }
 
 /*  =================================================

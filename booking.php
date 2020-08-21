@@ -78,7 +78,7 @@ require "forms-php/booking-form.php";
                   <p class="phoneBtn">Get Directions</p>
                </a>
             </li>
-            <li class="infoBox">
+            <!-- <li class="infoBox">
                <div class="arrowUp"></div>
                <h3>Working Hours</h3>
                <p>Monday - Friday:</p>
@@ -87,7 +87,7 @@ require "forms-php/booking-form.php";
                <p>By Appointment Only</p>
                <p>Sunday:</p>
                <p class="closedToday">Closed</p>
-            </li>
+            </li> -->
          </ul>
       </nav>
       <div class="menuBars open">
