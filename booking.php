@@ -123,11 +123,13 @@ require "forms-php/booking-form.php";
             <h3 class="formTitles bigSpan">Booking Details</h3>
             <section class="preferredDate smallSpan">
                <label for="preferredDate" class="blockText">Preferred Date</label>
-               <input id="preferredDate" type="date" name="preferred-date" min="<?=$min_date;?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" required />
+               <input id="preferredDate" type="date" name="preferred-date" min="<?=getMinDate();?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" required />
             </section>
             <section class="preferredTime smallSpan">
                <label for="preferredTime" class="blockText">Preferred Time</label>
-               <select id="preferredTime" name="preferred-time">
+               <select id="preferredTime" name="preferred-time" required>
+                  <option value=""></option>
+                  <!-- <?=$preferred_time;?> -->
                   <option value="8:30am - 12:00pm">8:30am - 12:00pm</option>
                   <option value="12:00pm - 4:00pm">12:00pm - 4:00pm</option>
                   <option value="9:00am - 12:00pm">Sat: 9:00am - 12:00pm</option>
@@ -140,32 +142,10 @@ require "forms-php/booking-form.php";
 
             <section class="carYear smallSpan">
                <label for="carYear" class="blockText">Year</label>
-               <input id="carYear" list="carYears" name="car-year" required />
-               <datalist id="carYears">
-                  <option value="2021"></option>
-                  <option value="2020"></option>
-                  <option value="2019"></option>
-                  <option value="2018"></option>
-                  <option value="2017"></option>
-                  <option value="2016"></option>
-                  <option value="2015"></option>
-                  <option value="2014"></option>
-                  <option value="2013"></option>
-                  <option value="2012"></option>
-                  <option value="2011"></option>
-                  <option value="2010"></option>
-                  <option value="2009"></option>
-                  <option value="2008"></option>
-                  <option value="2007"></option>
-                  <option value="2006"></option>
-                  <option value="2005"></option>
-                  <option value="2004"></option>
-                  <option value="2003"></option>
-                  <option value="2002"></option>
-                  <option value="2001"></option>
-                  <option value="2000"></option>
-                  <option value="Older than 2000"></option>
-               </datalist>
+               <select id="carYear" name="car-year" required>
+                  <option value=""></option>
+                  <?=getCarYears();?>
+               </select>
             </section>
             <section class="carMake smallSpan">
                <label for="carMake" class="blockText">Make</label>
