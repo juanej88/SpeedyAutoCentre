@@ -3,17 +3,11 @@
 <head>
    <meta charset="utf-8">
    <title>Speedy Auto Centre</title>
-   <link href="./images/favicon/logo_Speedy_64.png" type="image/png" rel="icon" />
-   <link href="./images/favicon/logo_Speedy_128.png" type="image/png" rel="icon" sizes="128x128" />
-   <link href="./images/favicon/logo_Speedy_256.png" type="image/png" rel="icon" sizes="256x256" />
-   <link href="./images/favicon/logo_Speedy_512.png" type="image/png" rel="icon" sizes="512x512" />
-   <link href="./images/favicon/logo_Speedy_128.png" rel="apple-touch-icon" sizes="128x128" />
-   <link href="./images/favicon/logo_Speedy_256.png" rel="apple-touch-icon" sizes="256x256" />
-   <link href="./images/favicon/logo_Speedy_512.png" rel="apple-touch-icon" sizes="512x512" />
-   <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500;700;900&display=swap" rel="stylesheet">
-   <script src="https://kit.fontawesome.com/cdd38ef8d8.js"></script>
-   <link href="./css/style.css" type="text/css" rel="stylesheet" />
+   <?php
+      require "header-footer-php/head.php";
+   ?>
 </head>
+
 <body>
    <header id="homeHeader" class="hideNav">
       <?php
@@ -85,31 +79,9 @@
    </main>
 
    <footer id="websiteFooter">
-      <div class="firstFooterColumn footerColumn">
-         <h3>Speedy Auto Centre</h3>
-         <p>Established in 2007. The experts from Speedy Auto Centre are equipped to deal with the latest automotive technology in vehicles of all makes and keep them in perfect working order.</p>
-         <a class="footerButton" href="./booking.php">Book Now</a>
-      </div>
-      <div class="secondFooterColumn footerColumn">
-         <h3>Working Hours</h3>
-         <p>Monday-Friday:</p>
-         <p>8:00am - 5:00pm</p>
-         <p>Saturday:</p>
-         <p>By Appointment Only</p>
-         <p>Sunday:</p>
-         <p class="closedToday">Closed</p>
-      </div>
-      <div class="thirdFooterColumn footerColumn">
-         <h3>Contact Us</h3>
-         <p><a class="footerInfoLink" href="tel:0296821772">02 9682 1772</a></p>
-         <p class="row1"><a class="footerInfoLink" href="https://maps.google.com/maps?ll=-33.847435,151.013035&z=16&t=m&hl=en&gl=AU&mapclient=embed&cid=6736138543682432416" target="_blank">171 Clyde St, South Granville NSW 2142</a></p>
-         <div class="socialMedia">
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
-         </div>
-      </div>
-      <p id="copyright">Copyright &copy; <span class="thisYear"></span> Speedy Auto Centre Pty Ltd. All rights reserved.</p>
-      <p id="createdBy">Created by <a href="http://juanespinosa.me">Juan Espinosa</a></p>
+      <?php
+         require "header-footer-php/footer.php";
+      ?>
    </footer>
 
    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

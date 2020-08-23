@@ -33,7 +33,7 @@
         </a>
     </li>
     <li>
-        <a class="navLinks currentPage" href="./booking.php">
+        <a class="navLinks" href="./booking.php">
         Booking
         <div class="menuArrowContainer">
             <div class="menuArrow"></div>
