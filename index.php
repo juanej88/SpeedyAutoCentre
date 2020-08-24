@@ -18,7 +18,7 @@
    <main>
       <section id="homeFirstSection">
          <div class="firstSentence">
-            <h2>Yes, we can service<br />your brand new car</h2>
+            <h2>Yes, we can service your brand new car</h2>
             <a class="bookNowButton" href="./booking.php">Book Now</a>
          </div>
       </section>
