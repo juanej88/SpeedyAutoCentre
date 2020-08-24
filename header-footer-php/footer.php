@@ -22,4 +22,4 @@
     </div>
 </div>
 <p id="copyright">Copyright &copy; <span class="thisYear"></span> Speedy Auto Centre Pty Ltd. All rights reserved.</p>
-<p id="createdBy">Created by <a href="http://juanespinosa.me">Juan Espinosa</a></p>
+<p id="createdBy">Created by <a href="http://juanespinosa.me" target="_blank">Juan Espinosa</a></p>

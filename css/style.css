@@ -79,6 +79,12 @@ footer span {
   textarea {
     font-size: 1.25rem;
   }
+
+  footer p,
+  footer a,
+  footer span {
+    font-size: 1rem;
+  }
 }
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -99,6 +105,11 @@ footer span {
   label {
     font-size: 0.9rem;
     font-size: 0.75rem;
+  }
+
+  #copyright,
+  footer span {
+    font-size: 0.6rem;
   }
 }
 
@@ -1458,7 +1469,41 @@ footer i {
 
   #copyright {
     grid-column: 2 / span 1;
-    border-top: 1px solid var(--speedyLightGrey2);
+  }
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  footer {
+    grid-template-columns: 5% 90% 5%;
+  }
+
+  footer .footerColumn {
+    grid-template-columns: 35% 65%;
+  }
+
+  footer .firstFooterColumn,
+  footer .secondFooterColumn,
+  footer .thirdFooterColumn,
+  #copyright,
+  #createdBy {
+    grid-column: 2;
+  }
+
+  #copyright {
+    text-align: center;
+    padding: 2.25em 0 1.5em 0;
+  }
+
+  #createdBy {
+    text-align: center;
+    border-top: 0;
+    padding: 0 0 3em 0;
+  }
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  footer {
+    grid-template-columns: 5% 25% 7.5% 25% 7.5% 25% 5%;
   }
 }
 
