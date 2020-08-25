@@ -11,7 +11,7 @@
     <li class="homeLink">
         <a class="navLinks" href="./index.php">
             Home
-            <div class="menuArrowContainer">
+            <div class="menuArrowContainer menuArrowContainerSpecial">
                 <div class="menuArrow"></div>
             </div>
         </a>

@@ -1,7 +1,7 @@
 <div class="firstFooterColumn footerColumn">
     <h4>Speedy Auto Centre</h4>
     <p>Established in 2007. The experts from Speedy Auto Centre are equipped to deal with the latest automotive technology in vehicles of all makes and keep them in perfect working order.</p>
-    <a class="footerButton" href="#bookingFirstSection">Book Now</a>
+    <a class="footerButton" href="./booking.php">Book Now</a>
 </div>
 <div class="secondFooterColumn footerColumn">
     <h4>Working Hours</h4>
@@ -21,5 +21,5 @@
     <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
     </div>
 </div>
-<p id="copyright">Copyright &copy; <span class="thisYear"></span> Speedy Auto Centre Pty Ltd. All rights reserved.</p>
-<p id="createdBy">Created by <a href="http://juanespinosa.me" target="_blank">Juan Espinosa</a></p>
+<p class="copyright">Copyright &copy; <span class="thisYear"></span> Speedy Auto Centre Pty Ltd. All rights reserved.</p>
+<p class="createdBy">Created by <a href="http://juanespinosa.me" target="_blank">Juan Espinosa</a></p>

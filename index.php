@@ -23,7 +23,7 @@
          </div>
       </section>
 
-      <section id="homeSecondSection">
+      <!-- <section id="homeSecondSection">
          <div class="briefIntro">
             <h2>High quality service for your car</h2><br/>
             <p>Speedy Auto Centre – the car experts. This is the right address for outstanding service quality for your car. Whether you are looking for advice, repair or service work, we can offer the full package.</p><br/>
@@ -32,7 +32,7 @@
             <a class="bookNowBlueButton" href="./booking.php">Book Now</a>
          </div>
          <div class="verticalImage"></div>
-      </section>
+      </section> -->
 
       <!-- <section id="homeThirdSection">
          <h2>What our clients say</h2>

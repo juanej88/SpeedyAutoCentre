@@ -18,6 +18,12 @@
   outline: none;
 }
 
+@media (max-width: 950px) {
+  * {
+    font-size: 15px;
+  }
+}
+
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   * {
     font-size: 32px;
@@ -69,6 +75,12 @@ footer span {
   font-size: 0.8rem;
 }
 
+@media (max-width: 950px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   h2 {
     font-size: 1.75rem;
@@ -107,14 +119,14 @@ footer span {
     font-size: 0.75rem;
   }
 
-  #copyright,
+  .copyright,
   footer span {
     font-size: 0.6rem;
   }
 }
 
 /*  =================================================
-    Start of Header Section 
+    Start | Header Section 
     ================================================= */
 
 header {
@@ -192,7 +204,7 @@ nav ul {
 
 nav li {
   display: flex;
-  padding: 0.5em 0 0.5em 2em;
+  padding: 0.5em 0 0.5em 1.75em;
   margin: 0.5em 0;
 }
 
@@ -207,6 +219,163 @@ nav a.lastIcon {
 
 .iconBtn {
   display: none;
+}
+
+/* == Max-width: 950px == */
+
+@media (max-width: 950px) {
+  header {
+    height: 4.75rem;
+  }
+
+  #homeHeader {
+    color: var(--speedyWhite);
+    animation: hideBookingNav 0.25s linear forwards;
+  }
+
+  nav {
+    position: relative;
+    top: -4.95em;
+    left: 100%;
+    width: 100%;
+    grid-area: 2 / 1 / span 1 / span 4;
+    background-color: var(--speedyBlue);
+    padding: 4.95em 0 1em 0;
+  }
+
+  nav.slideIn {
+    animation: slideIn ease-out 0.15s forwards;
+  }
+
+  @keyframes slideIn {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: 0%;
+    }
+  }
+
+  nav.slideOut {
+    animation: slideOut ease-out 0.15s forwards;
+  }
+
+  @keyframes slideOut {
+    0% {
+      left: 0%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  nav li {
+    display: block;
+    position: relative;
+    left: 5%;
+    width: 90%;
+    padding: 1.25em 0 1.25em 0;
+    border-top: 0.125em solid hsla(0, 0%, 100%, 0.25);
+    margin: 0;
+  }
+
+  li.homeLink {
+    position: relative;
+    left: 0%;
+    width: 100%;
+    padding-top: 5.25em;
+    padding-left: 5%;
+  }
+
+  li.contactContainer {
+    border-bottom: 0.125em solid hsla(0, 0%, 100%, 0.25);
+  }
+
+  li.bottomIcons {
+    width: 40%;
+    border-top: 0;
+  }
+
+  li.phoneIconContainer {
+    padding-top: 2.25em;
+    width: 40%;
+  }
+
+  li.locationIconContainer {
+    position: absolute;
+    left: 55%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    padding: 1em 10em 1em 0;
+    opacity: 1;
+  }
+
+  nav a.lastLinks {
+    padding: 0;
+  }
+
+  .infoIcons {
+    position: absolute;
+    height: 2.75em;
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+    color: var(--speedyBlue);
+    z-index: 1;
+  }
+
+  .iconBtn {
+    position: relative;
+    width: 100%;
+    height: 2.75em;
+    padding-left: 3.25em;
+    display: flex;
+    align-items: center;
+    color: var(--speedyBlue);
+    background-color: var(--speedyWhite);
+    border-radius: 2.5em;
+  }
+
+  nav a .menuArrowContainer {
+    position: absolute;
+    height: 4em;
+    width: 100%;
+    bottom: 0em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  nav a .menuArrowContainerSpecial {
+    left: -5%;
+  }
+
+  nav a .menuArrow {
+    position: relative;
+    left: -1.25em;
+    height: 1em;
+    width: 1em;
+    border-bottom: 0.15em solid var(--speedyWhite);
+    border-right: 0.15em solid var(--speedyWhite);
+    transform: rotate(-45deg);
+  }
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  header {
+    height: 4.25rem;
+  }
+
+  .navLogo {
+    height: 6.9rem;
+    padding-top: 0.5em;
+  }
 }
 
 /* == For mobile devices (Portrait and Landscape) == */
@@ -342,12 +511,15 @@ nav a.lastIcon {
   nav a .menuArrowContainer {
     position: absolute;
     height: 4em;
-    width: 13.75em;
+    width: 100%;
     bottom: 0em;
-    left: 50%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+  }
+
+  nav a .menuArrowContainerSpecial {
+    left: -5%;
   }
 
   nav a .menuArrow {
@@ -358,17 +530,6 @@ nav a.lastIcon {
     border-bottom: 0.15em solid var(--speedyWhite);
     border-right: 0.15em solid var(--speedyWhite);
     transform: rotate(-45deg);
-  }
-}
-
-@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  header {
-    height: 4.25rem;
-  }
-
-  .navLogo {
-    height: 6.9rem;
-    padding-top: 0.5em;
   }
 }
 
@@ -384,7 +545,7 @@ nav .currentPage:focus {
 }
 
 /*  =================================================
-    Nav - Information Boxes 
+    Nav | Information Boxes 
     ================================================= */
 
 .infoBox {
@@ -480,15 +641,16 @@ nav .currentPage:focus {
 }
 
 /*  =================================================
-    Menu Icon for Mobile Devices
+    Menu Icon for Max-Width: 950px and Mobile Devices
     ================================================= */
 
 header .menuBars {
-  visibility: hidden;
+  display: none;
   height: 2.75rem;
   width: 2.75rem;
   border-radius: 50%;
   margin: 0.75rem 0;
+  cursor: pointer;
 }
 
 header .barLines {
@@ -514,9 +676,134 @@ header .barLines {
   top: 52px;
 }
 
+/* ===== Max-Width: 950px ===== */
+
+@media (max-width: 950px) {
+  header .menuBars {
+    display: block;
+    grid-column: 3;
+    margin: 1rem 0;
+  }
+
+  header .barLines {
+    height: 3px;
+  }
+
+  .firstLine {
+    position: relative;
+    top: 9px;
+  }
+
+  .secondLine {
+    position: relative;
+    top: 15px;
+  }
+
+  .thirdLine {
+    position: relative;
+    top: 21px;
+  }
+
+  header .rotateBarsOpen {
+    animation: rotateBarsOpen linear 0.15s forwards;
+  }
+
+  @keyframes rotateBarsOpen {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(135deg);
+    }
+  }
+
+  header .rotateBarsClose {
+    animation: rotateBarsClose linear 0.15s forwards;
+  }
+
+  @keyframes rotateBarsClose {
+    0% {
+      transform: rotate(135deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .firstLineOpen {
+    animation: firstLineOpen linear 0.15s forwards;
+  }
+
+  @keyframes firstLineOpen {
+    0% {
+      top: 9px;
+    }
+    50% {
+      top: 18px;
+    }
+    100% {
+      top: 18px;
+    }
+  }
+
+  .thirdLineOpen {
+    animation: thirdLineOpen linear 0.15s forwards;
+  }
+
+  @keyframes thirdLineOpen {
+    0% {
+      top: 21px;
+    }
+    50% {
+      top: 12px;
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 12px;
+      transform: rotate(90deg);
+    }
+  }
+
+  .firstLineClose {
+    animation: firstLineClose linear 0.15s forwards;
+  }
+
+  @keyframes firstLineClose {
+    0% {
+      top: 18px;
+    }
+    50% {
+      top: 18px;
+    }
+    100% {
+      top: 9px;
+    }
+  }
+
+  .thirdLineClose {
+    animation: thirdLineClose linear 0.15s forwards;
+  }
+
+  @keyframes thirdLineClose {
+    0% {
+      top: 12px;
+      transform: rotate(90deg);
+    }
+    50% {
+      top: 12px;
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 21px;
+    }
+  }
+}
+
+/* ===== Mobile Devices ===== */
+
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   header .menuBars {
-    visibility: visible;
+    display: block;
     grid-column: 3;
   }
 
@@ -616,11 +903,11 @@ header .barLines {
 }
 
 /*  =================================================
-    End of Header Section
+    End | Header Section
     ================================================= */
 
 /*  =================================================
-    Start of Home Page
+    Start | Home Page
     ================================================= */
 
 #homeFirstSection {
@@ -649,6 +936,7 @@ header .barLines {
 }
 
 .bookNowButton {
+  font-weight: 700;
   padding: 0.5em 4em;
   position: relative;
   top: 2em;
@@ -849,11 +1137,11 @@ header .barLines {
 }
 
 /*  =================================================
-    End of Home Page
+    End | Home Page
     ================================================= */
 
 /*  =================================================
-    Start of Booking Page
+    Start | Booking Page
     ================================================= */
 
 /*  =================================================
@@ -897,7 +1185,7 @@ header .barLines {
     ================================================= */
 
 /*  =================================================
-    Start of Booking Main
+    Start | Booking Page
     ================================================= */
 
 #bookingFirstSection {
@@ -912,11 +1200,17 @@ header .barLines {
   grid-template: repeat(2, 50%) / 5% repeat(3, 30%) 5%;
 }
 
-#bookingFirstSection .bookingHeader {
+.bookingHeader {
   grid-area: 2 / 2;
   color: var(--speedyWhite);
   animation: showBookingHeader 0.25s linear;
   animation-fill-mode: forwards;
+}
+
+@media (max-width: 950px) {
+  #bookingFirstSection {
+    grid-template: repeat(2, 50%) / 5% 40% 50% 5%;
+  }
 }
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -928,7 +1222,7 @@ header .barLines {
     height: 36.25vh;
   }
 
-  #bookingFirstSection .bookingHeader {
+  .bookingHeader {
     position: relative;
     top: -0.3em;
   }
@@ -942,7 +1236,7 @@ header .barLines {
     grid-template: repeat(2, 50%) / 5% 45% 45% 5%;
   }
 
-  #bookingFirstSection .bookingHeader {
+  .bookingHeader {
     position: relative;
     top: 0.5em;
     font-size: 2rem;
@@ -959,7 +1253,7 @@ header .barLines {
   }
 }
 
-#bookingFirstSection .hideBookingHeader {
+.hideBookingHeader {
   animation: hideBookingHeader 0.25s linear;
   animation-fill-mode: forwards;
 }
@@ -973,18 +1267,28 @@ header .barLines {
   }
 }
 
-#bookingFirstSection h2 {
-  grid-area: 2 / 4;
-}
-
 #bookingSecondSection {
   width: 100%;
   color: var(--speedyBlue);
   background-color: var(--speedyLightGrey);
 }
 
+#bookingSecondSection h1,
+#bookingSecondSection h3,
+.bookingForm {
+  width: 90%;
+  max-width: 950px;
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #bookingSecondSection h1,
+  #bookingSecondSection h3,
+  .bookingForm {
+    width: 100%;
+  }
+}
+
 #bookingSecondSection h1 {
-  width: 65%;
   margin: 0 auto;
   text-align: center;
   font-weight: 900;
@@ -992,34 +1296,16 @@ header .barLines {
 }
 
 #bookingSecondSection h3 {
-  width: 65%;
   margin: 0 auto;
   text-align: justify;
   padding: 0 1.75rem 0.75em 1.75rem;
 }
 
-#bookingSecondSection .bookingForm {
-  width: 65%;
+.bookingForm {
   margin: 0 auto;
-  padding: 0 1rem 3rem 1rem;
+  padding: 0 1rem 1rem 1rem;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-}
-
-@media (max-width: 850px) {
-  #bookingSecondSection h1,
-  #bookingSecondSection h3,
-  #bookingSecondSection .bookingForm {
-    width: 90%;
-  }
-}
-
-@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
-  #bookingSecondSection h1,
-  #bookingSecondSection h3,
-  #bookingSecondSection .bookingForm {
-    width: 100%;
-  }
 }
 
 .bigSpan {
@@ -1034,7 +1320,7 @@ header .barLines {
   grid-column: span 2;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 950px) {
   .smallSpan {
     grid-column: span 3;
   }
@@ -1196,13 +1482,13 @@ header .barLines {
   }
 }
 
-#bookingSecondSection .bookingForm #preferredDate {
+#preferredDate {
   height: 2.5em;
 }
 
-#bookingSecondSection .bookingForm input,
-#bookingSecondSection .bookingForm select,
-#bookingSecondSection .bookingForm textarea {
+input,
+select,
+textarea {
   border: 0.125em solid var(--speedyWhite);
   border-radius: 2em;
   font-weight: 700;
@@ -1214,13 +1500,13 @@ header .barLines {
   caret-color: var(--speedyBlue);
 }
 
-.bookingForm #rego {
+#rego {
   text-transform: uppercase;
 }
 
-#bookingSecondSection .bookingForm input:focus,
-#bookingSecondSection .bookingForm select:focus,
-#bookingSecondSection .bookingForm textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   border-color: var(--speedyBlue);
   animation: focusedInput 0.4s linear;
   animation-fill-mode: forwards;
@@ -1248,7 +1534,7 @@ input:-webkit-autofill {
   cursor: pointer;
 }
 
-#bookingSecondSection .bookingForm .submitButton #submitButton {
+#submitButton {
   background-color: var(--speedyBlue);
   border-color: var(--speedyBlue);
   color: var(--speedyWhite);
@@ -1258,28 +1544,27 @@ input:-webkit-autofill {
 }
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
-  #bookingSecondSection .bookingForm .submitButton #submitButton {
+  #submitButton {
     font-size: 1.5rem;
   }
 }
 
-#bookingSecondSection .bookingForm .submitButton #submitButton:hover {
+#submitButton:hover {
   opacity: 1;
 }
 
-/* End of
-Booking Main */
+/*  ===== Recaptcha Position ===== */
 
 .grecaptcha-badge {
   bottom: 80px !important;
 }
 
 /*  =================================================
-    End of Booking Page
+    End | Booking Page
     ================================================= */
 
 /*  =================================================
-    Start of Footer Section
+    Start | Footer Section
     ================================================= */
 
 footer {
@@ -1289,12 +1574,6 @@ footer {
   padding-top: 3em;
   background-color: var(--speedyDarkGrey);
   color: var(--speedyLightGrey2);
-}
-
-footer .footerColumn {
-  display: grid;
-  grid-template-columns: 45% 55%;
-  padding-bottom: 2.5em;
 }
 
 footer h4 {
@@ -1307,17 +1586,23 @@ footer p {
   padding-bottom: 1em;
 }
 
-footer .firstFooterColumn {
+.footerColumn {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  padding-bottom: 2.5em;
+}
+
+.firstFooterColumn {
   grid-column: 2;
 }
 
-footer .firstFooterColumn p {
+.firstFooterColumn p {
   grid-column: 1 / span 2;
   text-align: justify;
   line-height: 1.2rem;
 }
 
-footer .footerButton {
+.footerButton {
   grid-column: 1 / span 2;
   width: 10rem;
   text-align: center;
@@ -1325,7 +1610,7 @@ footer .footerButton {
   border: 0.0625em solid var(--speedyLightGrey2);
   border-radius: 2em;
   padding: 0.5em 1em;
-  margin-top: 1.5em;
+  margin: 1.5em 0 1em 0;
   animation: footerButtonOff 0.25s linear forwards;
 }
 
@@ -1342,9 +1627,8 @@ footer .footerButton {
   }
 }
 
-footer .footerColumn .footerButton:hover {
-  animation: footerButtonOn 0.25s linear;
-  animation-fill-mode: forwards;
+.footerButton:hover {
+  animation: footerButtonOn 0.25s linear forwards;
 }
 
 @keyframes footerButtonOn {
@@ -1360,62 +1644,62 @@ footer .footerColumn .footerButton:hover {
   }
 }
 
-footer .secondFooterColumn {
+.secondFooterColumn {
   grid-column: 4;
 }
 
-footer .thirdFooterColumn {
+.thirdFooterColumn {
   grid-column: 6;
 }
 
-footer .footerSpanTwo {
+.footerSpanTwo {
   grid-column: span 2;
 }
 
-footer .footerInfoLink {
+.footerInfoLink {
   padding: 0.25rem 1rem 0.25rem 0;
 }
 
-footer .footerInfoLink:hover {
+.footerInfoLink:hover {
   color: var(--speedyWhite);
   opacity: 1;
 }
 
-footer .socialMedia a {
+.socialMedia a {
   padding: 0.5rem 0.5rem 0.5rem 0;
   margin-right: 0.5rem;
 }
 
-footer .socialMedia a:hover {
+.socialMedia a:hover {
   color: var(--speedyWhite);
   opacity: 1;
 }
 
-footer i {
+.socialMedia i {
   font-size: 1.5rem;
 }
 
-#copyright {
+.copyright {
   grid-column: 2 / span 3;
   border-top: 1px solid var(--speedyLightGrey2);
 }
 
-#createdBy {
+.createdBy {
   text-align: right;
   grid-column: 5 / span 2;
   border-top: 1px solid var(--speedyLightGrey2);
 }
 
-#copyright,
-#createdBy {
+.copyright,
+.createdBy {
   padding: 1.75rem 0;
 }
 
-#createdBy a {
+.createdBy a {
   padding: 0.75rem 0;
 }
 
-#createdBy a:hover {
+.createdBy a:hover {
   color: var(--speedyWhite);
   opacity: 1;
 }
@@ -1425,24 +1709,24 @@ footer i {
     grid-template-columns: 5% 41.25% 7.5% 41.25% 5%;
   }
 
-  footer .firstFooterColumn {
+  .firstFooterColumn {
     grid-column: 2 / span 3;
   }
 
-  footer .secondFooterColumn {
+  .secondFooterColumn {
     grid-column: 2;
   }
 
-  footer .thirdFooterColumn {
+  .thirdFooterColumn {
     grid-column: 4;
   }
 
-  #copyright {
+  .copyright {
     text-align: center;
     padding: 1.75rem 0 1.25rem 0;
   }
 
-  #createdBy {
+  .createdBy {
     text-align: center;
     grid-column: 2 / span 3;
     border-top: 0;
@@ -1455,19 +1739,19 @@ footer i {
     grid-template-columns: 10% 80% 10%;
   }
 
-  footer .footerColumn {
+  .footerColumn {
     grid-template-columns: 35% 65%;
   }
 
-  footer .firstFooterColumn {
+  .firstFooterColumn {
     grid-column: 2;
   }
 
-  footer .thirdFooterColumn {
+  .thirdFooterColumn {
     grid-column: 2;
   }
 
-  #copyright {
+  .copyright {
     grid-column: 2 / span 1;
   }
 }
@@ -1477,27 +1761,23 @@ footer i {
     grid-template-columns: 5% 90% 5%;
   }
 
-  footer .footerColumn {
-    grid-template-columns: 35% 65%;
-  }
-
-  footer .firstFooterColumn,
-  footer .secondFooterColumn,
-  footer .thirdFooterColumn,
-  #copyright,
-  #createdBy {
+  .firstFooterColumn,
+  .secondFooterColumn,
+  .thirdFooterColumn,
+  .copyright,
+  .createdBy {
     grid-column: 2;
   }
 
-  #copyright {
+  .copyright {
     text-align: center;
     padding: 2.25em 0 1.5em 0;
   }
 
-  #createdBy {
+  .createdBy {
     text-align: center;
     border-top: 0;
-    padding: 0 0 3em 0;
+    padding: 0 0 2.75em 0;
   }
 }
 
@@ -1508,5 +1788,5 @@ footer i {
 }
 
 /*  =================================================
-    End of Footer Section
+    End | Footer Section
     ================================================= */
