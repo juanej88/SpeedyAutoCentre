@@ -293,12 +293,13 @@ nav a.lastIcon {
 
   li.bottomIcons {
     width: 40%;
+    max-width: 200px;
     border-top: 0;
   }
 
   li.phoneIconContainer {
-    padding-top: 2.25em;
-    width: 40%;
+    left: -55%;
+    align-self: flex-end;
   }
 
   li.locationIconContainer {
@@ -312,7 +313,7 @@ nav a.lastIcon {
   }
 
   nav a {
-    padding: 1em 10em 1em 0;
+    padding: 1em 0;
     opacity: 1;
   }
 
@@ -321,8 +322,9 @@ nav a.lastIcon {
   }
 
   .infoIcons {
+    font-size: 0.95em;
     position: absolute;
-    height: 2.75em;
+    height: 2.5em;
     display: flex;
     align-items: center;
     padding-left: 1em;
@@ -331,9 +333,10 @@ nav a.lastIcon {
   }
 
   .iconBtn {
+    font-size: 0.95em;
     position: relative;
     width: 100%;
-    height: 2.75em;
+    height: 2.5em;
     padding-left: 3.25em;
     display: flex;
     align-items: center;
@@ -478,7 +481,7 @@ nav a.lastIcon {
 
   nav a {
     font-size: 1.25rem;
-    padding: 1em 10em 1em 0;
+    padding: 1em 0;
     opacity: 1;
   }
 
@@ -681,17 +684,20 @@ header .barLines {
 @media (max-width: 950px) {
   header .menuBars {
     display: block;
+    height: 2.4rem;
+    width: 2.4rem;
     grid-column: 3;
-    margin: 1rem 0;
+    margin: 1.15rem 0;
   }
 
   header .barLines {
-    height: 3px;
+    height: 2px;
+    width: 1.75rem;
   }
 
   .firstLine {
     position: relative;
-    top: 9px;
+    top: 10px;
   }
 
   .secondLine {
@@ -701,7 +707,7 @@ header .barLines {
 
   .thirdLine {
     position: relative;
-    top: 21px;
+    top: 20px;
   }
 
   header .rotateBarsOpen {
@@ -736,13 +742,13 @@ header .barLines {
 
   @keyframes firstLineOpen {
     0% {
-      top: 9px;
+      top: 10px;
     }
     50% {
-      top: 18px;
+      top: 17px;
     }
     100% {
-      top: 18px;
+      top: 17px;
     }
   }
 
@@ -752,14 +758,14 @@ header .barLines {
 
   @keyframes thirdLineOpen {
     0% {
-      top: 21px;
+      top: 20px;
     }
     50% {
-      top: 12px;
+      top: 13px;
       transform: rotate(0deg);
     }
     100% {
-      top: 12px;
+      top: 13px;
       transform: rotate(90deg);
     }
   }
@@ -770,13 +776,13 @@ header .barLines {
 
   @keyframes firstLineClose {
     0% {
-      top: 18px;
+      top: 17px;
     }
     50% {
-      top: 18px;
+      top: 17px;
     }
     100% {
-      top: 9px;
+      top: 10px;
     }
   }
 
@@ -786,15 +792,15 @@ header .barLines {
 
   @keyframes thirdLineClose {
     0% {
-      top: 12px;
+      top: 13px;
       transform: rotate(90deg);
     }
     50% {
-      top: 12px;
+      top: 13px;
       transform: rotate(0deg);
     }
     100% {
-      top: 21px;
+      top: 20px;
     }
   }
 }
@@ -1777,7 +1783,7 @@ footer p {
   .createdBy {
     text-align: center;
     border-top: 0;
-    padding: 0 0 2.75em 0;
+    padding: 0 0 3em 0;
   }
 }
 
