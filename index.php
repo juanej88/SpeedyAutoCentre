@@ -23,16 +23,16 @@
          </div>
       </section>
 
-      <!-- <section id="homeSecondSection">
+      <section id="homeSecondSection">
          <div class="briefIntro">
-            <h2>High quality service for your car</h2><br/>
+            <h2>High quality service for your car</h2>
             <p>Speedy Auto Centre – the car experts. This is the right address for outstanding service quality for your car. Whether you are looking for advice, repair or service work, we can offer the full package.</p><br/>
             <p>The experts from Speedy Auto Centre are equipped to deal with the latest automotive technology in vehicles of all makes and keep them in perfect working order. And so your car is always in the best possible hands and your manufacturer’s warranty is safe with us, when you take it to Speedy Auto Centre Service for maintenance and repair.</p><br/>
-            <p>For everything your car needs.</p><br/>
+            <p>For everything your car needs.</p>
             <a class="bookNowBlueButton" href="./booking.php">Book Now</a>
          </div>
          <div class="verticalImage"></div>
-      </section> -->
+      </section>
 
       <!-- <section id="homeThirdSection">
          <h2>What our clients say</h2>
