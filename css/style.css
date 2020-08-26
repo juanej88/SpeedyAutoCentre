@@ -105,6 +105,10 @@ footer span {
   }
 
   h3 {
+    font-size: 1.1rem;
+  }
+
+  p {
     font-size: 1rem;
   }
 
@@ -119,9 +123,15 @@ footer span {
     font-size: 0.75rem;
   }
 
+  footer p,
+  footer a,
+  footer span {
+    font-size: 0.8rem;
+  }
+
   .copyright,
   footer span {
-    font-size: 0.6rem;
+    font-size: 0.475rem;
   }
 }
 
@@ -139,13 +149,6 @@ header {
   grid-template-columns: 5% 20% 70% 5%;
   justify-items: right;
   z-index: 10;
-}
-
-@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  #homeHeader {
-    color: var(--speedyWhite);
-    animation: hideBookingNav 0.25s linear forwards;
-  }
 }
 
 .showNav {
@@ -934,7 +937,7 @@ header .barLines {
 }
 
 .firstSentence {
-  width: 33%;
+  width: 34%;
   grid-area: 3 / 2;
   color: var(--speedyWhite);
   position: relative;
@@ -1158,47 +1161,52 @@ header .barLines {
 
   .verticalImage {
     display: none;
+  }
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .briefIntro p {
+    /* BW */
+    font-size: 0.6rem;
+  }
 }
 
 #homeThirdSection {
-  height: 100vh;
   display: grid;
-  grid-template: 1fr 3fr 100px / 0.5fr 2.75fr 0.375fr 2.75fr 0.375fr 2.75fr 0.5fr;
+  grid-template-columns: 5% 27.5% 3.75% 27.5% 3.75% 27.5% 5%;
   background-color: var(--speedyWhite);
 }
 
 #homeThirdSection h2 {
-  font-weight: 900;
   color: var(--speedyBlue);
-  grid-area: 1 / 2 / span 1 / span 5;
+  grid-column: 2 / span 5;
   text-align: center;
-  align-self: center;
+  padding: 1.25em 0;
 }
 
 #homeThirdSection .comments {
-  border-radius: 1rem;
+  border-radius: 1em;
   color: var(--speedyBlue);
   text-align: center;
   background-color: var(--speedyLightGrey);
-  padding: 2.5rem;
+  padding: 2em 2em 1em;
+  margin-bottom: 4em;
   display: grid;
-  grid-template-rows: 3fr repeat(2, 2fr) 8fr 1fr;
+  grid-template-rows: 5em repeat(2, 3em) 1fr 3em;
+  align-items: center;
 }
 
-#firstComment {
+.firstComment {
   grid-area: 2 / 2;
 }
 
-#secondComment {
+.secondComment {
   grid-area: 2 / 4;
 }
 
-#thirdComment {
+.thirdComment {
+  display: inline;
   grid-area: 2 / 6;
-}
-
-.comments p {
-  align-self: start;
 }
 
 .profileImage {
@@ -1208,6 +1216,71 @@ header .barLines {
 
 .rating {
   color: var(--speedyYellow);
+  margin-bottom: 1em;
+}
+
+.comments p {
+  align-self: start;
+}
+
+@media (max-width: 950px) {
+  #homeThirdSection {
+    grid-template-columns: 5% 42.5% 5% 42.5% 5%;
+  }
+
+  #homeThirdSection h2 {
+    grid-column: 2 / span 3;
+  }
+
+  .thirdComment {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  #homeThirdSection {
+    grid-template-columns: 5% 90% 5%;
+  }
+
+  #homeThirdSection h2 {
+    grid-column: 2 / span 1;
+  }
+
+  .secondComment {
+    display: none !important;
+  }
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #homeThirdSection {
+    grid-template-columns: 5% 90% 5%;
+  }
+
+  #homeThirdSection h2 {
+    grid-column: 2 / span 1;
+  }
+
+  .secondComment {
+    display: none !important;
+  }
+
+  .thirdComment {
+    display: none !important;
+  }
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  #homeThirdSection {
+    grid-template-columns: 5% 42.5% 5% 42.5% 5%;
+  }
+
+  #homeThirdSection h2 {
+    grid-column: 2 / span 3;
+  }
+
+  .thirdComment {
+    display: none !important;
+  }
 }
 
 /*  =================================================

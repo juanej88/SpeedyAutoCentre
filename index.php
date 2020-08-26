@@ -34,9 +34,9 @@
          <div class="verticalImage"></div>
       </section>
 
-      <!-- <section id="homeThirdSection">
+      <section id="homeThirdSection">
          <h2>What our clients say</h2>
-         <div id="firstComment" class="comments">
+         <div id="firstComment" class="firstComment comments">
             <img class="profileImage" src="./images/profile/profile1.png" alt="Profile Image 1">
             <h3>Great Service!</h3>
             <div class="rating">
@@ -49,7 +49,7 @@
             <p>Great Service! Perfect value! John and his team are just fabulous! Had my 2010 Corolla there for a repair. Very uncomplicated and quick service at a fair price! Thanks</p>
             <h4>Dennis Forster</h4>
          </div>
-         <div id="secondComment" class="comments">
+         <div id="secondComment" class="secondComment comments">
             <img class="profileImage" src="./images/profile/profile2.png" alt="Profile Image 1">
             <h3>Great Mechanic!</h3>
             <div class="rating">
@@ -62,7 +62,7 @@
             <p>Great Mechanic! John and Carson are friendly and helpful. I've had my Nissan X-trail serviced here 2 years in a row and I found them to be honest and professional with there work. Priced fairly well too. definitely recommend this place. keep up the good work. Thanks Carson for the extra time you spent on my car.</p>
             <h4>Sam Youchaa</h4>
          </div>
-         <div id="thirdComment" class="comments">
+         <div id="thirdComment" class="thirdComment comments">
             <img class="profileImage" src="./images/profile/profile3.png" alt="Profile Image 1">
             <h3>Excellent customer service</h3>
             <div class="rating">
@@ -75,7 +75,7 @@
             <p>Excellent customer service and also my car service was great!</p>
             <h4>Gaston Gonzalez</h4>
          </div>
-      </section> -->
+      </section>
    </main>
 
    <footer id="websiteFooter">
