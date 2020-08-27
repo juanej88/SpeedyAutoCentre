@@ -1052,7 +1052,9 @@ header .barLines {
     }
   }
 
-  .bookNowButton:hover {
+  .bookNowButton:hover,
+  .bookNowButton:focus,
+  .bookNowButton:active {
     animation: darkButtonOn 0.25s linear;
     animation-fill-mode: forwards;
   }
@@ -1131,6 +1133,7 @@ header .barLines {
 .verticalImage {
   grid-area: 2 / 3;
   width: 100%;
+  min-height: 480px;
   background-image: url(../images/extra/carKey.jpg);
   background-size: cover;
   background-position: 35% 70%;
@@ -1156,7 +1159,9 @@ header .barLines {
   }
 
   .briefIntro {
+    text-align: center;
     border-radius: 1em;
+    padding: 2em 3em 5em;
   }
 
   .verticalImage {
@@ -1172,6 +1177,7 @@ header .barLines {
 }
 
 #homeThirdSection {
+  overflow: hidden;
   display: grid;
   grid-template-columns: 5% 27.5% 3.75% 27.5% 3.75% 27.5% 5%;
   background-color: var(--speedyWhite);
@@ -1189,7 +1195,7 @@ header .barLines {
   color: var(--speedyBlue);
   text-align: center;
   background-color: var(--speedyLightGrey);
-  padding: 2em 2em 1em;
+  padding: 2em 3em 1em;
   margin-bottom: 4em;
   display: grid;
   grid-template-rows: 5em repeat(2, 3em) 1fr 3em;
@@ -1197,6 +1203,7 @@ header .barLines {
 }
 
 .firstComment {
+  position: relative;
   grid-area: 2 / 2;
 }
 
@@ -1233,7 +1240,9 @@ header .barLines {
   }
 
   .thirdComment {
-    display: none !important;
+    position: relative;
+    left: 125%;
+    grid-area: 2 / 4;
   }
 }
 
@@ -1247,25 +1256,41 @@ header .barLines {
   }
 
   .secondComment {
-    display: none !important;
+    position: relative;
+    left: 125%;
+    grid-area: 2 / 2;
+  }
+
+  .thirdComment {
+    position: relative;
+    left: 125%;
+    grid-area: 2 / 2;
   }
 }
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   #homeThirdSection {
-    grid-template-columns: 5% 90% 5%;
+    grid-template-columns: 12.5% 75% 12.5%;
   }
 
   #homeThirdSection h2 {
     grid-column: 2 / span 1;
   }
 
+  #homeThirdSection .comments {
+    grid-template-rows: 5em repeat(2, 3em) 1fr 4em;
+  }
+
   .secondComment {
-    display: none !important;
+    position: relative;
+    left: 80vw;
+    grid-area: 2 / 2;
   }
 
   .thirdComment {
-    display: none !important;
+    position: relative;
+    left: 160vw;
+    grid-area: 2 / 2;
   }
 }
 
@@ -1279,7 +1304,9 @@ header .barLines {
   }
 
   .thirdComment {
-    display: none !important;
+    position: relative;
+    left: 125%;
+    grid-area: 2 / 4;
   }
 }
 
@@ -1606,25 +1633,25 @@ header .barLines {
   display: none;
 }
 
-#bookingSecondSection .bookingForm .submitButton {
+.submitButton {
   grid-column: 3 / 5;
   padding: 1.25rem 0 1rem 0;
 }
 
-@media (max-width: 1100px) {
-  #bookingSecondSection .bookingForm .submitButton {
+@media (max-width: 950px) {
+  .submitButton {
     grid-column: 2 / 6;
   }
 }
 
-@media (max-width: 650px) {
-  #bookingSecondSection .bookingForm .submitButton {
+@media (max-width: 600px) {
+  .submitButton {
     grid-column: 1 / 7;
   }
 }
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
-  #bookingSecondSection .bookingForm .submitButton {
+  .submitButton {
     grid-column: 1 / 7;
   }
 }
