@@ -51,12 +51,10 @@
             </section>
             <section class="preferredTime smallSpan">
                <label for="preferredTime" class="blockText">Preferred Time</label>
-               <select id="preferredTime" name="preferred-time" required>
-                  <option value=""></option>
-                  <!-- <?=$preferred_time;?> -->
-                  <option value="8:30am - 12:00pm">8:30am - 12:00pm</option>
+               <select id="preferredTime" name="preferred-time" required>                  
+                  <!-- <option value="8:30am - 12:00pm">8:30am - 12:00pm</option>
                   <option value="12:00pm - 4:00pm">12:00pm - 4:00pm</option>
-                  <option value="9:00am - 12:00pm">Sat: 9:00am - 12:00pm</option>
+                  <option value="9:00am - 12:00pm">Sat: 9:00am - 12:00pm</option> -->
                </select>
             </section>
             <section class="rego smallSpan">
@@ -159,7 +157,7 @@
    </footer>
 
    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-   <script defer src="./js/main.js" type="text/javascript"></script>
+   <script src="./js/main.js" type="text/javascript"></script>
    <script>
       grecaptcha.ready(function() {
          grecaptcha.execute('6LfXT74ZAAAAAP1dpPcxjBryqxydqlfl3FO4X06n', {action: 'homepage'}).then(function(token) {

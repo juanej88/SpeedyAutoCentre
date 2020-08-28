@@ -43,6 +43,7 @@
   --speedyLightGrey2: hsla(210, 0%, 80%, 1);
   --speedyYellow: hsla(45, 100%, 50%, 1);
   --speedyRed: rgba(220, 50, 35, 1);
+  --speedyDarkRed: hsl(0, 40%, 50%, 1);
 }
 
 /*  =================================================
@@ -1682,8 +1683,7 @@ input:focus,
 select:focus,
 textarea:focus {
   border-color: var(--speedyBlue);
-  animation: focusedInput 0.4s linear;
-  animation-fill-mode: forwards;
+  animation: focusedInput 0.4s linear forwards;
 }
 
 @keyframes focusedInput {
@@ -1692,6 +1692,23 @@ textarea:focus {
   }
   100% {
     border-color: var(--speedyBlue);
+  }
+}
+
+/* Invalid Input */
+
+.invalidInput,
+.invalidInput:focus {
+  border-color: var(--speedyDarkRed);
+  animation: invalidInput 0.4s linear forwards;
+}
+
+@keyframes invalidInput {
+  0% {
+    border-color: var(--speedyWhite);
+  }
+  100% {
+    border-color: var(--speedyDarkRed);
   }
 }
 

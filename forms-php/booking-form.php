@@ -43,7 +43,24 @@ function getCarMake() {
 // ===== Second Section =====
 // ====> Form Validation 
 
+// $check_date = $_POST["preferred-date"];
+// $get_date_PHP = strtotime($check_date);
+// $check_date_PHP = date("l", $get_date_PHP);
 
+// if ($check_date_PHP === "Sunday") {
+//     echo "Sundays are not available\n\n";
+// } else {
+//     echo "Your booking has been submitted!\n\n";
+// }
+
+
+// function validateForm() {
+//     if ($_SERVER["REQUEST_METHOD"] === "POST") {
+//         if($preferredDate === "Sunday") {
+
+//         }
+//     }
+// }
 
 // ===== Third Section =====
 // ====> Email Composition 

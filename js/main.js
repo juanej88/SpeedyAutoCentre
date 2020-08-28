@@ -261,6 +261,42 @@ const hideComments = () => {
 
 hideComments();
 
+const checkPreferredDate = () => {
+  $("#preferredDate").change(() => {
+    let preferredDate = document.getElementById("preferredDate").value;
+    let javascriptDate = new Date(preferredDate);
+    let day = javascriptDate.getDay();
+
+    if (day === 0) {
+      $("#preferredDate").addClass("invalidInput");
+      $(".availableHours").remove();
+    } else if (day === 6) {
+      $("#preferredDate").removeClass("invalidInput");
+      $(".availableHours").remove();
+      $("#preferredTime").append(
+        "<option class='availableHours' value=''></option>"
+      );
+      $("#preferredTime").append(
+        "<option class='availableHours' value='9:00am - 12:00pm'>9:00am - 12:00pm</option>"
+      );
+    } else {
+      $("#preferredDate").removeClass("invalidInput");
+      $(".availableHours").remove();
+      $("#preferredTime").append(
+        "<option class='availableHours' value=''></option>"
+      );
+      $("#preferredTime").append(
+        "<option class='availableHours' value='8:30am - 12:00pm'>8:30am - 12:00pm</option>"
+      );
+      $("#preferredTime").append(
+        "<option class='availableHours' value='12:00pm - 4:00pm'>12:00pm - 4:00pm</option>"
+      );
+    }
+  });
+};
+
+checkPreferredDate();
+
 const slideComments = () => {
   // if (window.orientation === 0) {
   //   $("#firstComment").addClass("firstCommentPortrait");
