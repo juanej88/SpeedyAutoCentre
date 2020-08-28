@@ -29,19 +29,19 @@
       <section id="bookingSecondSection">
          <h1>Booking</h1>
          <h3>Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h3>
-         <form class="bookingForm" action="./booking.php" method="POST">
+         <form class="bookingForm" action="" method="POST">
             <h3 class="formTitles bigSpan">Personal Details</h3>
             <section class="fullName bigSpan">
                <label for="fullName" class="blockText">Full Name</label>
-               <input id="fullName" type="text" name="full-name" required />
+               <input id="fullName" type="text" name="full-name" value="<?=$fullName;?>" required />
             </section>
             <section class="email mediumSpan">
                <label for="email" class="blockText">Email</label>
-               <input id="email" type="email" name="email" required />
+               <input id="email" type="email" name="email" value="<?=$email;?>" required />
             </section>
             <section class="phoneNumber mediumSpan">
                <label for="phoneNumber" class="blockText">Phone Number</label>
-               <input id="phoneNumber" type="tel" name="phone-number" minlength="8" maxlength="12" required />
+               <input id="phoneNumber" type="tel" name="phone-number" minlength="8" maxlength="12" value="<?=$phoneNumber;?>" required />
             </section>
 
             <h3 class="formTitles bigSpan">Booking Details</h3>
