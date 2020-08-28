@@ -270,9 +270,14 @@ const checkPreferredDate = () => {
     if (day === 0) {
       $("#preferredDate").addClass("invalidInput");
       $(".availableHours").remove();
+      $(".invalidSmallText").remove();
+      $(".preferredDate").append(
+        "<p class='invalidSmallText'>Closed on Sundays</p>"
+      );
     } else if (day === 6) {
       $("#preferredDate").removeClass("invalidInput");
       $(".availableHours").remove();
+      $(".invalidSmallText").remove();
       $("#preferredTime").append(
         "<option class='availableHours' value=''></option>"
       );
@@ -282,6 +287,7 @@ const checkPreferredDate = () => {
     } else {
       $("#preferredDate").removeClass("invalidInput");
       $(".availableHours").remove();
+      $(".invalidSmallText").remove();
       $("#preferredTime").append(
         "<option class='availableHours' value=''></option>"
       );

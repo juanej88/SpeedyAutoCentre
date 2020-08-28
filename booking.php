@@ -48,13 +48,11 @@
             <section class="preferredDate smallSpan">
                <label for="preferredDate" class="blockText">Preferred Date</label>
                <input id="preferredDate" type="date" name="preferred-date" min="<?=getMinDate();?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" required />
+               <?=$date_error;?>
             </section>
             <section class="preferredTime smallSpan">
                <label for="preferredTime" class="blockText">Preferred Time</label>
                <select id="preferredTime" name="preferred-time" required>                  
-                  <!-- <option value="8:30am - 12:00pm">8:30am - 12:00pm</option>
-                  <option value="12:00pm - 4:00pm">12:00pm - 4:00pm</option>
-                  <option value="9:00am - 12:00pm">Sat: 9:00am - 12:00pm</option> -->
                </select>
             </section>
             <section class="rego smallSpan">
@@ -77,12 +75,11 @@
             </section>
             <section class="carModel smallSpan">
                <label for="carModel" class="blockText">Model</label>
-               <label for=""></label>
                <input id="carModel" type="text" name="car-model" required />
             </section>
 
             <span class="blockText bigSpan">Service</span>
-            <section class="smallSpan">
+            <section class="smallSpan oneRow">
                <input id="bluePinkSlip" class="checkboxes" type="checkbox" name="service[]" value="Blue/Pink Slip" />
                <label id="bluePinkSlipBox" for="bluePinkSlip" class="textInBox">
                   Blue / Pink Slip
@@ -91,7 +88,7 @@
                   </div>
                </label>
             </section>
-            <section class="smallSpan">
+            <section class="smallSpan oneRow">
                <input id="engineService" class="checkboxes" type="checkbox" name="service[]" value="General Maintenance" />
                <label id="engineServiceBox" for="engineService" class="textInBox">
                   General Maintenance
@@ -100,7 +97,7 @@
                   </div>
                </label>
             </section>
-            <section class="smallSpan">
+            <section class="smallSpan oneRow">
                <input id="safetyInspections" class="checkboxes" type="checkbox" name="service[]" value="Safety Inspection" />
                <label id="safetyInspectionsBox" for="safetyInspections" class="textInBox">
                   Safety Inspections
@@ -109,7 +106,7 @@
                   </div>
                </label>
             </section>
-            <section class="smallSpan">
+            <section class="smallSpan oneRow">
                <input id="tyreBrakeService" class="checkboxes" type="checkbox" name="service[]" value="Tyre/Brake Service" />
                <label id="tyreBrakeServiceBox" for="tyreBrakeService" class="textInBox">
                   Tyre / Brake Service
@@ -118,7 +115,7 @@
                   </div>
                </label>
             </section>
-            <section class="smallSpan">
+            <section class="smallSpan oneRow">
                <input id="repairs" class="checkboxes" type="checkbox" name="service[]" value="Repairs" />
                <label id="repairsBox" for="repairs" class="textInBox">
                   Repairs
@@ -127,7 +124,7 @@
                   </div>
                </label>
             </section>
-            <section class="smallSpan">
+            <section class="smallSpan oneRow">
                <input id="otherService" class="checkboxes" type="checkbox" name="service[]" value="Other Service/Comments" />
                <label id="otherServiceBox" for="otherService" class="textInBox">
                   Other / Add Comments
@@ -142,7 +139,7 @@
                <textarea id="addComments" name="comments" rows="4"></textarea>
             </section>
 
-            <section class="submitButton smallSpan">
+            <section class="submitButton smallSpan oneRow">
                <input id="submitButton" type="submit" name="submit" value="Submit Booking" />
             </section>
             <input id="gToken" type="hidden" name="g-token" />
