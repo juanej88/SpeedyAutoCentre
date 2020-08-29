@@ -270,14 +270,16 @@ const checkPreferredDate = () => {
     if (day === 0) {
       $("#preferredDate").addClass("invalidInput");
       $(".availableHours").remove();
-      $(".invalidSmallText").remove();
+      $(".preferredDate .invalidSmallText").remove();
+      $(".preferredTime .invalidSmallText").remove();
       $(".preferredDate").append(
         "<p class='invalidSmallText'>Closed on Sundays</p>"
       );
     } else if (day === 6) {
       $("#preferredDate").removeClass("invalidInput");
       $(".availableHours").remove();
-      $(".invalidSmallText").remove();
+      $(".preferredDate .invalidSmallText").remove();
+      $(".preferredTime .invalidSmallText").remove();
       $("#preferredTime").append(
         "<option class='availableHours' value=''></option>"
       );
@@ -287,7 +289,8 @@ const checkPreferredDate = () => {
     } else {
       $("#preferredDate").removeClass("invalidInput");
       $(".availableHours").remove();
-      $(".invalidSmallText").remove();
+      $(".preferredDate .invalidSmallText").remove();
+      $(".preferredTime .invalidSmallText").remove();
       $("#preferredTime").append(
         "<option class='availableHours' value=''></option>"
       );
@@ -302,6 +305,29 @@ const checkPreferredDate = () => {
 };
 
 checkPreferredDate();
+
+const checkPreferredTime = () => {
+  $("#preferredTime").focusin(() => {
+    if (
+      $(".preferredDate p").hasClass("invalidSmallText") ||
+      $("#preferredTime").val() === null
+    ) {
+      $(".preferredTime .invalidSmallText").remove();
+      $("#preferredTime").addClass("invalidInput");
+      $(".preferredTime").append(
+        "<p class='invalidSmallText'>Select a valid date first</p>"
+      );
+    }
+  });
+
+  $("#preferredDate").change(() => {
+    if (!$(".preferredDate p").hasClass("invalidSmallText")) {
+      $("#preferredTime").removeClass("invalidInput");
+    }
+  });
+};
+
+checkPreferredTime();
 
 const slideComments = () => {
   // if (window.orientation === 0) {
