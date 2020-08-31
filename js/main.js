@@ -127,7 +127,6 @@ closedColour();
 
 // This function changes the copyright year on the footer accordingly to
 // the actual year
-
 const changeCopyrightYear = () => {
   const actualDate = new Date();
   const actualYear = actualDate.getFullYear();
@@ -138,7 +137,6 @@ const changeCopyrightYear = () => {
 changeCopyrightYear();
 
 // This function shows and hides the booking header 1 when scrolling
-
 const bookingheaderAnimation = () => {
   $(window).scroll(() => {
     const $windowPosition = $(window).scrollTop();
@@ -260,6 +258,53 @@ const hideComments = () => {
 };
 
 hideComments();
+
+const checkInputs = (inputNum, inputMsg) => {
+  if (!$(inputNum)[0].checkValidity()) {
+    $(inputNum).siblings(".invalidSmallText").remove();
+    $(inputNum).addClass("invalidInput");
+    $(inputNum)[0].insertAdjacentHTML(
+      "afterend",
+      `<p class='invalidSmallText'>${inputMsg}</p>`
+    );
+  } else {
+    $(inputNum).removeClass("invalidInput");
+    $(inputNum).siblings(".invalidSmallText").remove();
+  }
+};
+
+const checkEachInput = () => {
+  const invalidInputMsg = [
+    "Invalid name",
+    "Invalid email",
+    "It must have at least 8 numbers",
+    "Invalid Rego",
+    "Invalid year",
+    "Invalid make",
+    "Invalid model",
+  ];
+
+  for (let i = 0; i < invalidInputMsg.length; i++) {
+    // It checks the validity of the inputs for the first time once
+    // they lose focus
+    $(`.input${i}`).focusout(() => {
+      checkInputs(`.input${i}`, invalidInputMsg[i]);
+      // It checks the validity of the inputs for the second time
+      // every time a key is typed or an input is changed
+      if (i <= 3 || i === 6) {
+        $(`.input${i}`).keyup(() => {
+          checkInputs(`.input${i}`, invalidInputMsg[i]);
+        });
+      } else {
+        $(`.input${i}`).change(() => {
+          checkInputs(`.input${i}`, invalidInputMsg[i]);
+        });
+      }
+    });
+  }
+};
+
+checkEachInput();
 
 const checkPreferredDate = () => {
   $("#preferredDate").change(() => {

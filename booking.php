@@ -31,55 +31,55 @@
          <h3>Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h3>
          <form class="bookingForm" action="" method="POST">
             <h3 class="formTitles bigSpan">Personal Details</h3>
-            <section class="fullName bigSpan">
+            <section class="fullName bigSpan spanGrid">
                <label for="fullName" class="blockText">Full Name</label>
-               <input id="fullName" type="text" name="full-name" value="<?=$fullName;?>" required />
+               <input id="fullName" class="input0" type="text" name="full-name" value="<?=$fullName;?>" required />
             </section>
-            <section class="email mediumSpan">
+            <section class="email mediumSpan spanGrid">
                <label for="email" class="blockText">Email</label>
-               <input id="email" type="email" name="email" value="<?=$email;?>" required />
+               <input id="email" class="input1" type="email" name="email" value="<?=$email;?>" required />
             </section>
-            <section class="phoneNumber mediumSpan">
+            <section class="phoneNumber mediumSpan spanGrid">
                <label for="phoneNumber" class="blockText">Phone Number</label>
-               <input id="phoneNumber" type="tel" name="phone-number" minlength="8" maxlength="12" value="<?=$phoneNumber;?>" required />
+               <input id="phoneNumber" class="input2" type="tel" name="phone-number" minlength="8" maxlength="15" value="<?=$phoneNumber;?>" required />
             </section>
 
             <h3 class="formTitles bigSpan">Booking Details</h3>
-            <section class="preferredDate smallSpan">
+            <section class="preferredDate smallSpan spanGrid">
                <label for="preferredDate" class="blockText">Preferred Date</label>
                <input id="preferredDate" type="date" name="preferred-date" min="<?=getMinDate();?>" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" required />
                <?=$date_error;?>
             </section>
-            <section class="preferredTime smallSpan">
+            <section class="preferredTime smallSpan spanGrid">
                <label for="preferredTime" class="blockText">Preferred Time</label>
                <select id="preferredTime" name="preferred-time" required>                  
                </select>
             </section>
-            <section class="rego smallSpan">
+            <section class="rego smallSpan spanGrid">
                <label for="rego" class="blockText">Vehicle Registration Number</label>
-               <input id="rego" type="text" name="car-rego" required />
+               <input id="rego" class="input3" type="text" name="car-rego" required />
             </section>
-            <section class="carYear smallSpan">
+            <section class="carYear smallSpan spanGrid">
                <label for="carYear" class="blockText">Year</label>
-               <select id="carYear" name="car-year" required>
+               <select id="carYear" class="input4" name="car-year" required>
                   <option value=""></option>
                   <?=getCarYear();?>
                </select>
             </section>
-            <section class="carMake smallSpan">
+            <section class="carMake smallSpan spanGrid">
                <label for="carMake" class="blockText">Make</label>
-               <select id="carMake" type="text" name="car-make" required>
+               <select id="carMake" class="input5" type="text" name="car-make" required>
                   <option value=""></option>
                   <?=getCarMake();?>
                </select>
             </section>
-            <section class="carModel smallSpan">
+            <section class="carModel smallSpan spanGrid">
                <label for="carModel" class="blockText">Model</label>
-               <input id="carModel" type="text" name="car-model" required />
+               <input id="carModel" class="input6" type="text" name="car-model" required />
             </section>
 
             <span class="blockText bigSpan">Service</span>
-            <section class="smallSpan oneRow">
+            <section class="smallSpan">
                <input id="bluePinkSlip" class="checkboxes" type="checkbox" name="service[]" value="Blue/Pink Slip" />
                <label id="bluePinkSlipBox" for="bluePinkSlip" class="textInBox">
                   Blue / Pink Slip
@@ -88,7 +88,7 @@
                   </div>
                </label>
             </section>
-            <section class="smallSpan oneRow">
+            <section class="smallSpan">
                <input id="engineService" class="checkboxes" type="checkbox" name="service[]" value="General Maintenance" />
                <label id="engineServiceBox" for="engineService" class="textInBox">
                   General Maintenance
@@ -97,7 +97,7 @@
                   </div>
                </label>
             </section>
-            <section class="smallSpan oneRow">
+            <section class="smallSpan">
                <input id="safetyInspections" class="checkboxes" type="checkbox" name="service[]" value="Safety Inspection" />
                <label id="safetyInspectionsBox" for="safetyInspections" class="textInBox">
                   Safety Inspections
@@ -106,7 +106,7 @@
                   </div>
                </label>
             </section>
-            <section class="smallSpan oneRow">
+            <section class="smallSpan">
                <input id="tyreBrakeService" class="checkboxes" type="checkbox" name="service[]" value="Tyre/Brake Service" />
                <label id="tyreBrakeServiceBox" for="tyreBrakeService" class="textInBox">
                   Tyre / Brake Service
@@ -115,7 +115,7 @@
                   </div>
                </label>
             </section>
-            <section class="smallSpan oneRow">
+            <section class="smallSpan">
                <input id="repairs" class="checkboxes" type="checkbox" name="service[]" value="Repairs" />
                <label id="repairsBox" for="repairs" class="textInBox">
                   Repairs
@@ -124,7 +124,7 @@
                   </div>
                </label>
             </section>
-            <section class="smallSpan oneRow">
+            <section class="smallSpan">
                <input id="otherService" class="checkboxes" type="checkbox" name="service[]" value="Other Service/Comments" />
                <label id="otherServiceBox" for="otherService" class="textInBox">
                   Other / Add Comments
@@ -139,7 +139,7 @@
                <textarea id="addComments" name="comments" rows="4"></textarea>
             </section>
 
-            <section class="submitButton smallSpan oneRow">
+            <section class="submitButton smallSpan">
                <input id="submitButton" type="submit" name="submit" value="Submit Booking" />
             </section>
             <input id="gToken" type="hidden" name="g-token" />

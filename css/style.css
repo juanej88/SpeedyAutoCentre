@@ -1494,12 +1494,11 @@ header .barLines {
 
 .smallSpan {
   grid-column: span 2;
-  display: grid;
-  grid-template-rows: 1.85em 3.25em 0;
 }
 
-.oneRow {
-  display: block;
+.spanGrid {
+  display: grid;
+  grid-template-rows: 1.85em 3.25em 0;
 }
 
 @media (max-width: 950px) {
@@ -1524,12 +1523,10 @@ header .barLines {
 
   .smallSpan {
     grid-column: span 6;
-    display: grid;
-    grid-template-rows: 2.25em 4em 0;
   }
 
-  .oneRow {
-    display: block;
+  .spanGrid {
+    grid-template-rows: 1.85em 4em 0;
   }
 }
 
