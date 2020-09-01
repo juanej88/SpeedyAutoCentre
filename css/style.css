@@ -1393,14 +1393,45 @@ header .barLines {
   }
 }
 
-#servicesSecondSection img {
-  width: 4rem;
+#servicesSecondSection {
+  width: 100%;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
 }
 
 .servicesHeading {
+  grid-column: span 3;
   text-align: center;
   color: var(--speedyBlue);
   padding: 1.5rem 0 1rem 0;
+}
+
+.service {
+  width: 100%;
+  padding: 1em 0;
+  margin: 1em;
+  display: grid;
+  grid-template: 2rem / 20% 80%;
+}
+
+.service img {
+  grid-area: 1 / 1 / span 2 / span 1;
+  width: 100%;
+  max-width: 5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: var(--speedyBlue);
+}
+
+.service h3 {
+  color: var(--speedyBlue);
+  padding: 0 0.75rem;
+}
+
+.service ul {
+  padding: 0 0.75rem;
 }
 
 /*  =================================================
