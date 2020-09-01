@@ -17,11 +17,11 @@ const navAnimation = () => {
     }
 
     if (windowPosition < bookingHeight) {
-      $("#bookingHeader").removeClass("showBookingNav");
-      $("#bookingHeader").addClass("hideBookingNav");
+      $(".whiteHeader").removeClass("showWhiteNav");
+      $(".whiteHeader").addClass("hideWhiteNav");
     } else if (windowPosition >= bookingHeight) {
-      $("#bookingHeader").addClass("showBookingNav");
-      $("#bookingHeader").removeClass("hideBookingNav");
+      $(".whiteHeader").addClass("showWhiteNav");
+      $(".whiteHeader").removeClass("hideWhiteNav");
     }
   });
 };
@@ -277,11 +277,11 @@ const checkEachInput = () => {
   const invalidInputMsg = [
     "Invalid name",
     "Invalid email",
-    "It must have at least 8 numbers",
+    "Minimum length of 8",
     "Invalid Rego",
-    "Invalid year",
-    "Invalid make",
-    "Invalid model",
+    "Required",
+    "Required",
+    "Required",
   ];
 
   for (let i = 0; i < invalidInputMsg.length; i++) {

@@ -17,7 +17,7 @@
         </a>
     </li>
     <li>
-        <a class="navLinks" href="./aboutus.html">
+        <a class="navLinks" href="./aboutus.php">
             About Us
             <div class="menuArrowContainer">
                 <div class="menuArrow"></div>
@@ -25,7 +25,7 @@
         </a>
     </li>
     <li>
-        <a class="navLinks" href="./services.html">
+        <a class="navLinks" href="./services.php">
             Services
             <div class="menuArrowContainer">
                 <div class="menuArrow"></div>
@@ -41,7 +41,7 @@
         </a>
     </li>
     <li class="contactContainer">
-        <a class="navLinks" href="./contact.html">
+        <a class="navLinks" href="./contact.php">
             Contact
             <div class="menuArrowContainer">
                 <div class="menuArrow"></div>

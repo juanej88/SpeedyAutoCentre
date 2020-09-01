@@ -15,7 +15,7 @@
 ?>
 
 <body>
-   <header id="bookingHeader" class="hideBookingNav">
+   <header id="bookingHeader" class="whiteHeader hideWhiteNav">
       <?php
          require "header-footer-php/header.php";
       ?>
