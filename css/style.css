@@ -1366,7 +1366,7 @@ header .barLines {
   background-image: url(../images/background/servicesBackground.jpg);
   background-size: cover;
   background-attachment: fixed;
-  filter: brightness(0.9);
+  filter: brightness(0.95);
   background-position: 50% 50%;
 }
 
@@ -1393,8 +1393,8 @@ header .barLines {
   }
 }
 
-#servicesSecondSection {
-  height: 100vh;
+#servicesSecondSection img {
+  width: 4rem;
 }
 
 .servicesHeading {
