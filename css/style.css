@@ -192,8 +192,7 @@ header {
 }
 
 .showWhiteNav {
-  animation: showWhiteNav 0.25s linear;
-  animation-fill-mode: forwards;
+  animation: showWhiteNav 0.25s linear forwards;
 }
 
 @keyframes showWhiteNav {
@@ -206,8 +205,7 @@ header {
 }
 
 .hideWhiteNav {
-  animation: hideWhiteNav 0.25s linear;
-  animation-fill-mode: forwards;
+  animation: hideWhiteNav 0.25s linear forwards;
 }
 
 @keyframes hideWhiteNav {
@@ -251,7 +249,10 @@ nav li {
 
 nav a {
   padding: 0.7em 0.5em 0.7em 0.5em;
-  opacity: 0.75;
+}
+
+#homeHeader nav a {
+  opacity: 0.85;
 }
 
 nav a.lastIcon {
@@ -580,7 +581,7 @@ nav a.lastIcon {
 nav a:hover,
 nav a:focus {
   color: var(--speedyWhite);
-  opacity: 1;
+  opacity: 0.65;
 }
 
 nav .currentPage:hover,
@@ -1352,6 +1353,67 @@ header .barLines {
     ================================================= */
 
 /*  =================================================
+    Start | About Us Page
+    ================================================= */
+
+#aboutUsFirstSection {
+  width: 100%;
+  height: 62vh;
+}
+
+.aboutUsBackground {
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/background/aboutUsBackground.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% 115%;
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #aboutUsFirstSection {
+    height: 37.5vh;
+  }
+
+  .aboutUsBackground {
+    background-size: auto;
+    background-attachment: scroll;
+    background-position: 65% 30%;
+  }
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  #aboutUsFirstSection {
+    height: 72.5vh;
+  }
+
+  .aboutUsBackground {
+    background-size: cover;
+    background-position: 50% 35%;
+  }
+}
+
+#aboutUsSecondSection {
+  width: 100%;
+  height: 100vh;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 1.5em;
+}
+
+.aboutUsHeading {
+  grid-column: span 3;
+  text-align: center;
+  color: var(--speedyBlue);
+  padding: 0.75em 0 1em;
+}
+
+/*  =================================================
+    End | About Us Page
+    ================================================= */
+
+/*  =================================================
     Start | Services Page
     ================================================= */
 
@@ -1378,7 +1440,7 @@ header .barLines {
   .servicesBackground {
     background-size: auto;
     background-attachment: scroll;
-    background-position: 20% 20%;
+    background-position: 15% 20%;
   }
 }
 
@@ -1545,7 +1607,8 @@ header .barLines {
 
 .service li {
   color: var(--speedyDarkGrey);
-  padding: 0 0 0.75em 0.75rem;
+  padding: 0 0 0.75em 1.5rem;
+  text-indent: -0.75em;
 }
 
 /*  =================================================
@@ -1648,10 +1711,9 @@ header .barLines {
 }
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
-  #bookingSecondSection h1,
-  #bookingSecondSection h3,
   .bookingForm {
     width: 100%;
+    max-width: 1000px;
   }
 }
 
