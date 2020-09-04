@@ -27,9 +27,10 @@
       </section>
 
       <section id="bookingSecondSection">
-         <h1>Booking</h1>
-         <h3>Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h3>
-         <form class="bookingForm" action="" method="POST">
+         <?=$formHeading_error;?>
+         <?=$instructions_error;?>
+         <h3 class="errorMsg"><?=$validation_error;?></h3>
+         <form class="bookingForm" action="#bookingSecondSection" method="POST">
             <h3 class="formTitles bigSpan">Personal Details</h3>
             <section class="fullName bigSpan spanGrid">
                <label for="fullName" class="blockText">Full Name</label>
@@ -52,12 +53,12 @@
             </section>
             <section class="preferredTime smallSpan spanGrid">
                <label for="preferredTime" class="blockText">Preferred Time</label>
-               <select id="preferredTime" name="preferred-time" required>                  
+               <select id="preferredTime" name="preferred-time" required>               
                </select>
             </section>
             <section class="rego smallSpan spanGrid">
                <label for="rego" class="blockText">Vehicle Registration Number</label>
-               <input id="rego" class="input3" type="text" name="car-rego" required />
+               <input id="rego" class="input3" type="text" name="car-rego" value="<?=$carRego;?>" required />
             </section>
             <section class="carYear smallSpan spanGrid">
                <label for="carYear" class="blockText">Year</label>
@@ -75,7 +76,7 @@
             </section>
             <section class="carModel smallSpan spanGrid">
                <label for="carModel" class="blockText">Model</label>
-               <input id="carModel" class="input6" type="text" name="car-model" required />
+               <input id="carModel" class="input6" type="text" name="car-model" value="<?=$carModel;?>" required />
             </section>
 
             <span class="blockText bigSpan">Service</span>
