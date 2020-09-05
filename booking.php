@@ -145,6 +145,7 @@
             </section>
             <input id="gToken" type="hidden" name="g-token" />
          </form>
+         <?=$bottomBar;?>
       </section>
    </main>
 

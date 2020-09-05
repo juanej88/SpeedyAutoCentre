@@ -44,6 +44,7 @@
   --speedyYellow: hsla(45, 100%, 50%, 1);
   --speedyRed: rgba(220, 50, 35, 1);
   --speedyDarkRed: hsl(0, 100%, 35%, 1);
+  --speedyGreen: hsl(125, 100%, 35%, 1);
 }
 
 /*  =================================================
@@ -1724,8 +1725,20 @@ header .barLines {
 
 #bookingSecondSection h3 {
   margin: 0 auto;
-  text-align: justify;
   padding-bottom: 0.75em;
+}
+
+.temporalBar {
+  width: 100%;
+  height: 5.65rem;
+}
+
+.errorBar {
+  background-color: var(--speedyDarkRed);
+}
+
+.successfulBar {
+  background-color: var(--speedyGreen);
 }
 
 #bookingSecondSection h1.errorMsg,

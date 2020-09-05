@@ -52,14 +52,18 @@ $check_date_PHP = date("l", $get_date_PHP);
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     if($_POST["service"] === NULL) {
-        $formHeading_error = "<h3><br/><br/></h3><h1 class=\"errorMsg\">Your booking is incomplete</h1>";
-        $instructions_error = "<h3 id=\"bookingInstructions\" class=\"errorMsg\"><br/>Your booking hasn't been submitted yet.<br/><br/>You must:<br/>-Select at least one SERVICE for your car";
+        $formHeading_error = "<div class=\"temporalBar errorBar\"></div><h1 class=\"errorMsg\">Your booking is incomplete</h1>";
+        $instructions_error = "<h3 id=\"bookingInstructions\" class=\"errorMsg\"><br/>Your booking hasn't been submitted yet.<br/><br/>You must:<br/>-Select at least one SERVICE for your car</h3>";
+    } else {
+        $formHeading_error = "<div class=\"temporalBar successfulBar\"></div><h1>Your booking has been submitted successfully</h1>";
+        $instructions_error = "<h3 id=\"bookingInstructions\"><br/>One of our staff will contact you to confirm your appointment date and time.<br/>Have a nice day.</h3>";
+        $bottomBar = "<div class=\"temporalBar successfulBar\"></div>";
     }
 
-    if ($check_date_PHP === "Sunday") {
-        $instructions_error = "Sundays are not available";
-        $date_error = "<p class='invalidSmallText'>Closed on Sundays</p>";
-    }
+    // if ($check_date_PHP === "Sunday") {
+    //     $instructions_error = "Sundays are not available";
+    //     $date_error = "<p class='invalidSmallText'>Closed on Sundays</p>";
+    // }
     
 }
 
