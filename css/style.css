@@ -1741,6 +1741,11 @@ header .barLines {
   background-color: var(--speedyGreen);
 }
 
+/* Height for mobile != 0.9 */
+.successfulBar2 {
+  height: 1.4rem;
+}
+
 #bookingSecondSection h1.errorMsg,
 #bookingSecondSection h3.errorMsg {
   color: var(--speedyDarkRed);

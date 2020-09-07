@@ -86,5 +86,6 @@
 
    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
    <script defer src="./js/main.js" type="text/javascript"></script>
+   <script defer src="./js/slider.js" type="text/javascript"></script>
 </body>
 </html>

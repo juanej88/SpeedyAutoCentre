@@ -56,8 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $instructions_error = "<h3 id=\"bookingInstructions\" class=\"errorMsg\"><br/>Your booking hasn't been submitted yet.<br/><br/>You must:<br/>-Select at least one SERVICE for your car</h3>";
     } else {
         $formHeading_error = "<div class=\"temporalBar successfulBar\"></div><h1>Your booking has been submitted successfully</h1>";
-        $instructions_error = "<h3 id=\"bookingInstructions\"><br/>One of our staff will contact you to confirm your appointment date and time.<br/>Have a nice day.</h3>";
-        $bottomBar = "<div class=\"temporalBar successfulBar\"></div>";
+        $instructions_error = "<h3 id=\"bookingInstructions\"><br/>One of our staff will contact you to confirm your appointment date and time.</h3>";
+        $bottomBar = "<div class=\"temporalBar successfulBar successfulBar2\"></div>";
     }
 
     // if ($check_date_PHP === "Sunday") {
