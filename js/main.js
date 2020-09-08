@@ -259,14 +259,6 @@ const hideComments = () => {
 
 hideComments();
 
-const removeForm = () => {
-  if ($(".temporalBar").hasClass("successfulBar")) {
-    $(".bookingForm").remove();
-  }
-};
-
-removeForm();
-
 const checkInputs = (inputNum, inputMsg) => {
   if (!$(inputNum)[0].checkValidity()) {
     $(inputNum).siblings(".invalidSmallText").remove();
@@ -285,11 +277,11 @@ const checkEachInput = () => {
   const invalidInputMsg = [
     "Invalid name",
     "Invalid email",
-    "Minimum length of 8",
+    "Invalid number",
     "Invalid Rego",
     "Required",
     "Required",
-    "Required",
+    "Invalid model",
   ];
 
   for (let i = 0; i < invalidInputMsg.length; i++) {
@@ -380,3 +372,11 @@ const checkPreferredTime = () => {
   });
 };
 checkPreferredTime();
+
+const removeForm = () => {
+  if ($(".temporalBar").hasClass("successfulBar")) {
+    $(".bookingForm").remove();
+  }
+};
+
+removeForm();

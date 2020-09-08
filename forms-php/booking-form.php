@@ -40,44 +40,15 @@ function getCarMake() {
     }
 }
 
+// ===== End First Section
+
 // ===== Second Section =====
-// ====> Form Validation 
-$formHeading_error = "<h1>Booking</h1>";
-$instructions_error = "<h3 id=\"bookingInstructions\">Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h3>";
-
-$check_date = $_POST["preferred-date"];
-$get_date_PHP = strtotime($check_date);
-$check_date_PHP = date("l", $get_date_PHP);
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    
-    if($_POST["service"] === NULL) {
-        $formHeading_error = "<div class=\"temporalBar errorBar\"></div><h1 class=\"errorMsg\">Your booking is incomplete</h1>";
-        $instructions_error = "<h3 id=\"bookingInstructions\" class=\"errorMsg\"><br/>Your booking hasn't been submitted yet.<br/><br/>You must:<br/>-Select at least one SERVICE for your car</h3>";
-    } else {
-        $formHeading_error = "<div class=\"temporalBar successfulBar\"></div><h1>Your booking has been submitted successfully</h1>";
-        $instructions_error = "<h3 id=\"bookingInstructions\"><br/>One of our staff will contact you to confirm your appointment date and time.</h3>";
-        $bottomBar = "<div class=\"temporalBar successfulBar successfulBar2\"></div>";
-    }
-
-    // if ($check_date_PHP === "Sunday") {
-    //     $instructions_error = "Sundays are not available";
-    //     $date_error = "<p class='invalidSmallText'>Closed on Sundays</p>";
-    // }
-    
-}
-
-
-// function validateForm() {
-// }
-
-// ===== Third Section =====
 // ====> Email Composition 
 
 // Booking form variables
 $fullName = $_POST["full-name"];
-$email = $_POST["email"];
-$phoneNumber = $_POST["phone-number"];
+$email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+$phoneNumber = filter_var($_POST["phone-number"], FILTER_SANITIZE_NUMBER_INT);
 
 $preferredDate = $_POST["preferred-date"];
 $getDatePHP = strtotime($preferredDate);
@@ -85,9 +56,10 @@ $preferredDatePHP = date("l, d F Y", $getDatePHP);
 
 $preferredTime = $_POST["preferred-time"];
 $carRego = $_POST["car-rego"];
-$carYear = $_POST["car-year"];
+$carYear = filter_var($_POST["car-year"], FILTER_SANITIZE_NUMBER_INT);
 $carMake = $_POST["car-make"];
 $carModel = $_POST["car-model"];
+
 $comments = $_POST["comments"];
 
 // It gets the selected checkbox(es) and store it(them)
@@ -146,3 +118,45 @@ $message = "<h3>You have a new booking request</h3>
             <p>Service: <strong>$serviceRequired</strong></p> 
             $addComents
             <hr />";
+
+// ===== End Second Section
+
+// ===== Third Section =====
+// ====> Form Validation 
+$formHeading_error = "<h1>Booking</h1>";
+$instructions_error = "<h3 id=\"bookingInstructions\">Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h3>";
+
+$check_date = $_POST["preferred-date"];
+$get_date_PHP = strtotime($check_date);
+$check_date_PHP = date("l", $get_date_PHP);
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $email_validation = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+    if ($email_validation === FALSE) {
+        $formHeading_error = "<div class=\"temporalBar errorBar\"></div><h1 class=\"errorMsg\">Your booking is incomplete</h1>";
+        $instructions_error = "<h3 id=\"bookingInstructions\" class=\"errorMsg\"><br/>Your booking hasn't been submitted yet.<br/><br/>You must:<br/>-Submit a valid EMAIL address</h3>";
+    }
+    
+    // if($_POST["service"] === NULL) {
+    //     $formHeading_error = "<div class=\"temporalBar errorBar\"></div><h1 class=\"errorMsg\">Your booking is incomplete</h1>";
+    //     $instructions_error = "<h3 id=\"bookingInstructions\" class=\"errorMsg\"><br/>Your booking hasn't been submitted yet.<br/><br/>You must:<br/>-Select at least one SERVICE for your car</h3>";
+    // } else {
+    //     $formHeading_error = "<div class=\"temporalBar successfulBar\"></div><h1>Your booking has been submitted successfully</h1>";
+    //     $instructions_error = "<h3 id=\"bookingInstructions\"><br/>One of our staff will contact you to confirm your appointment date and time.</h3>";
+    //     $bottomBar = "<div class=\"temporalBar successfulBar successfulBar2\"></div>";
+    // }
+
+    // if ($check_date_PHP === "Sunday") {
+    //     $instructions_error = "Sundays are not available";
+    //     $date_error = "<p class='invalidSmallText'>Closed on Sundays</p>";
+    // }
+    
+}
+
+
+// function validateForm() {
+// }
+
+// ===== End Third Section
