@@ -43,24 +43,136 @@ function getCarMake() {
 // ===== End First Section
 
 // ===== Second Section =====
-// ====> Email Composition 
+// ====> Form Validation
 
 // Booking form variables
+// Personal Details Section
 $fullName = $_POST["full-name"];
 $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-$phoneNumber = filter_var($_POST["phone-number"], FILTER_SANITIZE_NUMBER_INT);
-
+$phoneNumber = $_POST["phone-number"];
+// Booking Details Section
 $preferredDate = $_POST["preferred-date"];
 $getDatePHP = strtotime($preferredDate);
 $preferredDatePHP = date("l, d F Y", $getDatePHP);
-
 $preferredTime = $_POST["preferred-time"];
 $carRego = $_POST["car-rego"];
-$carYear = filter_var($_POST["car-year"], FILTER_SANITIZE_NUMBER_INT);
+$carYear = $_POST["car-year"];
 $carMake = $_POST["car-make"];
 $carModel = $_POST["car-model"];
-
 $comments = $_POST["comments"];
+
+// Regex for every "text" input, excluding the email
+$fullNamePattern = "/^[A-z-_ ]{2,30}$/";
+$phoneNumberPattern = "/^[+]?([(][0-9]{1,3}[)])?[0-9- ]{8,12}$/";
+$carRegoPattern = "/^[A-Za-z0-9- ]{2,8}$/";
+$carModelPattern = "/^[A-Za-z0-9- ]{2,15}$/";
+$commentsPattern = "/^[\w\s\?\!\'\"\,\;\:\(\)\-\_]{0,250}$/";
+
+// It gets the day selected e.g. "Monday"
+$check_date = $_POST["preferred-date"];
+$get_date_PHP = strtotime($check_date);
+$check_date_PHP = date("l", $get_date_PHP);
+
+// Default variables
+$formHeading = "<h1>Booking</h1>";
+$formInstructions = "<h3 id=\"bookingInstructions\">Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h3>";
+
+// Successful variables
+$formHeading_successful = "<div class=\"temporalBar successfulBar\"></div><h1>Your booking has been submitted successfully</h1>";
+$formInstructions_successful = "<h3 id=\"bookingInstructions\"><br/>One of our staff will contact you to confirm your appointment date and time.</h3>";
+$bottomBar = "";
+
+// Error variables
+$formHeading_error = "<div class=\"temporalBar errorBar\"></div><h1 class=\"errorMsg\">Your booking is incomplete</h1>";
+$formInstructions_error = "<h3 id=\"bookingInstructions\" class=\"errorMsg\"><br/>Your booking hasn't been submitted yet.</h3><h3 class=\"errorMsg\">You must:</h3>";
+// Specific error variables
+$fullName_error = "<h3 class=\"errorMsg\">- Submit a valid NAME</h3>";
+$email_error = "<h3 class=\"errorMsg\">- Submit a valid EMAIL</h3>";
+$phoneNumber_error = "<h3 class=\"errorMsg\">- Submit a valid phone NUMBER</h3>";
+$preferredDate_error = "<h3 class=\"errorMsg\">- Select a valid DATE. Sundays are not available</h3>";
+$carRego_error = "<h3 class=\"errorMsg\">- Select a valid car REGO</h3>";
+$carModel_error = "<h3 class=\"errorMsg\">- Select a valid car MODEL</h3>";
+$service_error = "<h3 class=\"errorMsg\">- Select at least one SERVICE for your car</h3>";
+$comments_error = "<h3 class=\"errorMsg\">- Submit valid COMMENTS. Special characters which are allowed: ? ! % ' \" . , ; : ( ) - _</h3>";
+
+// Validates all the inputs once the form is intended to be sumbitted
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // These variables validate all "text" inputs
+    $fullName_validation = preg_match($fullNamePattern, $fullName);
+    $email_validation = filter_var($email, FILTER_VALIDATE_EMAIL);
+    $phoneNumber_validation = preg_match($phoneNumberPattern, $phoneNumber);
+    $carRego_validation = preg_match($carRegoPattern, $carRego);
+    $carModel_validation = preg_match($carModelPattern, $carModel);
+    // This validates the comments if the user submitted some
+    $comments_validation = 1;
+    if ($comments !== NULL) {
+        $comments = str_replace(".", "_", $comments);
+        $comments = str_replace("%", " percentage", $comments);
+        $comments_validation = preg_match($commentsPattern, $comments);
+    }
+
+    // It checks if there is any invalid input in order to display
+    // an error text to the user, so it can be fixed
+    if ($fullName_validation !== 1 || 
+        $email_validation === FALSE || 
+        $phoneNumber_validation !== 1 || 
+        $check_date_PHP === "Sunday" || 
+        $carRego_validation !== 1 || 
+        $carModel_validation !== 1 ||
+        $_POST["service"] === NULL || 
+        $comments_validation !== 1) {
+        
+        $formHeading = $formHeading_error;
+        $formInstructions = $formInstructions_error;
+        
+        // If there is an invalid input, it checks input by input
+        // in order to display the specific error to the user
+        if ($fullName_validation !== 1) {
+            $formInstructions = $formInstructions . $fullName_error;
+        }
+
+        if ($email_validation === FALSE) {
+            $formInstructions = $formInstructions . $email_error;
+        }
+
+        if ($phoneNumber_validation !== 1) {
+            $formInstructions = $formInstructions . $phoneNumber_error;
+        }
+
+        if ($check_date_PHP === "Sunday") {
+            $formInstructions = $formInstructions . $preferredDate_error;
+            $date_error = "<p class='invalidSmallText'>Closed on Sundays</p>";
+        }
+
+        if ($carRego_validation !== 1) {
+            $formInstructions = $formInstructions . $carRego_error;
+        }
+
+        if ($carModel_validation !== 1) {
+            $formInstructions = $formInstructions . $carModel_error;
+        }
+    
+        if ($_POST["service"] === NULL) {
+            $formInstructions = $formInstructions . $service_error;
+        }
+
+        if ($comments_validation !== 1) {
+            $formInstructions = $formInstructions . $comments_error;
+        }
+
+    } else {
+        // If all inputs are successful, the heading displays
+        // a successful text and the form is submitted
+        $formHeading = $formHeading_successful;
+        $formInstructions = $formInstructions_successful;
+        $bottomBar = "<div class=\"temporalBar successfulBar successfulBar2\"></div>";
+    }
+}
+
+// ===== End Second Section
+
+// ===== Third Section =====
+// ====> Email Composition
 
 // It gets the selected checkbox(es) and store it(them)
 // into the variable $serviceRequired
@@ -97,6 +209,7 @@ function verifyComments() {
 }
 $addComents = verifyComments();
 
+// The email composition
 $subject = "New Booking Request | $fullName";
 $message = "<h3>You have a new booking request</h3>
             <br />
@@ -118,45 +231,5 @@ $message = "<h3>You have a new booking request</h3>
             <p>Service: <strong>$serviceRequired</strong></p> 
             $addComents
             <hr />";
-
-// ===== End Second Section
-
-// ===== Third Section =====
-// ====> Form Validation 
-$formHeading_error = "<h1>Booking</h1>";
-$instructions_error = "<h3 id=\"bookingInstructions\">Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h3>";
-
-$check_date = $_POST["preferred-date"];
-$get_date_PHP = strtotime($check_date);
-$check_date_PHP = date("l", $get_date_PHP);
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    $email_validation = filter_var($email, FILTER_VALIDATE_EMAIL);
-
-    if ($email_validation === FALSE) {
-        $formHeading_error = "<div class=\"temporalBar errorBar\"></div><h1 class=\"errorMsg\">Your booking is incomplete</h1>";
-        $instructions_error = "<h3 id=\"bookingInstructions\" class=\"errorMsg\"><br/>Your booking hasn't been submitted yet.<br/><br/>You must:<br/>-Submit a valid EMAIL address</h3>";
-    }
-    
-    // if($_POST["service"] === NULL) {
-    //     $formHeading_error = "<div class=\"temporalBar errorBar\"></div><h1 class=\"errorMsg\">Your booking is incomplete</h1>";
-    //     $instructions_error = "<h3 id=\"bookingInstructions\" class=\"errorMsg\"><br/>Your booking hasn't been submitted yet.<br/><br/>You must:<br/>-Select at least one SERVICE for your car</h3>";
-    // } else {
-    //     $formHeading_error = "<div class=\"temporalBar successfulBar\"></div><h1>Your booking has been submitted successfully</h1>";
-    //     $instructions_error = "<h3 id=\"bookingInstructions\"><br/>One of our staff will contact you to confirm your appointment date and time.</h3>";
-    //     $bottomBar = "<div class=\"temporalBar successfulBar successfulBar2\"></div>";
-    // }
-
-    // if ($check_date_PHP === "Sunday") {
-    //     $instructions_error = "Sundays are not available";
-    //     $date_error = "<p class='invalidSmallText'>Closed on Sundays</p>";
-    // }
-    
-}
-
-
-// function validateForm() {
-// }
 
 // ===== End Third Section

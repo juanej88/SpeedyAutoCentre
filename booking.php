@@ -27,8 +27,8 @@
       </section>
 
       <section id="bookingSecondSection">
-         <?=$formHeading_error;?>
-         <?=$instructions_error;?>
+         <?=$formHeading;?>
+         <?=$formInstructions;?>
          <h3 class="errorMsg"><?=$validation_error;?></h3>
          <form class="bookingForm" action="#bookingSecondSection" method="POST">
             <h3 class="formTitles bigSpan">Personal Details</h3>
@@ -42,7 +42,7 @@
             </section>
             <section class="phoneNumber mediumSpan spanGrid">
                <label for="phoneNumber" class="blockText">Phone Number</label>
-               <input id="phoneNumber" class="input2" type="tel" name="phone-number" minlength="8" maxlength="18" pattern="[+]*[(]*[0-9]?[0-9]?[0-9]?[)]*[0-9]{8,12}" value="<?=$phoneNumber;?>" required />
+               <input id="phoneNumber" class="input2" type="tel" name="phone-number" minlength="8" maxlength="18" pattern="[+]?([(][0-9]{1,3}[)])?[0-9- ]{8,12}" value="<?=$phoneNumber;?>" required />
             </section>
 
             <h3 class="formTitles bigSpan">Booking Details</h3>
@@ -58,7 +58,7 @@
             </section>
             <section class="rego smallSpan spanGrid">
                <label for="rego" class="blockText">Vehicle Registration Number</label>
-               <input id="rego" class="input3" type="text" name="car-rego" minlength="2" maxlength="8" pattern="[A-Za-z0-9-_ ]{2,8}" value="<?=$carRego;?>" required />
+               <input id="rego" class="input3" type="text" name="car-rego" minlength="2" maxlength="8" pattern="[A-Za-z0-9- ]{2,8}" value="<?=$carRego;?>" required />
             </section>
             <section class="carYear smallSpan spanGrid">
                <label for="carYear" class="blockText">Year</label>
@@ -76,7 +76,7 @@
             </section>
             <section class="carModel smallSpan spanGrid">
                <label for="carModel" class="blockText">Model</label>
-               <input id="carModel" class="input6" type="text" name="car-model" minlength="2" maxlength="15" pattern="[A-Za-z0-9-_ ]{2,15}" value="<?=$carModel;?>" required />
+               <input id="carModel" class="input6" type="text" name="car-model" minlength="2" maxlength="15" pattern="[A-Za-z0-9- ]{2,15}" value="<?=$carModel;?>" required />
             </section>
 
             <span class="blockText bigSpan">Service</span>
@@ -137,7 +137,7 @@
 
             <section class="addComments hideComments bigSpan">
                <label for="addComments" class="blockText">Comments</label>
-               <textarea id="addComments" name="comments" rows="4" maxlength="250"></textarea>
+               <textarea id="addComments" name="comments" rows="4" maxlength="250"><?=$comments;?></textarea>
             </section>
 
             <section class="submitButton smallSpan">

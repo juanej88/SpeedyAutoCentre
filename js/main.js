@@ -373,10 +373,13 @@ const checkPreferredTime = () => {
 };
 checkPreferredTime();
 
-const removeForm = () => {
-  if ($(".temporalBar").hasClass("successfulBar")) {
-    $(".bookingForm").remove();
-  }
-};
+const removeForm = () =>
+  $(".temporalBar").hasClass("successfulBar") ? $(".bookingForm").remove() : "";
+
+// const removeForm = () => {
+//   if ($(".temporalBar").hasClass("successfulBar")) {
+//     $(".bookingForm").remove();
+//   }
+// };
 
 removeForm();
