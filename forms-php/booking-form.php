@@ -68,7 +68,7 @@ $carRegoPattern = "/^[A-Za-z0-9- ]{2,8}$/";
 $carModelPattern = "/^[A-Za-z0-9- ]{2,15}$/";
 $commentsPattern = "/^[\w\s\?\!\'\"\,\;\:\(\)\-\_]{0,250}$/";
 
-// It gets the day selected e.g. "Monday"
+// It gets the day selected e.g. "Sunday"
 $check_date = $_POST["preferred-date"];
 $get_date_PHP = strtotime($check_date);
 $check_date_PHP = date("l", $get_date_PHP);
@@ -95,6 +95,16 @@ $carModel_error = "<h3 class=\"errorMsg\">- Select a valid car MODEL</h3>";
 $service_error = "<h3 class=\"errorMsg\">- Select at least one SERVICE for your car</h3>";
 $comments_error = "<h3 class=\"errorMsg\">- Submit valid COMMENTS. Special characters which are allowed: ? ! % ' \" . , ; : ( ) - _</h3>";
 
+// Add the respective $input_error to the variable $formInstructions
+function addErrorMessage($input_validation, $input_error) {
+    if ($input_validation === 0 || 
+        $input_validation === FALSE || 
+        $input_validation === "Sunday" || 
+        $input_validation === NULL) {
+        return $input_error;
+    }
+}
+
 // Validates all the inputs once the form is intended to be sumbitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // These variables validate all "text" inputs
@@ -110,55 +120,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $comments = str_replace("%", " percentage", $comments);
         $comments_validation = preg_match($commentsPattern, $comments);
     }
-
     // It checks if there is any invalid input in order to display
     // an error text to the user, so it can be fixed
-    if ($fullName_validation !== 1 || 
+    if ($fullName_validation === 0 || 
         $email_validation === FALSE || 
-        $phoneNumber_validation !== 1 || 
+        $phoneNumber_validation === 0 || 
         $check_date_PHP === "Sunday" || 
-        $carRego_validation !== 1 || 
-        $carModel_validation !== 1 ||
+        $carRego_validation === 0 || 
+        $carModel_validation === 0 ||
         $_POST["service"] === NULL || 
-        $comments_validation !== 1) {
-        
+        $comments_validation === 0) {
+
         $formHeading = $formHeading_error;
         $formInstructions = $formInstructions_error;
-        
         // If there is an invalid input, it checks input by input
         // in order to display the specific error to the user
-        if ($fullName_validation !== 1) {
-            $formInstructions = $formInstructions . $fullName_error;
-        }
-
-        if ($email_validation === FALSE) {
-            $formInstructions = $formInstructions . $email_error;
-        }
-
-        if ($phoneNumber_validation !== 1) {
-            $formInstructions = $formInstructions . $phoneNumber_error;
-        }
-
-        if ($check_date_PHP === "Sunday") {
-            $formInstructions = $formInstructions . $preferredDate_error;
-            $date_error = "<p class='invalidSmallText'>Closed on Sundays</p>";
-        }
-
-        if ($carRego_validation !== 1) {
-            $formInstructions = $formInstructions . $carRego_error;
-        }
-
-        if ($carModel_validation !== 1) {
-            $formInstructions = $formInstructions . $carModel_error;
-        }
-    
-        if ($_POST["service"] === NULL) {
-            $formInstructions = $formInstructions . $service_error;
-        }
-
-        if ($comments_validation !== 1) {
-            $formInstructions = $formInstructions . $comments_error;
-        }
+        $formInstructions = $formInstructions . addErrorMessage($fullName_validation, $fullName_error);
+        $formInstructions = $formInstructions . addErrorMessage($email_validation, $email_error);
+        $formInstructions = $formInstructions . addErrorMessage($phoneNumber_validation, $phoneNumber_error);
+        $formInstructions = $formInstructions . addErrorMessage($check_date_PHP, $preferredDate_error);
+        $formInstructions = $formInstructions . addErrorMessage($carRego_validation, $carRego_error);
+        $formInstructions = $formInstructions . addErrorMessage($carModel_validation, $carModel_error);
+        $formInstructions = $formInstructions . addErrorMessage($_POST["service"], $service_error);
+        $formInstructions = $formInstructions . addErrorMessage($comments_validation, $comments_error);
+        
+        // if ($check_date_PHP === "Sunday") {
+        //     $date_error = "<p class='invalidSmallText'>Closed on Sundays</p>";
+        // }
 
     } else {
         // If all inputs are successful, the heading displays
@@ -179,7 +167,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 function getService() {
     global $_POST;
     $num_services = 1;
-    
+
     // This if statement gets the number of the
     // checkboxes selected when they are 2 or more
     if(gettype($_POST["service"]) === "array") {
@@ -194,7 +182,7 @@ function getService() {
             $all_services = $all_services . ", " . $_POST["service"][$i];
         }
     }
-    
+
     return $all_services;
 }
 $serviceRequired = getService();
@@ -202,7 +190,7 @@ $serviceRequired = getService();
 // If comments are typed, they are added to the email, otherwise, they are not
 function verifyComments() {
     global $comments;
-    
+
     if ($comments) {
         return "<p>Comments: <strong>$comments</strong></p>";
     }
