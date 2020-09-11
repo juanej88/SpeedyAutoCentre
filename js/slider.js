@@ -1,3 +1,36 @@
+// It animates the loading percentage from 0 to 100
+const updateLoadingAnimation = () => {
+  let percentage = 0;
+
+  setTimeout(() => {
+    let interval = setInterval(() => {
+      $(".loadingPercentage").html(percentage);
+      if (percentage < 100) {
+        percentage += 5;
+      }
+    }, 40);
+  }, 150);
+
+  // It stops the percentage growth after 1.2s
+  setTimeout(() => {
+    clearInterval(interval);
+  }, 1200);
+};
+
+updateLoadingAnimation();
+
+// It removes the loading animation after 1.5s
+const removeLoadingAnimation = () => {
+  setTimeout(() => {
+    $("#loadingSection").css({ opacity: "1" }).animate({ opacity: "0" }, 150);
+    setTimeout(() => {
+      $("#loadingSection").remove();
+    }, 150);
+  }, 1350);
+};
+
+removeLoadingAnimation();
+
 const slideComments = () => {
   // if (window.orientation === 0) {
   //   $("#firstComment").addClass("firstCommentPortrait");

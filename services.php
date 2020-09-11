@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<header id="servicesHeader" class="whiteHeader hideWhiteNav">
+	<header id="servicesHeader" class="whiteHeader">
 		<?php
 			require "header-footer-php/header.php";
 		?>

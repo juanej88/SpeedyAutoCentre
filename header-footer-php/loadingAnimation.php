@@ -1,5 +1,5 @@
 <div class="animationContainer">
-	<i class="fas fa-shipping-fast car"></i>
+	<i class="fas fa-car-side car"></i>
 	<div class="road"></div>
 	<div class="lanes">
 		<?php

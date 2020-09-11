@@ -1,36 +1,3 @@
-// It animates the loading percentage from 0 to 100
-const updateLoadingAnimation = () => {
-  let percentage = 0;
-
-  let interval = setInterval(() => {
-    $(".loadingPercentage").html(percentage);
-    if (percentage < 100) {
-      percentage += 1;
-    }
-  }, 8);
-
-  // It stops the percentage growth after 2.5s
-  setTimeout(() => {
-    clearInterval(interval);
-  }, 2500);
-};
-
-setTimeout(() => {
-  updateLoadingAnimation();
-}, 200);
-
-// It removes the loading animation after 1.35s
-const removeLoadingAnimation = () => {
-  $("#loadingSection").css({ opacity: "1" }).animate({ opacity: "0" }, 150);
-  setTimeout(() => {
-    $("#loadingSection").remove();
-  }, 150);
-};
-
-setTimeout(() => {
-  removeLoadingAnimation();
-}, 1200);
-
 //This function adds an animation to the nav when the website is scrolled by
 //20% of the window height.
 const navAnimation = () => {
@@ -49,8 +16,10 @@ const navAnimation = () => {
     }
 
     if (windowPosition < bookingHeight) {
+      if ($(".whiteHeader").hasClass("showWhiteNav")) {
+        $(".whiteHeader").addClass("hideWhiteNav");
+      }
       $(".whiteHeader").removeClass("showWhiteNav");
-      $(".whiteHeader").addClass("hideWhiteNav");
     } else if (windowPosition >= bookingHeight) {
       $(".whiteHeader").addClass("showWhiteNav");
       $(".whiteHeader").removeClass("hideWhiteNav");

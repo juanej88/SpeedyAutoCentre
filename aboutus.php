@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <header id="aboutUsHeader" class="whiteHeader hideWhiteNav">
+    <header id="aboutUsHeader" class="whiteHeader">
 		<?php
 			require "header-footer-php/header.php";
 		?>
