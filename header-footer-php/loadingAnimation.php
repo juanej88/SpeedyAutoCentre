@@ -10,5 +10,6 @@
 		endfor;
 		?>
 	</div>
-	<h3 class="loadingText">Loading <span class="loadingPercentage">0</span>%</h3>
+	<h3 class="loadingText">Loading</h3>
+	<div class="loadingIndicator"></div>
 </div>

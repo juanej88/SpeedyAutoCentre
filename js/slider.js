@@ -1,33 +1,21 @@
 // It animates the loading percentage from 0 to 100
 const updateLoadingAnimation = () => {
-  let percentage = 0;
-
   setTimeout(() => {
-    let interval = setInterval(() => {
-      $(".loadingPercentage").html(percentage);
-      if (percentage < 100) {
-        percentage += 5;
-      }
-    }, 40);
     $(".lanes").animate({ left: "-100%" }, 800, "linear");
+    $(".loadingIndicator").animate({ left: "80%" }, 800, "linear");
   }, 200);
-
-  // It stops the percentage growth after 1.2s
-  setTimeout(() => {
-    clearInterval(interval);
-  }, 1200);
 };
 
 updateLoadingAnimation();
 
-// It removes the loading animation after 1.5s
+// It removes the loading animation after 1.35s
 const removeLoadingAnimation = () => {
   setTimeout(() => {
     $("#loadingSection").animate({ opacity: "0" }, 150, "linear");
     setTimeout(() => {
       $("#loadingSection").remove();
     }, 150);
-  }, 1350);
+  }, 1200);
 };
 
 removeLoadingAnimation();

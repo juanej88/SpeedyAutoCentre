@@ -1026,8 +1026,13 @@ header .barLines {
   padding-top: 0.5em;
 }
 
-.loadingPercentage {
-  font-size: 1.25rem;
+.loadingIndicator {
+  position: absolute;
+  left: 20%;
+  height: 2rem;
+  width: 100%;
+  background-color: var(--speedyDarkGrey);
+  opacity: 0.75;
 }
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
