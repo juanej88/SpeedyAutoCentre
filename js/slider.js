@@ -9,7 +9,8 @@ const updateLoadingAnimation = () => {
         percentage += 5;
       }
     }, 40);
-  }, 150);
+    $(".lanes").animate({ left: "-100%" }, 800, "linear");
+  }, 200);
 
   // It stops the percentage growth after 1.2s
   setTimeout(() => {
@@ -22,7 +23,7 @@ updateLoadingAnimation();
 // It removes the loading animation after 1.5s
 const removeLoadingAnimation = () => {
   setTimeout(() => {
-    $("#loadingSection").css({ opacity: "1" }).animate({ opacity: "0" }, 150);
+    $("#loadingSection").animate({ opacity: "0" }, 150, "linear");
     setTimeout(() => {
       $("#loadingSection").remove();
     }, 150);

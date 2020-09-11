@@ -1010,18 +1010,6 @@ header .barLines {
   left: 0%;
   width: 200%;
   height: 0.1rem;
-  animation: movingLanes linear 0.85s forwards;
-  animation-delay: 0.2s;
-}
-
-@keyframes movingLanes {
-  0% {
-    left: 0%;
-  }
-
-  100% {
-    left: -100%;
-  }
 }
 
 .laneDivision {
@@ -1046,11 +1034,6 @@ header .barLines {
   .animationContainer {
     width: 33%;
     top: 45%;
-  }
-
-  .lanes {
-    animation: movingLanes linear 1s forwards;
-    animation-delay: 0.2s;
   }
 }
 
