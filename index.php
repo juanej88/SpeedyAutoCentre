@@ -16,6 +16,12 @@
    </header>
 
    <main>
+      <section id="loadingSection">
+         <?php
+            require "header-footer-php/loadingAnimation.php";
+         ?>
+      </section>
+
       <section id="homeFirstSection">
          <div class="firstSentence">
             <h2>Yes, we can service your brand new car</h2>

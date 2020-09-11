@@ -155,7 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $formInstructions = $formInstructions_successful;
         $bottomBar = "<div class=\"temporalBar successfulBar successfulBar2\"></div>";
     }
-}
+};
 
 // ===== End Second Section
 

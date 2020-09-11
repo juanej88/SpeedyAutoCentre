@@ -956,6 +956,104 @@ header .barLines {
     ================================================= */
 
 /*  =================================================
+    Start | Loading Section
+    ================================================= */
+
+#loadingSection {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--speedyDarkGrey);
+  z-index: 20;
+}
+
+#secondaryLoadingSection {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--speedyDarkGrey);
+  z-index: 20;
+}
+
+.animationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: absolute;
+  width: 15%;
+  height: 6rem;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+}
+
+.car {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 2.5%);
+  font-size: 2.75rem;
+  color: var(--speedyWhite);
+}
+
+.road {
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--speedyWhite);
+}
+
+.lanes {
+  display: flex;
+  position: relative;
+  top: -0.35rem;
+  left: 0%;
+  width: 200%;
+  height: 0.1rem;
+  animation: movingLanes linear 0.85s forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes movingLanes {
+  0% {
+    left: 0%;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
+.laneDivision {
+  height: 0.1rem;
+  width: 7.5%;
+  margin: 0 2.5%;
+  background-color: var(--speedyDarkGrey);
+}
+
+.loadingText {
+  width: 100%;
+  text-align: center;
+  color: var(--speedyWhite);
+  padding-top: 0.5em;
+}
+
+.loadingPercentage {
+  font-size: 1.25rem;
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .animationContainer {
+    width: 33%;
+    top: 45%;
+  }
+}
+
+/*  =================================================
+    End | Loading Section
+    ================================================= */
+
+/*  =================================================
     Start | Home Page
     ================================================= */
 
