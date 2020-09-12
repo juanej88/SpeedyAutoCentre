@@ -78,12 +78,16 @@ $formHeading = "<h1>Booking</h1>";
 $formInstructions = "<h3 id=\"bookingInstructions\">Simply fill out the details below and one of our staff will contact you to confirm your appointment date and time.</h3>";
 
 // Successful variables
-$formHeading_successful = "<div class=\"temporalBar successfulBar\"></div><h1>Your booking has been submitted successfully</h1>";
-$formInstructions_successful = "<h3 id=\"bookingInstructions\"><br/>One of our staff will contact you to confirm your appointment date and time.</h3>";
+$formHeading_successful = "<div class=\"temporalBar successfulBar\"></div><h1>Thank you for your booking</h1>";
+$formInstructions_successful = "<h3 id=\"bookingInstructions\">Your booking has been sent successfully.<br/></br>One of our staff members will contact you to confirm your appointment date and time.</h3>
+    <p class=\"bookingDetails\">Preferred Date: $preferredDatePHP</p>
+    <p class=\"bookingDetails\">Preferred Time: $preferredTime</p><br>
+    <h3>Location:</h3>
+    <iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6627.276781805231!2d151.013035!3d-33.847435!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5d7b9250de022da0!2sSpeedy%20Auto%20Centre!5e0!3m2!1sen!2sau!4v1599907668963!5m2!1sen!2sau\" width=\"800\" height=\"600\" frameborder=\"0\" style=\"border:0;width: 90%;max-width: 950px;margin-bottom: 1rem;position: relative;transform: translateX(-50%);left: 50%;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"></iframe>";
 
 // Error variables
 $formHeading_error = "<div class=\"temporalBar errorBar\"></div><h1 class=\"errorMsg\">Your booking is incomplete</h1>";
-$formInstructions_error = "<h3 id=\"bookingInstructions\" class=\"errorMsg\"><br/>Your booking hasn't been submitted yet.</h3><h3 class=\"errorMsg\">You must:</h3>";
+$formInstructions_error = "<h3 id=\"bookingInstructions\" class=\"errorMsg\"><br/>Your booking hasn't been sent yet.</h3><h3 class=\"errorMsg\">You must:</h3>";
 // Specific error variables
 $fullName_error = "<h3 class=\"errorMsg\">- Submit a valid NAME</h3>";
 $email_error = "<h3 class=\"errorMsg\">- Submit a valid EMAIL</h3>";

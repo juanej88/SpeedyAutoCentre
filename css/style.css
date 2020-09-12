@@ -1828,6 +1828,13 @@ header .barLines {
   background-color: var(--speedyGreen);
 }
 
+.bookingDetails {
+  font-size: 1.1rem;
+  width: 90%;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
 #bookingSecondSection h1.errorMsg,
 #bookingSecondSection h3.errorMsg {
   color: var(--speedyDarkRed);
