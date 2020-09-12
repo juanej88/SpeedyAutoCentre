@@ -80,7 +80,6 @@ $formInstructions = "<h3 id=\"bookingInstructions\">Simply fill out the details 
 // Successful variables
 $formHeading_successful = "<div class=\"temporalBar successfulBar\"></div><h1>Your booking has been submitted successfully</h1>";
 $formInstructions_successful = "<h3 id=\"bookingInstructions\"><br/>One of our staff will contact you to confirm your appointment date and time.</h3>";
-$bottomBar = "";
 
 // Error variables
 $formHeading_error = "<div class=\"temporalBar errorBar\"></div><h1 class=\"errorMsg\">Your booking is incomplete</h1>";
@@ -149,11 +148,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // }
 
     } else {
+        echo 
+        '<section id="loadingSection">
+            <div class="animationContainer">
+                <i class="fas fa-car-side car"></i>
+                <div class="road"></div>
+                <div class="lanes">';
+                    for ($i = 0; $i < 8; $i++) {
+                        echo '<div class="laneDivision"></div>';
+                    }
+        echo
+                '</div>
+                <h3 class="loadingText">Sending</h3>
+                <div class="loadingIndicator"></div>
+            </div>
+        </section>';
+
         // If all inputs are successful, the heading displays
         // a successful text and the form is submitted
         $formHeading = $formHeading_successful;
         $formInstructions = $formInstructions_successful;
-        $bottomBar = "<div class=\"temporalBar successfulBar successfulBar2\"></div>";
     }
 };
 

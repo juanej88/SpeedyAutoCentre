@@ -9,7 +9,7 @@
 </head>
 
 <body>
-   <header id="homeHeader" class="hideNav">
+   <header id="homeHeader">
       <?php
          require "header-footer-php/header.php";
       ?>
@@ -17,9 +17,21 @@
 
    <main>
       <section id="loadingSection">
-         <?php
-            require "header-footer-php/loadingAnimation.php";
-         ?>
+         <div class="animationContainer">
+            <i class="fas fa-car-side car"></i>
+            <div class="road"></div>
+            <div class="lanes">
+               <?php
+               for ($i = 0; $i < 8; $i++):
+               ?>
+               <div class="laneDivision"></div>
+               <?php
+               endfor;
+               ?>
+            </div>
+            <h3 class="loadingText">Loading</h3>
+            <div class="loadingIndicator"></div>
+         </div>
       </section>
 
       <section id="homeFirstSection">

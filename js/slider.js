@@ -1,25 +1,3 @@
-// It animates the loading percentage from 0 to 100
-const updateLoadingAnimation = () => {
-  setTimeout(() => {
-    $(".lanes").animate({ left: "-100%" }, 800, "linear");
-    $(".loadingIndicator").animate({ left: "80%" }, 800, "linear");
-  }, 200);
-};
-
-updateLoadingAnimation();
-
-// It removes the loading animation after 1.35s
-const removeLoadingAnimation = () => {
-  setTimeout(() => {
-    $("#loadingSection").animate({ opacity: "0" }, 150, "linear");
-    setTimeout(() => {
-      $("#loadingSection").remove();
-    }, 150);
-  }, 1200);
-};
-
-removeLoadingAnimation();
-
 const slideComments = () => {
   // if (window.orientation === 0) {
   //   $("#firstComment").addClass("firstCommentPortrait");

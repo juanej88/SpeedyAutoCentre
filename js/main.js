@@ -1,3 +1,26 @@
+// It animates the loading percentage from 0 to 100
+const updateLoadingAnimation = () => {
+  setTimeout(() => {
+    $(".lanes").animate({ left: "-100%" }, 800, "linear");
+    $(".loadingIndicator").animate({ left: "85%" }, 800, "linear");
+  }, 200);
+};
+
+updateLoadingAnimation();
+
+// It removes the loading animation after 1.4s
+const removeLoadingAnimation = () => {
+  setTimeout(() => {
+    $(".animationContainer").remove();
+    $("#loadingSection").animate({ opacity: "0" }, 200, "linear");
+    setTimeout(() => {
+      $("#loadingSection").remove();
+    }, 200);
+  }, 1200);
+};
+
+removeLoadingAnimation();
+
 //This function adds an animation to the nav when the website is scrolled by
 //20% of the window height.
 const navAnimation = () => {
@@ -8,8 +31,10 @@ const navAnimation = () => {
     let bookingHeight = $firstSection * 0.25;
 
     if (windowPosition < homeHeight) {
+      if ($("#homeHeader").hasClass("showNav")) {
+        $("#homeHeader").addClass("hideNav");
+      }
       $("#homeHeader").removeClass("showNav");
-      $("#homeHeader").addClass("hideNav");
     } else if (windowPosition >= homeHeight) {
       $("#homeHeader").addClass("showNav");
       $("#homeHeader").removeClass("hideNav");
@@ -374,13 +399,10 @@ const checkPreferredTime = () => {
 };
 checkPreferredTime();
 
-const removeForm = () =>
-  $(".temporalBar").hasClass("successfulBar") ? $(".bookingForm").remove() : "";
-
-// const removeForm = () => {
-//   if ($(".temporalBar").hasClass("successfulBar")) {
-//     $(".bookingForm").remove();
-//   }
-// };
+const removeForm = () => {
+  if ($(".temporalBar").hasClass("successfulBar")) {
+    $(".bookingForm").remove();
+  }
+};
 
 removeForm();
