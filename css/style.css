@@ -218,6 +218,11 @@ header {
   }
 }
 
+.navAfterSubmission {
+  background-color: rgba(0, 60, 120, 0.98);
+  animation: none;
+}
+
 /* ===== Ends White Header */
 
 .logoContainer {

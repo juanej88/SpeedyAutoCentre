@@ -403,6 +403,14 @@ const removeForm = () => {
   if ($(".temporalBar").hasClass("successfulBar")) {
     $(".bookingForm").remove();
   }
+
+  if (
+    $(".temporalBar").hasClass("successfulBar") ||
+    $(".temporalBar").hasClass("errorBar")
+  ) {
+    $("#bookingFirstSection").remove();
+    $("#bookingHeader").addClass("navAfterSubmission");
+  }
 };
 
 removeForm();

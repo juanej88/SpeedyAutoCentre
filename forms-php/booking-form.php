@@ -32,8 +32,10 @@ function getCarYear() {
     }
 }
 
+$car_makes = ["Audi", "BMW", "Citroen", "Fiat", "Ford", "Holden", "Honda", "Hyundai", "Infiniti", "Jeep", "Kia", "Land Rover", "Lexus", "Mazda", "Mercedes-Benz", "Mini", "Mitsubishi", "Nissan", "Peugeot", "Renault", "Skoda", "Subaru", "Suzuki", "Toyota", "Volkswagen", "Volvo", "Other"];
+
 function getCarMake() {
-    $car_makes = ["Audi", "BMW", "Citroen", "Fiat", "Ford", "Holden", "Honda", "Hyundai", "Infiniti", "Jeep", "Kia", "Land Rover", "Lexus", "Mazda", "Mercedes-Benz", "Mini", "Mitsubishi", "Nissan", "Peugeot", "Renault", "Skoda", "Subaru", "Suzuki", "Toyota", "Volkswagen", "Volvo", "Other"];
+    global $car_makes;
 
     foreach ($car_makes as $make) {
         echo "<option value=\"$make\">$make</option>\n";
@@ -47,19 +49,19 @@ function getCarMake() {
 
 // Booking form variables
 // Personal Details Section
-$fullName = $_POST["full-name"];
-$email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-$phoneNumber = $_POST["phone-number"];
+$fullName = trim($_POST["full-name"]);
+$email = trim(filter_var($_POST["email"], FILTER_SANITIZE_EMAIL));
+$phoneNumber = trim($_POST["phone-number"]);
 // Booking Details Section
 $preferredDate = $_POST["preferred-date"];
 $getDatePHP = strtotime($preferredDate);
 $preferredDatePHP = date("l, d F Y", $getDatePHP);
 $preferredTime = $_POST["preferred-time"];
-$carRego = $_POST["car-rego"];
+$carRego = trim($_POST["car-rego"]);
 $carYear = $_POST["car-year"];
 $carMake = $_POST["car-make"];
-$carModel = $_POST["car-model"];
-$comments = $_POST["comments"];
+$carModel = trim($_POST["car-model"]);
+$comments = trim($_POST["comments"]);
 
 // Regex for every "text" input, excluding the email
 $fullNamePattern = "/^[A-z-_ ]{2,30}$/";
@@ -72,6 +74,17 @@ $commentsPattern = "/^[\w\s\?\!\'\"\,\;\:\(\)\-\_]{0,250}$/";
 $check_date = $_POST["preferred-date"];
 $get_date_PHP = strtotime($check_date);
 $check_date_PHP = date("l", $get_date_PHP);
+
+function validatePreferredTime() {
+    global $check_date_PHP, $preferredTime;
+    if ($check_date_PHP === "Saturday" && $preferredTime === "9:00am - 12:00pm") {
+        return TRUE;
+    } else if ($check_date_PHP !== "Saturday" && ($preferredTime === "8:30am - 12:00pm" || $preferredTime === "12:00pm - 4:00pm")) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
 
 // Default variables
 $formHeading = "<h1>Booking</h1>";
@@ -93,7 +106,9 @@ $fullName_error = "<h3 class=\"errorMsg\">- Submit a valid NAME</h3>";
 $email_error = "<h3 class=\"errorMsg\">- Submit a valid EMAIL</h3>";
 $phoneNumber_error = "<h3 class=\"errorMsg\">- Submit a valid phone NUMBER</h3>";
 $preferredDate_error = "<h3 class=\"errorMsg\">- Select a valid DATE. Sundays are not available</h3>";
+$preferredTime_error = "<h3 class=\"errorMsg\">- Select a valid TIME</h3>";
 $carRego_error = "<h3 class=\"errorMsg\">- Select a valid car REGO</h3>";
+$carMake_error = "<h3 class=\"errorMsg\">- Select a valid car MAKE</h3>";
 $carModel_error = "<h3 class=\"errorMsg\">- Select a valid car MODEL</h3>";
 $service_error = "<h3 class=\"errorMsg\">- Select at least one SERVICE for your car</h3>";
 $comments_error = "<h3 class=\"errorMsg\">- Submit valid COMMENTS. Special characters which are allowed: ? ! % ' \" . , ; : ( ) - _</h3>";
@@ -114,7 +129,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $fullName_validation = preg_match($fullNamePattern, $fullName);
     $email_validation = filter_var($email, FILTER_VALIDATE_EMAIL);
     $phoneNumber_validation = preg_match($phoneNumberPattern, $phoneNumber);
+    $preferredTime_validation = validatePreferredTime();
     $carRego_validation = preg_match($carRegoPattern, $carRego);
+    $carMake_validation = in_array($carMake, $car_makes);
     $carModel_validation = preg_match($carModelPattern, $carModel);
     // This validates the comments if the user submitted some
     $comments_validation = 1;
@@ -129,7 +146,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $email_validation === FALSE || 
         $phoneNumber_validation === 0 || 
         $check_date_PHP === "Sunday" || 
+        $preferredTime_validation === FALSE || 
         $carRego_validation === 0 || 
+        $carMake_validation === FALSE ||
         $carModel_validation === 0 ||
         $_POST["service"] === NULL || 
         $comments_validation === 0) {
@@ -138,14 +157,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $formInstructions = $formInstructions_error;
         // If there is an invalid input, it checks input by input
         // in order to display the specific error to the user
-        $formInstructions = $formInstructions . addErrorMessage($fullName_validation, $fullName_error);
-        $formInstructions = $formInstructions . addErrorMessage($email_validation, $email_error);
-        $formInstructions = $formInstructions . addErrorMessage($phoneNumber_validation, $phoneNumber_error);
-        $formInstructions = $formInstructions . addErrorMessage($check_date_PHP, $preferredDate_error);
-        $formInstructions = $formInstructions . addErrorMessage($carRego_validation, $carRego_error);
-        $formInstructions = $formInstructions . addErrorMessage($carModel_validation, $carModel_error);
-        $formInstructions = $formInstructions . addErrorMessage($_POST["service"], $service_error);
-        $formInstructions = $formInstructions . addErrorMessage($comments_validation, $comments_error);
+        $formInstructions .= addErrorMessage($fullName_validation, $fullName_error);
+        $formInstructions .= addErrorMessage($email_validation, $email_error);
+        $formInstructions .= addErrorMessage($phoneNumber_validation, $phoneNumber_error);
+        $formInstructions .= addErrorMessage($check_date_PHP, $preferredDate_error);
+        $formInstructions .= addErrorMessage($preferredTime_validation, $preferredTime_error);
+        $formInstructions .= addErrorMessage($carRego_validation, $carRego_error);
+        $formInstructions .= addErrorMessage($carMake_validation, $carMake_error);
+        $formInstructions .= addErrorMessage($carModel_validation, $carModel_error);
+        $formInstructions .= addErrorMessage($_POST["service"], $service_error);
+        $formInstructions .= addErrorMessage($comments_validation, $comments_error);
         
         // if ($check_date_PHP === "Sunday") {
         //     $date_error = "<p class='invalidSmallText'>Closed on Sundays</p>";

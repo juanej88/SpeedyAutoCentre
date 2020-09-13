@@ -11,7 +11,6 @@
 
 <?php
    require "forms-php/booking-form.php";
-   // require "send-email-php/recaptcha.php";
 ?>
 
 <body>
@@ -164,5 +163,8 @@
          });
       });
    </script>
+   <?php
+   // require "send-email-php/recaptcha.php";
+   ?>
 </body>
 </html>
