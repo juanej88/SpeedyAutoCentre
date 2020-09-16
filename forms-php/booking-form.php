@@ -68,7 +68,7 @@ $fullNamePattern = "/^[A-z-_ ]{2,30}$/";
 $phoneNumberPattern = "/^[+]?([(][0-9]{1,3}[)])?[0-9- ]{8,12}$/";
 $carRegoPattern = "/^[A-Za-z0-9- ]{2,8}$/";
 $carModelPattern = "/^[A-Za-z0-9- ]{2,15}$/";
-$commentsPattern = "/^[\w\s\?\!\'\"\,\;\:\(\)\-\_]{0,250}$/";
+$commentsPattern = "/^[\w\s\?\!\’\'\"\.\,\;\:\(\)\-\_]{0,250}$/";
 
 // It gets the day selected e.g. "Sunday"
 $check_date = $_POST["preferred-date"];
@@ -111,7 +111,7 @@ $carRego_error = "<h3 class=\"errorMsg\">- Select a valid car REGO</h3>";
 $carMake_error = "<h3 class=\"errorMsg\">- Select a valid car MAKE</h3>";
 $carModel_error = "<h3 class=\"errorMsg\">- Select a valid car MODEL</h3>";
 $service_error = "<h3 class=\"errorMsg\">- Select at least one SERVICE for your car</h3>";
-$comments_error = "<h3 class=\"errorMsg\">- Submit valid COMMENTS. Special characters which are allowed: ? ! % ' \" . , ; : ( ) - _</h3>";
+$comments_error = "<h3 class=\"errorMsg\">- Submit valid COMMENTS. Special characters which are allowed: ? ! % ’ ' \" . , ; : ( ) - _</h3>";
 
 // Add the respective $input_error to the variable $formInstructions
 function addErrorMessage($input_validation, $input_error) {
@@ -136,7 +136,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // This validates the comments if the user submitted some
     $comments_validation = 1;
     if ($comments !== NULL) {
-        $comments = str_replace(".", "_", $comments);
         $comments = str_replace("%", " percentage", $comments);
         $comments_validation = preg_match($commentsPattern, $comments);
     }
