@@ -67,6 +67,10 @@ h4 {
   font-size: 1.1rem;
 }
 
+p {
+  font-size: 1rem;
+}
+
 label,
 span {
   font-size: 0.9rem;
@@ -111,8 +115,9 @@ footer span {
     font-size: 1.1rem;
   }
 
-  p {
-    font-size: 1rem;
+  p,
+  p strong {
+    font-size: 0.6rem;
   }
 
   input,
@@ -1399,7 +1404,7 @@ header .barLines {
   }
 }
 
-@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   #homeThirdSection {
     grid-template-columns: 12.5% 75% 12.5%;
   }
@@ -1422,22 +1427,6 @@ header .barLines {
     position: relative;
     left: 160vw;
     grid-area: 2 / 2;
-  }
-}
-
-@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  #homeThirdSection {
-    grid-template-columns: 5% 42.5% 5% 42.5% 5%;
-  }
-
-  #homeThirdSection h2 {
-    grid-column: 2 / span 3;
-  }
-
-  .thirdComment {
-    position: relative;
-    left: 125%;
-    grid-area: 2 / 4;
   }
 }
 
@@ -1488,17 +1477,76 @@ header .barLines {
 
 #aboutUsSecondSection {
   width: 100%;
-  padding: 0 5%;
+  color: var(--speedyBlue);
+  padding-bottom: 4rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 1.5em;
+  grid-template-columns: 35% 30% 30%;
 }
 
 .aboutUsHeading {
+  color: var(--speedyBlue);
   grid-column: span 3;
   text-align: center;
+  padding: 0.75em 0;
+}
+
+.verticalImage2 {
+  grid-area: 2 / 1 / span 4;
+  background-image: url(../images/extra/road.jpg);
+  background-size: cover;
+  background-position: 25% 60%;
+}
+
+.aboutUsSubheading {
+  grid-column: 2 / span 2;
+  background-color: var(--speedyLightGrey);
   color: var(--speedyBlue);
-  padding: 0.75em 0 1em;
+  padding: 2rem 3rem 0.75rem;
+}
+
+.aboutUsSubheadingOne {
+  border-radius: 0 1em 0 0;
+}
+
+.aboutUsParagraph {
+  grid-column: 2 / span 2;
+  background-color: var(--speedyLightGrey);
+  padding: 0.5rem 3rem;
+  line-height: 1.5;
+}
+
+.aboutUsParagraphTwo {
+  border-radius: 0 0 1em 0;
+  padding: 0.5rem 3rem 2rem;
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #aboutUsSecondSection {
+    padding: 0 0 3rem 5%;
+  }
+
+  .verticalImage2 {
+    display: none;
+  }
+
+  .aboutUsSubheading {
+    grid-column: 1 / span 3;
+    padding: 2rem 2rem 0.75rem;
+  }
+
+  .aboutUsSubheadingOne {
+    border-radius: 1em 1em 0 0;
+  }
+
+  .aboutUsParagraph {
+    grid-column: 1 / span 3;
+    padding: 0.5rem 2rem;
+  }
+
+  .aboutUsParagraphTwo {
+    border-radius: 0 0 1em 1em;
+    padding: 0.5rem 2rem 2rem;
+  }
 }
 
 /*  =================================================
