@@ -11,6 +11,7 @@
 
 <?php
    require "forms-php/booking-form.php";
+   require "send-email-php/send-email.php";
 ?>
 
 <body>
@@ -28,7 +29,6 @@
       <section id="bookingSecondSection">
          <?=$formHeading;?>
          <?=$formInstructions;?>
-         <h3 class="errorMsg"><?=$validation_error;?></h3>
          <form class="bookingForm" action="#bookingSecondSection" method="POST">
             <h3 class="formTitles bigSpan">Personal Details</h3>
             <section class="fullName bigSpan spanGrid">
@@ -37,7 +37,7 @@
             </section>
             <section class="email mediumSpan spanGrid">
                <label for="email" class="blockText">Email</label>
-               <input id="email" class="input1" type="email" name="email" value="<?=$email;?>" required />
+               <input id="email" class="input1" type="email" name="email" value="<?=$emailAddress;?>" required />
             </section>
             <section class="phoneNumber mediumSpan spanGrid">
                <label for="phoneNumber" class="blockText">Phone Number</label>
@@ -158,13 +158,10 @@
    <script src="./js/main.js" type="text/javascript"></script>
    <script>
       grecaptcha.ready(function() {
-         grecaptcha.execute('6LfXT74ZAAAAAP1dpPcxjBryqxydqlfl3FO4X06n', {action: 'homepage'}).then(function(token) {
+         grecaptcha.execute('6LeKc84ZAAAAANHC0n-3Q3cthsyhJ-WEOmUxkJSj', {action: 'homepage'}).then(function(token) {
             document.getElementById('gToken').value = token;
          });
       });
    </script>
-   <?php
-   // require "send-email-php/recaptcha.php";
-   ?>
 </body>
 </html>
