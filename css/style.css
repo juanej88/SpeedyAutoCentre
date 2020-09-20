@@ -1220,6 +1220,7 @@ header .barLines {
 }
 
 .briefIntro {
+  width: 100%;
   color: var(--speedyBlue);
   grid-area: 2 / 2;
   line-height: 1.5;
@@ -1327,6 +1328,7 @@ header .barLines {
 }
 
 #homeThirdSection .comments {
+  width: 100%;
   border-radius: 1em;
   color: var(--speedyBlue);
   text-align: center;
@@ -2210,6 +2212,7 @@ input:-webkit-autofill {
     ================================================= */
 
 footer {
+  width: 100%;
   display: grid;
   grid-template-columns: 5% 25% 10.5% 25% 7.5% 22% 5%;
   align-items: start;
@@ -2229,6 +2232,7 @@ footer p {
 }
 
 .footerColumn {
+  width: 100%;
   display: grid;
   grid-template-columns: 45% 55%;
   padding-bottom: 2.5em;
