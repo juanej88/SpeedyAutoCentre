@@ -93,6 +93,11 @@
             <p>Excellent customer service and also my car service was great!</p>
             <h4>Gaston Gonzalez</h4>
          </div>
+         <div class="referenceCircleContainer">
+            <div class="referenceCircle referenceCircleOne referenceCircleActive"></div>
+            <div class="referenceCircle referenceCircleTwo"></div>
+            <div class="referenceCircle referenceCircleThree"></div>
+         </div>
       </section>
    </main>
 

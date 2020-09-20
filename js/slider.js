@@ -42,14 +42,17 @@ const slideComments = () => {
       firstComment.style.left = "-120%";
       secondComment.style.left = 0;
       thirdComment.style.left = "120%";
+      $("#firstComment").removeClass("activeComment");
+      $("#secondComment").addClass("activeComment");
     } else {
       firstComment.style.transition = "all 0.25s";
       secondComment.style.transition = "all 0.25s";
       thirdComment.style.transition = "all 0.25s";
-      firstComment.style.left = "0";
-      // secondComment.style.left = "80vw";
+      firstComment.style.left = 0;
       secondComment.style.left = "120%";
       thirdComment.style.left = "240%";
+      $("#secondComment").removeClass("activeComment");
+      $("#firstComment").addClass("activeComment");
     }
   };
 
@@ -80,6 +83,8 @@ const slideComments = () => {
       firstComment.style.left = 0;
       secondComment.style.left = "120%";
       thirdComment.style.left = "240%";
+      $("#secondComment").removeClass("activeComment");
+      $("#firstComment").addClass("activeComment");
     } else {
       firstComment.style.transition = "all 0.25s";
       secondComment.style.transition = "all 0.25s";
@@ -87,6 +92,8 @@ const slideComments = () => {
       firstComment.style.left = "-240%";
       secondComment.style.left = "-120%";
       thirdComment.style.left = 0;
+      $("#secondComment").removeClass("activeComment");
+      $("#thirdComment").addClass("activeComment");
     }
   };
 
@@ -122,6 +129,8 @@ const slideComments = () => {
       firstComment.style.left = "-120%";
       secondComment.style.left = 0;
       thirdComment.style.left = "120%";
+      $("#thirdComment").removeClass("activeComment");
+      $("#secondComment").addClass("activeComment");
     } else {
       firstComment.style.transition = "all 0.25s";
       secondComment.style.transition = "all 0.25s";
@@ -129,6 +138,8 @@ const slideComments = () => {
       firstComment.style.left = "-240%";
       secondComment.style.left = "-120%";
       thirdComment.style.left = 0;
+      $("#thirdcomment").addClass("activeComment");
+      $("#secondComment").removeClass("activeComment");
     }
   };
 
@@ -146,3 +157,32 @@ const slideComments = () => {
 };
 
 slideComments();
+
+// It changes the active comment reference
+const highlightActiveComment = () => {
+  $("#firstComment").on("touchend", () => {
+    if (!$("#firstComment").hasClass("activeComment")) {
+      $(".referenceCircleOne").removeClass("referenceCircleActive");
+      $(".referenceCircleTwo").addClass("referenceCircleActive");
+    }
+  });
+
+  $("#secondComment").on("touchend", () => {
+    if ($("#firstComment").hasClass("activeComment")) {
+      $(".referenceCircleTwo").removeClass("referenceCircleActive");
+      $(".referenceCircleOne").addClass("referenceCircleActive");
+    } else if ($("#thirdComment").hasClass("activeComment")) {
+      $(".referenceCircleTwo").removeClass("referenceCircleActive");
+      $(".referenceCircleThree").addClass("referenceCircleActive");
+    }
+  });
+
+  $("#thirdComment").on("touchend", () => {
+    if (!$("#thirdComment").hasClass("activeComment")) {
+      $(".referenceCircleThree").removeClass("referenceCircleActive");
+      $(".referenceCircleTwo").addClass("referenceCircleActive");
+    }
+  });
+};
+
+highlightActiveComment();
