@@ -40,14 +40,14 @@
         </div>
         </a>
     </li>
-    <!-- <li class="contactContainer">
+    <li class="contactContainer">
         <a class="navLinks" href="./contact.php">
             Contact
             <div class="menuArrowContainer">
                 <div class="menuArrow"></div>
             </div>
         </a>
-    </li> -->
+    </li>
     <li class="bottomIcons phoneIconContainer">
         <a class="lastLinks" href="tel:0296821772">
             <i id="phoneIcon" class="infoIcons fas fa-phone-alt"></i>

@@ -6,7 +6,7 @@
    <?php
       require "header-footer-php/head.php";
    ?>
-   <script src="https://www.google.com/recaptcha/api.js?render=6LfXT74ZAAAAAP1dpPcxjBryqxydqlfl3FO4X06n"></script>
+   <script src="https://www.google.com/recaptcha/api.js?render=6LeKc84ZAAAAANHC0n-3Q3cthsyhJ-WEOmUxkJSj"></script>
 </head>
 
 <?php
@@ -144,7 +144,6 @@
             </section>
             <input id="gToken" type="hidden" name="g-token" />
          </form>
-         <?=$bottomBar;?>
       </section>
    </main>
 

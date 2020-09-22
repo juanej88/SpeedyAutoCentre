@@ -2234,6 +2234,46 @@ input:-webkit-autofill {
     ================================================= */
 
 /*  =================================================
+    Start | Contact Page
+    ================================================= */
+
+#contactFirstSection {
+  width: 100%;
+  min-width: 300px;
+  height: 62vh;
+  background-image: url(../images/background/contactBackground.jpg);
+  background-size: cover;
+  background-position: 50% 75%;
+  background-attachment: fixed;
+  filter: brightness(0.85);
+  display: grid;
+  grid-template: repeat(2, 50%) / 5% repeat(3, 30%) 5%;
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #contactFirstSection {
+    background-size: auto;
+    background-attachment: scroll;
+    background-position: 50% 0%;
+    grid-template: repeat(2, 50%) / 5% 60% 30% 5%;
+    height: 36.25vh;
+  }
+}
+
+@media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  #contactFirstSection {
+    background-size: cover;
+    height: 72.5vh;
+    background-position: 50% 10%;
+    grid-template: repeat(2, 50%) / 5% 45% 45% 5%;
+  }
+}
+
+/*  =================================================
+    End | Contact Page
+    ================================================= */
+
+/*  =================================================
     Start | Footer Section
     ================================================= */
 
