@@ -29,7 +29,7 @@
       <section id="bookingSecondSection">
          <?=$formHeading;?>
          <?=$formInstructions;?>
-         <form class="bookingForm" action="#bookingSecondSection" method="POST">
+         <form class="bookingForm" action="" method="POST">
             <h3 class="formTitles bigSpan">Personal Details</h3>
             <section class="fullName bigSpan spanGrid">
                <label for="fullName" class="blockText">Full Name</label>
@@ -153,8 +153,8 @@
       ?>
    </footer>
 
-   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-   <script src="./js/main.js" type="text/javascript"></script>
+   <script defer src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+   <script defer src="./js/main.js" type="text/javascript"></script>
    <script>
       grecaptcha.ready(function() {
          grecaptcha.execute('6LeKc84ZAAAAANHC0n-3Q3cthsyhJ-WEOmUxkJSj', {action: 'homepage'}).then(function(token) {
