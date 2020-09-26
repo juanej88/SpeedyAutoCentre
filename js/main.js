@@ -409,7 +409,9 @@ const removeForm = () => {
     $(".temporalBar").hasClass("errorBar")
   ) {
     $("#bookingFirstSection").remove();
+    $("#contactFirstSection").remove();
     $("#bookingHeader").addClass("navAfterSubmission");
+    $("#contactHeader").addClass("navAfterSubmission");
   }
 };
 

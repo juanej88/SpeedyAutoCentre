@@ -23,7 +23,7 @@
 		<section id="servicesSecondSection">
 			<h1 class="servicesHeading">Services</h1>
 			<div class="service service5">
-				<img src="./icons/icon_service_engine.png" alt="Engine Service Icon" />
+				<img src="./images/icons/icon_service_engine.png" alt="Engine Service Icon" />
 				<h3>Engine Service</h3>
 				<ul>
 					<li>- Oil and Filter Change</li>
@@ -33,7 +33,7 @@
 				</ul>
 			</div>
 			<div class="service service7">
-				<img src="./icons/icon_service_battery.png" alt="Electronic Systems Icon" />
+				<img src="./images/icons/icon_service_battery.png" alt="Electronic Systems Icon" />
 				<h3>Electronic Systems</h3>
 				<ul>
 					<li>- Battery Service</li>
@@ -42,7 +42,7 @@
 				</ul>
 			</div>
 			<div class="service service9">
-				<img src="./icons/icon_service_climate.png" alt="Climate Control Service Icon" />
+				<img src="./images/icons/icon_service_climate.png" alt="Climate Control Service Icon" />
 				<h3>Climate Control Service</h3>
 				<ul>
 					<li>- A/C System Services and Repairs</li>
@@ -50,7 +50,7 @@
 				</ul>
 			</div>
 			<div class="service service2">
-				<img src="./icons/icon_service_inspection.png" alt="Inspection and Checks Icon" />
+				<img src="./images/icons/icon_service_inspection.png" alt="Inspection and Checks Icon" />
 				<h3>Inspection and Checks</h3>
 				<ul>
 					<li>- Inspection</li>
@@ -61,7 +61,7 @@
 				</ul>
 			</div>
 			<div class="service service6">
-				<img src="./icons/icon_service_tyre.png" alt="Tyre Service Icon" />
+				<img src="./images/icons/icon_service_tyre.png" alt="Tyre Service Icon" />
 				<h3>Tyre Service</h3>
 				<ul>
 					<li>- Balancing and Wheel Change</li>
@@ -70,7 +70,7 @@
 				</ul>
 			</div>
 			<div class="service service8">
-				<img src="./icons/icon_service_brake.png" alt="Brake Servicing Icon" />
+				<img src="./images/icons/icon_service_brake.png" alt="Brake Servicing Icon" />
 				<h3>Brake Servicing</h3>
 				<ul>
 					<li>- Repair and Maintenance</li>
@@ -78,7 +78,7 @@
 				</ul>
 			</div>
 			<div class="service service3">
-				<img src="./icons/icon_service_mechanics.png" alt="Mechanical Repairs Icon" />
+				<img src="./images/icons/icon_service_mechanics.png" alt="Mechanical Repairs Icon" />
 				<h3>Mechanical Repairs</h3>
 				<ul>
 					<li>- Genuine Spare Parts (Subject to Availability)</li>
@@ -87,7 +87,7 @@
 				</ul>
 			</div>
 			<div class="service service4">
-				<img src="./icons/icon_service_light.png" alt="Globe Inspection Icon" />
+				<img src="./images/icons/icon_service_light.png" alt="Globe Inspection Icon" />
 				<h3>Globe Inspection</h3>
 				<ul>
 					<li>- Replacement and Repair of Individual Components</li>
@@ -96,7 +96,7 @@
 				</ul>
 			</div>
 			<div class="service service10">
-				<img src="./icons/icon_service_glass.png" alt="Glass Repair Icon" />
+				<img src="./images/icons/icon_service_glass.png" alt="Glass Repair Icon" />
 				<h3>Glass Repair</h3>
 				<ul>
 					<li>- Professional Replacement of the Entire Windshield</li>
