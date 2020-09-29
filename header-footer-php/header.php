@@ -4,7 +4,9 @@
 ?>
 
 <div class="logoContainer">
-    <img class="navLogo bigLogo" src="./images/logo/logo_Speedy.png" alt="Speedy Auto Centre's Logo">
+    <a href="./index.php">
+        <img class="navLogo" src="./images/logo/logo_Speedy.png" alt="Speedy Auto Centre's Logo">
+    </a>
 </div>
 <nav>
     <ul>

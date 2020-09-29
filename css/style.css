@@ -417,7 +417,7 @@ nav a.lastIcon {
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   header {
-    height: 4.25rem;
+    height: 3.55rem;
   }
 
   .navLogo {
@@ -430,7 +430,7 @@ nav a.lastIcon {
 
 @media (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   header {
-    height: 4.25rem;
+    height: 3.55rem;
   }
 
   .navLogo {
@@ -496,7 +496,7 @@ nav a.lastIcon {
     position: relative;
     left: 0%;
     width: 100%;
-    padding-top: 3.25em;
+    padding-top: 4em;
     padding-left: 5%;
   }
 
@@ -697,7 +697,7 @@ header .menuBars {
   height: 2.75rem;
   width: 2.75rem;
   border-radius: 50%;
-  margin: 0.75rem 0;
+  margin: 0.4rem 0;
   cursor: pointer;
 }
 
