@@ -33,7 +33,7 @@
             <h3 class="formTitles bigSpan">Personal Details</h3>
             <section class="fullName bigSpan spanGrid">
                <label for="fullName" class="blockText">Full Name</label>
-               <input id="fullName" class="input0" type="text" name="full-name" minlength="2" maxlength="30" pattern="[A-Za-z-_ ]{2,30}" value="<?=$fullName;?>" required />
+               <input id="fullName" class="input0" type="text" name="full-name" minlength="2" maxlength="30" pattern="[A-zÀ-ÿ-_ ]{2,30}" value="<?=$fullName;?>" required />
             </section>
             <section class="email mediumSpan spanGrid">
                <label for="email" class="blockText">Email</label>
@@ -51,8 +51,13 @@
                <?=$date_error;?>
             </section>
             <section class="preferredTime smallSpan spanGrid">
-               <label for="preferredTime" class="blockText">Preferred Time</label>
-               <select id="preferredTime" name="preferred-time" required>               
+               <label for="preferredTime" class="blockText">
+                  Preferred Time
+                  <div class="downArrowContainer">
+                     <div class="downArrow"></div>
+                  </div>
+               </label>
+               <select id="preferredTime" class="selectInput" name="preferred-time" required>
                </select>
             </section>
             <section class="rego smallSpan spanGrid">
@@ -60,22 +65,32 @@
                <input id="rego" class="input3" type="text" name="car-rego" minlength="2" maxlength="8" pattern="[A-Za-z0-9- ]{2,8}" value="<?=$carRego;?>" required />
             </section>
             <section class="carYear smallSpan spanGrid">
-               <label for="carYear" class="blockText">Year</label>
-               <select id="carYear" class="input4" name="car-year" required>
+               <label for="carYear" class="blockText">
+                  Year
+                  <div class="downArrowContainer">
+                     <div class="downArrow"></div>
+                  </div>
+               </label>
+               <select id="carYear" class="input4 selectInput" name="car-year" required>
                   <option value=""></option>
                   <?=getCarYear();?>
                </select>
             </section>
             <section class="carMake smallSpan spanGrid">
-               <label for="carMake" class="blockText">Make</label>
-               <select id="carMake" class="input5" type="text" name="car-make" required>
+               <label for="carMake" class="blockText">
+                  Make
+                  <div class="downArrowContainer">
+                     <div class="downArrow"></div>
+                  </div>
+               </label>
+               <select id="carMake" class="input5 selectInput" type="text" name="car-make" required>
                   <option value=""></option>
                   <?=getCarMake();?>
                </select>
             </section>
             <section class="carModel smallSpan spanGrid">
                <label for="carModel" class="blockText">Model</label>
-               <input id="carModel" class="input6" type="text" name="car-model" minlength="2" maxlength="15" pattern="[A-Za-z0-9- ]{2,15}" value="<?=$carModel;?>" required />
+               <input id="carModel" class="input6" type="text" name="car-model" minlength="1" maxlength="15" pattern="[A-Za-z0-9- ]{1,15}" value="<?=$carModel;?>" required />
             </section>
 
             <span class="blockText bigSpan">Service</span>

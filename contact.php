@@ -30,7 +30,7 @@
             <h3 class="formTitles bigSpan">Personal Details</h3>
             <section class="fullName bigSpan spanGrid">
                <label for="fullName" class="blockText">Full Name</label>
-               <input id="fullName" class="input0" type="text" name="full-name" minlength="2" maxlength="30" pattern="[A-Za-z-_ ]{2,30}" value="<?=$fullName;?>" required />
+               <input id="fullName" class="input0" type="text" name="full-name" minlength="2" maxlength="30" pattern="[A-zÀ-ÿ-_ ]{2,30}" value="<?=$fullName;?>" required />
             </section>
             <section class="email mediumSpan spanGrid">
                <label for="email" class="blockText">Email</label>
