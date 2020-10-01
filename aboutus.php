@@ -2,7 +2,14 @@
 <html lang="en" dir="ltr">
 <head>
 	<meta charset="utf-8">
-	<title>About Us | Speedy Auto Centre</title>
+  <title>About Us | Speedy Auto Centre</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179410478-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-179410478-1');
+  </script>
 	<?php
 		require "header-footer-php/head.php";
 	?>

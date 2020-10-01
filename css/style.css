@@ -2200,7 +2200,6 @@ textarea:focus {
 .invalidInput:focus {
   color: var(--speedyDarkRed);
   border-color: var(--speedyDarkRed);
-  transition: ;
   animation: invalidInput 0.4s linear forwards;
 }
 
@@ -2222,6 +2221,7 @@ textarea:focus {
 
 /* It removes the default background colour and text colour when autofilling */
 input:-webkit-autofill {
+  box-shadow: 0 0 0 2em var(--speedyWhite) inset;
   -webkit-box-shadow: 0 0 0 2em var(--speedyWhite) inset;
   -webkit-text-fill-color: var(--speedyBlue);
 }
