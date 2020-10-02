@@ -44,7 +44,7 @@
       <section id="homeFirstSection">
          <div class="firstSentence">
             <h2>Yes, we can service your brand new car</h2>
-            <a class="bookNowButton" href="./booking.php">Book Now</a>
+            <a class="bookNowButton" href="./booking">Book Now</a>
          </div>
       </section>
 
@@ -54,7 +54,7 @@
             <p>Speedy Auto Centre – the car experts. This is the right address for outstanding service quality for your car. Whether you are looking for advice, repair or service work, we can offer the full package.</p><br/>
             <p>The experts from Speedy Auto Centre are equipped to deal with the latest automotive technology in vehicles of all makes and keep them in perfect working order. And so your car is always in the best possible hands and your manufacturer’s warranty is safe with us, when you take it to Speedy Auto Centre Service for maintenance and repair.</p><br/>
             <p>For everything your car needs.</p>
-            <a class="bookNowBlueButton" href="./booking.php">Book Now</a>
+            <a class="bookNowBlueButton" href="./booking">Book Now</a>
          </div>
          <div class="verticalImage"></div>
       </section>

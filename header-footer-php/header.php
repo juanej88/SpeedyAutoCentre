@@ -4,14 +4,14 @@
 ?>
 
 <div class="logoContainer">
-    <a href="./index.php">
+    <a href="./">
         <img class="navLogo" src="./images/logo/logo_Speedy.png" alt="Speedy Auto Centre's Logo">
     </a>
 </div>
 <nav>
     <ul>
     <li class="homeLink">
-        <a class="navLinks" href="./index.php">
+        <a class="navLinks" href="./">
             Home
             <div class="menuArrowContainer menuArrowContainerSpecial">
                 <div class="menuArrow"></div>
@@ -19,7 +19,7 @@
         </a>
     </li>
     <li>
-        <a class="navLinks" href="./aboutus.php">
+        <a class="navLinks" href="./aboutus">
             About Us
             <div class="menuArrowContainer">
                 <div class="menuArrow"></div>
@@ -27,7 +27,7 @@
         </a>
     </li>
     <li>
-        <a class="navLinks" href="./services.php">
+        <a class="navLinks" href="./services">
             Services
             <div class="menuArrowContainer">
                 <div class="menuArrow"></div>
@@ -35,7 +35,7 @@
         </a>
     </li>
     <li>
-        <a class="navLinks" href="./booking.php">
+        <a class="navLinks" href="./booking">
         Booking
         <div class="menuArrowContainer">
             <div class="menuArrow"></div>
@@ -43,7 +43,7 @@
         </a>
     </li>
     <li class="contactContainer">
-        <a class="navLinks" href="./contact.php">
+        <a class="navLinks" href="./contact">
             Contact
             <div class="menuArrowContainer">
                 <div class="menuArrow"></div>

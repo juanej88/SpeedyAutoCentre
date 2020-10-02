@@ -15,10 +15,22 @@ handlers:
     application_readable: true
 
   # Serve php scripts.
-  - url: /(.+\.php)$
-    script: \1
-    secure: always
-
   - url: /
     script: index.php
+    secure: always
+
+  - url: /aboutus
+    script: aboutus.php
+    secure: always
+
+  - url: /services
+    script: services.php
+    secure: always
+
+  - url: /booking
+    script: booking.php
+    secure: always
+
+  - url: /contact
+    script: contact.php
     secure: always

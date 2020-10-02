@@ -1,7 +1,7 @@
 <div class="firstFooterColumn footerColumn">
     <h4>Speedy Auto Centre</h4>
     <p>Established in 2007. The experts from Speedy Auto Centre are equipped to deal with the latest automotive technology in vehicles of all makes and keep them in perfect working order.</p>
-    <a class="footerButton" href="./booking.php">Book Now</a>
+    <a class="footerButton" href="./booking">Book Now</a>
 </div>
 <div class="secondFooterColumn footerColumn">
     <h4>Working Hours</h4>
